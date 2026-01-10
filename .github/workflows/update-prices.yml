@@ -12,23 +12,32 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Fetch PoE2 currency JSON
+           - name: Fetch PoE2 currency JSON
         run: |
           LEAGUE="standard"
           URL="https://poe.ninja/poe2/api/data/currencyoverview?league=${LEAGUE}&type=Currency"
-          curl -sS "$URL" -o /tmp/raw.json
+          echo "Fetching $URL"
+
+          curl -f -sS "$URL" -o /tmp/raw.json || echo "{}" > /tmp/raw.json
 
           node -e "
-          const fs=require('fs');
-          const raw=JSON.parse(fs.readFileSync('/tmp/raw.json','utf8'));
-          const out={
+          const fs = require('fs');
+          let rawText = fs.readFileSync('/tmp/raw.json','utf8').trim();
+          if (!rawText || rawText.length < 10) {
+            console.log('Empty or invalid response, skipping update');
+            process.exit(0);
+          }
+          const raw = JSON.parse(rawText);
+          const out = {
             updatedAt: new Date().toISOString(),
             league: '${LEAGUE}',
             lines: raw.lines || []
           };
           fs.mkdirSync('data',{recursive:true});
           fs.writeFileSync('data/prices.json', JSON.stringify(out,null,2));
+          console.log('prices.json updated with', out.lines.length, 'items');
           "
+
 
       - name: Commit changes
         run: |
