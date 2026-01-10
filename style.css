@@ -4,7 +4,7 @@
 
 /* Totals bar (Total Invest / Loot / Gains) */
 :root {
-  --icon-total-size: 18px;
+  --icon-total-size: 48px;
 
   /* Left market list (Currency / Fragments icons) */
   --icon-market-size: 20px;
@@ -340,3 +340,4 @@ button:hover {
   color: #00ff66;
   white-space: pre-wrap;
 }
+
