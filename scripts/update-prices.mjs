@@ -1,75 +1,128 @@
 import fs from "fs";
 
-const URL = "https://poe2scout.com/economy/currency";
+const LEAGUE = "vaal"; // change à "standard" si besoin
+const URL = `https://poe.ninja/poe2/economy/${LEAGUE}/currency`;
 
-function clean(text) {
-  return (text || "").replace(/\s+/g, " ").trim();
+function findNextData(html) {
+  const m = html.match(/<script id="__NEXT_DATA__" type="application\/json">([\s\S]*?)<\/script>/);
+  return m ? m[1] : null;
 }
 
-function parsePriceCell(t) {
-  // exemples vus sur ces pages : "302.77 ex." ou "8.7 Divine Orb"
-  const s = clean(t).toLowerCase();
+function deepFindCurrencies(obj) {
+  // On cherche un tableau d'objets qui ressemble à une liste de currencies
+  // heuristique: objets avec name + price en exalt/divine ou équivalent
+  const stack = [obj];
+  let best = null;
 
-  // ex
-  let m = s.match(/([0-9]+(?:\.[0-9]+)?)\s*ex/);
-  if (m) return { amount: Number(m[1]), unit: "ex" };
+  while (stack.length) {
+    const cur = stack.pop();
+    if (!cur) continue;
 
-  // div
-  m = s.match(/([0-9]+(?:\.[0-9]+)?)\s*div/);
-  if (m) return { amount: Number(m[1]), unit: "div" };
+    if (Array.isArray(cur)) {
+      // candidat ?
+      if (cur.length > 5 && typeof cur[0] === "object") {
+        const sample = cur.slice(0, 10);
+        const score = sample.reduce((s, it) => {
+          if (!it || typeof it !== "object") return s;
+          const keys = Object.keys(it);
+          const hasName = keys.some(k => /name|currency/i.test(k));
+          const hasPrice = keys.some(k => /exalt|divine|price|value|ratio/i.test(k));
+          return s + (hasName ? 1 : 0) + (hasPrice ? 1 : 0);
+        }, 0);
+        if (score >= 12) best = cur; // bon signal
+      }
 
-  // fallback
-  return { amount: null, unit: null, raw: clean(t) };
+      for (const v of cur) stack.push(v);
+    } else if (typeof cur === "object") {
+      for (const k of Object.keys(cur)) stack.push(cur[k]);
+    }
+  }
+
+  return best;
+}
+
+function normalize(lines) {
+  // On fabrique un format stable: { name, exaltPrice, divinePrice } si trouvable
+  return lines.map(it => {
+    const name =
+      it.currencyTypeName ||
+      it.name ||
+      it.itemName ||
+      it.displayName ||
+      it.currency ||
+      it.type ||
+      null;
+
+    // On tente plusieurs champs possibles
+    const exaltPrice =
+      it.exaltedValue ??
+      it.exalted ??
+      it.exaltValue ??
+      it.exalt ??
+      it.ex ??
+      null;
+
+    const divinePrice =
+      it.divineValue ??
+      it.divine ??
+      it.divineOrbValue ??
+      null;
+
+    // Sinon, on garde un "raw" utile
+    return {
+      name,
+      exaltPrice,
+      divinePrice,
+      raw: it
+    };
+  }).filter(x => x.name);
 }
 
 const res = await fetch(URL, {
   headers: {
-    // évite certains blocages “bot”
-    "User-Agent": "Mozilla/5.0 (GitHub Actions) price-bot",
+    "User-Agent": "Mozilla/5.0",
     "Accept": "text/html,*/*"
   }
 });
 
 const html = await res.text();
-if (!html || html.length < 5000) {
-  console.error("HTML trop petit, probablement bloqué.");
-  console.error("First 500 chars:\n", html.slice(0, 500));
+
+const nextDataText = findNextData(html);
+if (!nextDataText) {
+  console.error("Impossible de trouver __NEXT_DATA__ dans la page.");
+  console.error("Premiers 500 chars:\n", html.slice(0, 500));
   process.exit(1);
 }
 
-// Scraping très simple : on récupère les lignes <tr> du tableau
-// POE2Scout rend un tableau HTML (server-side), donc ça marche sans navigateur.
-const rows = [...html.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/g)].map(r => r[1]);
+let nextData;
+try {
+  nextData = JSON.parse(nextDataText);
+} catch (e) {
+  console.error("JSON.parse(__NEXT_DATA__) a échoué");
+  process.exit(1);
+}
 
-const items = [];
-for (const row of rows) {
-  const cols = [...row.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map(c => c[1]);
+const candidates = deepFindCurrencies(nextData);
+if (!candidates) {
+  console.error("Aucune liste de currencies détectée dans __NEXT_DATA__.");
+  process.exit(1);
+}
 
-  if (cols.length < 2) continue;
+const lines = normalize(candidates);
 
-  const name = clean(cols[0].replace(/<[^>]+>/g, ""));
-  const priceText = clean(cols[1].replace(/<[^>]+>/g, ""));
-
-  // on ignore les entêtes / lignes vides
-  if (!name || name.toLowerCase() === "item") continue;
-
-  const price = parsePriceCell(priceText);
-  if (price.amount === null) continue;
-
-  items.push({
-    name,
-    price: price.amount,
-    unit: price.unit
-  });
+if (!lines.length) {
+  console.error("Liste currencies trouvée mais vide après normalisation.");
+  process.exit(1);
 }
 
 const out = {
   updatedAt: new Date().toISOString(),
   source: URL,
-  lines: items
+  league: LEAGUE,
+  lines
 };
 
 fs.mkdirSync("data", { recursive: true });
 fs.writeFileSync("data/prices.json", JSON.stringify(out, null, 2), "utf8");
 
-console.log(`OK -> ${items.length} currencies écrites dans data/prices.json`);
+console.log(`OK -> ${lines.length} currencies écrites dans data/prices.json`);
