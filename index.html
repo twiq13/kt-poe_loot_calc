@@ -1,82 +1,103 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PoE II Loot Calculator</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PoE2 Farm Calculator</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- HEADER : titre + résultats en haut à droite -->
-  <div class="topbar">
-    <div class="topbar-left">
-      <h1>PoE II Farm Calculette</h1>
+  <h1>PoE2 Farm Calculator</h1>
+
+  <!-- HEADER BAR -->
+  <div class="header-bar">
+
+    <!-- INVEST (left) -->
+    <div class="invest-mini">
+      <div class="field">
+        <label>Total Maps</label>
+        <input type="number" id="maps" value="10" min="0">
+      </div>
+      <div class="field">
+        <label>Cost per Map</label>
+        <input type="number" id="costPerMap" value="0" min="0" step="0.01">
+      </div>
     </div>
 
-    <div class="topbar-right results-panel">
-<div class="results-bar">
-  <div><strong>Total Invest:</strong> <span id="totalInvest">0</span></div>
-  <div><strong>Total loot:</strong> <span id="totalLoot">0</span></div>
-  <div><strong>Gains:</strong> <span id="gain">0</span></div>
-  <button class="resetBtn" onclick="resetAll()">Reset all</button>
-</div>
+    <!-- TOTALS (right) -->
+    <div class="totals-mini">
+      <div class="totalBox">
+        <div class="tLabel">Total Invest</div>
+        <div class="tValue" id="totalInvest">0</div>
+      </div>
+      <div class="totalBox">
+        <div class="tLabel">Total Loot</div>
+        <div class="tValue" id="totalLoot">0</div>
+      </div>
+      <div class="totalBox">
+        <div class="tLabel">Gains</div>
+        <div class="tValue" id="gain">0</div>
+      </div>
 
+      <button class="resetBtn" id="resetBtn" type="button">Reset</button>
     </div>
+
   </div>
 
-<h2>Investissement</h2>
-<div class="invest-row">
-  <input type="number" id="maps" placeholder="Nombre de maps" value="10">
-  <input type="number" id="costPerMap" placeholder="Coût total pour une map (ex)" value="0">
-</div>
-
-
-  <!-- ZONE PRINCIPALE -->
+  <!-- MAIN LAYOUT -->
   <div class="layout">
 
-    <!-- COLONNE GAUCHE -->
-    <aside class="currency-panel">
-      <h3>Currencies</h3>
-      <input id="currencySearch" placeholder="Rechercher..." />
+    <!-- LEFT PANEL -->
+    <aside class="left-panel">
+      <div class="panel-title">Market List</div>
+
+      <!-- TABS (preparing future types) -->
+      <div class="tabs">
+        <button class="tab active" data-tab="currency">Currency</button>
+        <button class="tab" data-tab="fragments">Fragments</button>
+        <button class="tab" data-tab="abyssal">Abyssal Bones</button>
+        <button class="tab" data-tab="other">Other</button>
+      </div>
+
+      <input id="currencySearch" placeholder="Search..." />
+
       <div id="currencyList"></div>
     </aside>
 
-    <!-- COLONNE DROITE -->
+    <!-- RIGHT PANEL -->
     <main class="app">
-      <h2>Loot</h2>
+      <div class="app-title">Loot (prices shown in Exalted)</div>
 
       <table class="loot-table">
         <thead>
           <tr>
             <th>Item</th>
-            <th>Prix</th>
-            <th>Quantité</th>
-            <th class="th-delete"></th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th></th>
           </tr>
         </thead>
         <tbody id="lootBody"></tbody>
       </table>
 
       <div class="loot-actions">
-        <button onclick="addLootLine()">➕ Ajouter une ligne</button>
-        <button onclick="addManualLine()">➕ Ligne manuelle</button>
+        <button type="button" onclick="addLootLine()">
+          <span class="btnIcon">+</span> Add row
+        </button>
+        <button type="button" onclick="addManualLine()">
+          <span class="btnIcon">+</span> Manual row
+        </button>
       </div>
     </main>
 
   </div>
 
-  <!-- DATALIST AUTOCOMPLETE -->
   <datalist id="currencyDatalist"></datalist>
 
-  <div id="fetchStatus" class="status">
-    Fetch status: attente...
-  </div>
+  <div id="fetchStatus" class="status">Status: waiting...</div>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>
-
-
-
