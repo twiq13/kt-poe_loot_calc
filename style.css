@@ -341,3 +341,19 @@ button:hover {
   white-space: pre-wrap;
 }
 
+/* ===== FORCE ICON SIZES (overrides inline) ===== */
+.pIcon,
+.cIcon,
+.lootIcon,
+.baseIcon {
+  width: var(--icon-total-size) !important;
+  height: var(--icon-total-size) !important;
+}
+
+/* If you want different sizes per zone, use these instead: */
+.pIcon { width: var(--icon-total-size) !important; height: var(--icon-total-size) !important; }
+.cIcon { width: var(--icon-market-size) !important; height: var(--icon-market-size) !important; }
+.lootIcon { width: var(--icon-loot-item-size) !important; height: var(--icon-loot-item-size) !important; }
+.baseIcon { width: var(--icon-loot-price-size) !important; height: var(--icon-loot-price-size) !important; }
+
+
