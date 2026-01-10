@@ -438,3 +438,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     recalcAll();
   });
 });
+
+console.log("DATA:", data);
+console.log("LINES:", data.lines?.length);
+
