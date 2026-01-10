@@ -1,26 +1,36 @@
+// scripts/scrape-poeninja-poe2.mjs
+// PoE2 poe.ninja scraper (Playwright) -> data/prices.json
+// - Scrape multiple sections (tabs) you prepared
+// - For each row: name, icon, amount+unit (display like site), exaltedValue (from hover tooltip conversions when possible)
+// - Also outputs baseIcon (Exalted Orb icon) + divineInEx (1 Divine = X Ex) when found
+
 import fs from "fs";
 import { chromium } from "playwright";
 
 const LEAGUE = (process.env.LEAGUE || "standard").toLowerCase();
-const BASE = "https://poe.ninja";
 
+const BASE = "https://poe.ninja";
+const ECONOMY_BASE = `${BASE}/poe2/economy/${LEAGUE}`;
+
+// Sections you asked (UI tabs)
+// NOTE: poe.ninja paths can evolve; these are the most common "economy" endpoints style.
+// If one 404s, the scraper will log and continue.
 const SECTIONS = [
-  { key: "currency",        slugs: ["currency"] },
-  { key: "fragments",       slugs: ["fragments"] },
-  { key: "abyssalBones",    slugs: ["abyssal-bones", "abyssalbones"] },
-  { key: "uncutGems",       slugs: ["uncut-gems", "uncutgems"] },
-  { key: "lineageGems",     slugs: ["lineage-gems", "lineagegems"] },
-  { key: "essences",        slugs: ["essences"] },
-  { key: "soulCores",       slugs: ["soul-cores", "soulcores"] },
-  { key: "idols",           slugs: ["idols"] },
-  { key: "runes",           slugs: ["runes"] },
-  { key: "omens",           slugs: ["omens"] },
-  { key: "expedition",      slugs: ["expedition"] },
-  { key: "liquidEmotions",  slugs: ["liquid-emotions", "liquidemotions"] },
-  { key: "catalyst",        slugs: ["catalyst", "catalysts"] },
+  { key: "currency",       label: "Currency",        path: "currency" },
+  { key: "fragments",      label: "Fragments",       path: "fragments" },
+  { key: "abyssalBones",   label: "Abyssal Bones",   path: "abyssal-bones" },
+  { key: "uncutGems",      label: "Uncut Gems",      path: "uncut-gems" },
+  { key: "lineageGems",    label: "Lineage Gems",    path: "lineage-support-gems" },
+  { key: "essences",       label: "Essences",        path: "essences" },
+  { key: "soulCores",      label: "Soul Cores",      path: "soul-cores" },
+  { key: "idols",          label: "Idols",           path: "idols" },
+  { key: "runes",          label: "Runes",           path: "runes" },
+  { key: "omens",          label: "Omens",           path: "omens" },
+  { key: "expedition",     label: "Expedition",      path: "expedition" },
+  { key: "liquidEmotions", label: "Liquid Emotions", path: "liquid-emotions" },
+  { key: "catalyst",       label: "Catalyst",        path: "breach-catalyst" },
 ];
 
-// ---------------- utils ----------------
 function cleanName(name) {
   return String(name || "").replace(/\s*WIKI\s*$/i, "").trim();
 }
@@ -44,311 +54,266 @@ function parseCompactNumber(s) {
   return Number.isFinite(n) ? n : null;
 }
 
-async function safeGoto(page, url) {
-  try {
-    const res = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
-    const status = res?.status?.() ?? 0;
-    if (status >= 400) return { ok: false, status };
-    return { ok: true, status };
-  } catch {
-    return { ok: false, status: 0 };
-  }
+// Extract "amount + unit" from the Value cell text as shown on site (fallback)
+// Example rowText: "Mirror of Kalandra WIKI 2.5k 1.0 0% 4.7k 2.5k 1.0"
+// In many cases the Value cell contains "2.5k" and then an icon (unit implied).
+async function getValueCellText(td) {
+  const raw = (await td.innerText()).replace(/\s+/g, " ").trim();
+  return raw;
 }
 
-// Read visible amount + unit + unitIcon from the Value cell
-async function extractValueCell(td) {
-  return await td.evaluate(el => {
-    // Grab visible text
-    const txt = (el.textContent || "").replace(/\s+/g, " ").trim();
-
-    // amount = first token starting with digit
-    const tokens = txt.split(" ");
-    const amountText = tokens.find(t => /^[0-9]/.test(t)) || "";
-
-    // unit icon: often last img in the cell
-    const imgs = Array.from(el.querySelectorAll("img"));
-    const last = imgs[imgs.length - 1] || null;
-
-    const unit =
-      (last?.getAttribute("aria-label")
-        || last?.getAttribute("alt")
-        || last?.getAttribute("title")
-        || "")?.trim();
-
-    const unitIcon = last?.getAttribute("src") || "";
-
-    return { amountText, unit, unitIcon };
-  });
-}
-
-// Tooltip text (best effort)
-async function getTooltipText(page) {
+// Find index of column named "Value" (case-insensitive)
+async function findValueColIndex(page) {
   return await page.evaluate(() => {
-    const candidates = Array.from(
-      document.querySelectorAll('[role="tooltip"], .tooltip, [data-popper-placement]')
-    );
-    const visible = candidates.filter(el => {
-      const r = el.getBoundingClientRect();
-      return r.width > 0 && r.height > 0;
-    });
-    const el = visible[visible.length - 1] || null;
-    return el ? (el.innerText || "").replace(/\s+/g, " ").trim() : "";
+    const ths = Array.from(document.querySelectorAll("table thead th"));
+    const idx = ths.findIndex(th => (th.innerText || "").trim().toLowerCase() === "value");
+    return idx;
   });
 }
 
-// Parse "X Exalted Orb" from tooltip (we accept ANY number, even < 1)
+// Robust tooltip reader: wait for conversion tooltip that contains "⇆" and "Orb"
+async function readConversionTooltip(page) {
+  // Wait for any visible element that looks like conversion tooltip
+  await page.waitForFunction(() => {
+    const els = Array.from(document.querySelectorAll("body *"));
+    const visible = els.filter(el => {
+      const r = el.getBoundingClientRect();
+      if (r.width < 40 || r.height < 10) return false;
+      const cs = window.getComputedStyle(el);
+      if (cs.visibility === "hidden" || cs.display === "none" || cs.opacity === "0") return false;
+      const t = (el.textContent || "").trim();
+      return t.includes("⇆") && t.toLowerCase().includes("orb");
+    });
+    return visible.length > 0;
+  }, { timeout: 2000 });
+
+  return await page.evaluate(() => {
+    const els = Array.from(document.querySelectorAll("body *"));
+    const visible = els.filter(el => {
+      const r = el.getBoundingClientRect();
+      if (r.width < 40 || r.height < 10) return false;
+      const cs = window.getComputedStyle(el);
+      if (cs.visibility === "hidden" || cs.display === "none" || cs.opacity === "0") return false;
+      const t = (el.textContent || "").trim();
+      return t.includes("⇆") && t.toLowerCase().includes("orb");
+    });
+    const el = visible[visible.length - 1];
+    return el ? (el.textContent || "").replace(/\s+/g, " ").trim() : "";
+  });
+}
+
+// Parse tooltip -> get "X Exalted Orb" (or Perfect Exalted Orb)
 function parseExaltedFromTooltip(tip) {
   if (!tip) return null;
-  const m = tip.match(/([0-9]+([.,][0-9]+)?(k|m)?)\s*Exalted\s*Orb/i);
+  const m = tip.match(/([0-9]+([.,][0-9]+)?(k|m)?)\s*(Perfect\s*)?Exalted\s*Orb/i);
   if (!m) return null;
   return parseCompactNumber(m[1]);
 }
 
-// ---------------- scrape one section ----------------
-async function scrapeSection(page, sectionKey, url) {
-  console.log(`\n[${sectionKey}] Opening: ${url}`);
+// Parse tooltip -> get "X Divine Orb"
+function parseDivineFromTooltip(tip) {
+  if (!tip) return null;
+  const m = tip.match(/([0-9]+([.,][0-9]+)?(k|m)?)\s*Divine\s*Orb/i);
+  if (!m) return null;
+  return parseCompactNumber(m[1]);
+}
 
-  const nav = await safeGoto(page, url);
-  if (!nav.ok) {
-    console.log(`[${sectionKey}] SKIP (HTTP ${nav.status})`);
-    return { ok: false, lines: [], baseIcon: "" };
-  }
+// Try to hover correct target inside a Value cell (often icon)
+async function hoverValueCell(page, td) {
+  const hoverTarget =
+    (await td.$("img")) ||
+    (await td.$("svg")) ||
+    (await td.$("span")) ||
+    td;
+
+  await hoverTarget.hover({ timeout: 5000 });
+  await page.waitForTimeout(120);
+}
+
+async function scrapeSection(page, section) {
+  const url = `${ECONOMY_BASE}/${section.path}`;
+  console.log(`\n=== Section: ${section.label} -> ${url}`);
 
   try {
-    await page.waitForSelector("table thead th", { timeout: 60000 });
-    await page.waitForSelector("table tbody tr", { timeout: 60000 });
-    await page.waitForTimeout(2000);
-  } catch {
-    console.log(`[${sectionKey}] SKIP (table not found)`);
-    return { ok: false, lines: [], baseIcon: "" };
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
+  } catch (e) {
+    console.log(`Skip (goto failed): ${section.key} -> ${String(e)}`);
+    return { section, url, lines: [], ok: 0, skipped: 0 };
   }
 
-  // Find "Value" column index
-  const valueColIndex = await page.evaluate(() => {
-    const ths = Array.from(document.querySelectorAll("table thead th"));
-    return ths.findIndex(th => (th.innerText || "").trim().toLowerCase() === "value");
-  });
+  // some pages might not have a table
+  try {
+    await page.waitForSelector("table thead th", { timeout: 15000 });
+    await page.waitForSelector("table tbody tr", { timeout: 15000 });
+  } catch {
+    console.log(`Skip (no table): ${section.key}`);
+    return { section, url, lines: [], ok: 0, skipped: 0 };
+  }
 
+  await page.waitForTimeout(1200);
+
+  const valueColIndex = await findValueColIndex(page);
   if (valueColIndex < 0) {
-    console.log(`[${sectionKey}] SKIP (Value column not found)`);
-    return { ok: false, lines: [], baseIcon: "" };
+    console.log(`Skip (no Value column): ${section.key}`);
+    return { section, url, lines: [], ok: 0, skipped: 0 };
   }
 
   const rowHandles = await page.$$("table tbody tr");
   if (!rowHandles.length) {
-    console.log(`[${sectionKey}] SKIP (no rows)`);
-    return { ok: false, lines: [], baseIcon: "" };
+    console.log(`Skip (no rows): ${section.key}`);
+    return { section, url, lines: [], ok: 0, skipped: 0 };
   }
 
-  // Try to grab Exalted icon from this page (best effort, currency page usually)
-  let exaltIcon = "";
-  for (const tr of rowHandles.slice(0, 80)) {
-    const txt = (await tr.innerText()).replace(/\s+/g, " ").trim().toLowerCase();
-    if (txt.startsWith("exalted orb") || txt.startsWith("perfect exalted orb")) {
-      const img = await tr.$("td img");
-      if (img) exaltIcon = normalizeUrl((await img.getAttribute("src")) || "");
-      break;
-    }
-  }
-
+  let ok = 0;
+  let skipped = 0;
   const lines = [];
+
+  // cap per section (avoid huge)
   const max = Math.min(rowHandles.length, 350);
 
   for (let i = 0; i < max; i++) {
     const tr = rowHandles[i];
     const tds = await tr.$$("td");
-    if (!tds.length || tds.length <= valueColIndex) continue;
+    if (!tds.length || tds.length <= valueColIndex) { skipped++; continue; }
 
+    // Name cell is usually td[0]
     const nameRaw = ((await tds[0].innerText()) || "").replace(/\s+/g, " ").trim();
     const name = cleanName(nameRaw);
-    if (!name) continue;
+    if (!name) { skipped++; continue; }
 
-    // item icon
+    // Item icon (left)
     let icon = "";
     const img0 = await tds[0].$("img");
     if (img0) icon = normalizeUrl((await img0.getAttribute("src")) || "");
 
-    // amount/unit/unitIcon from Value cell
-    const { amountText, unit, unitIcon } = await extractValueCell(tds[valueColIndex]);
-    const amount = parseCompactNumber(amountText);
+    // Value cell fallback text (amount is usually a first numeric token)
+    const valueText = await getValueCellText(tds[valueColIndex]);
+    const token = valueText.split(" ").find(x => /^[0-9]/.test(x)) || null;
+    const amount = parseCompactNumber(token);
 
-    // store raw line (we'll compute exaltedValue later)
+    // Tooltip conversion -> exaltedValue
+    let exaltedValue = null;
+    let tooltipText = "";
+
+    try {
+      await hoverValueCell(page, tds[valueColIndex]);
+      tooltipText = await readConversionTooltip(page);
+      exaltedValue = parseExaltedFromTooltip(tooltipText);
+    } catch {
+      exaltedValue = null;
+    }
+
+    if (exaltedValue !== null) ok++;
+
+    // "unit" from tooltip: if tooltip contains "Divine Orb" or "Chaos Orb" etc
+    // We keep it for LEFT list display. Priority: Divine / Chaos / Exalted.
+    let unit = "";
+    if (tooltipText) {
+      if (/Divine\s*Orb/i.test(tooltipText)) unit = "Divine Orb";
+      else if (/Chaos\s*Orb/i.test(tooltipText)) unit = "Chaos Orb";
+      else if (/(Perfect\s*)?Exalted\s*Orb/i.test(tooltipText)) unit = "Exalted Orb";
+    }
+
     lines.push({
-      section: sectionKey,
+      section: section.key,
       name,
       icon,
       amount: amount ?? null,
-      unit: cleanName(unit || ""),
-      unitIcon: normalizeUrl(unitIcon || ""),
-      exaltedValue: null
+      unit,
+      exaltedValue, // Ex value from tooltip (best)
+      tooltip: tooltipText || "" // helpful debug, can remove later
     });
   }
 
-  console.log(`[${sectionKey}] OK -> ${lines.length} lines`);
-  return { ok: true, lines, baseIcon: exaltIcon };
+  console.log(`Done: rows=${lines.length} exaltedFound=${ok} skipped=${skipped}`);
+  return { section, url, lines, ok, skipped };
 }
 
-// ---------------- main ----------------
 (async () => {
   const browser = await chromium.launch({ headless: true });
+
   const page = await browser.newPage({
     userAgent:
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36",
+    viewport: { width: 1400, height: 900 },
   });
 
-  const outSections = {};
+  // block heavy stuff (faster / more stable)
+  await page.route("**/*", (route) => {
+    const req = route.request();
+    const type = req.resourceType();
+    if (type === "font" || type === "media") return route.abort();
+    return route.continue();
+  });
+
+  // Scrape all sections
+  const allSections = [];
+  let allLines = [];
+
   let baseIcon = "";
-
-  // scrape all sections
-  for (const sec of SECTIONS) {
-    let done = false;
-
-    for (const slug of sec.slugs) {
-      const url = `${BASE}/poe2/economy/${LEAGUE}/${slug}`;
-      const res = await scrapeSection(page, sec.key, url);
-
-      if (res.ok && res.lines.length) {
-        outSections[sec.key] = res.lines;
-        if (!baseIcon && res.baseIcon) baseIcon = res.baseIcon;
-        done = true;
-        break;
-      }
-    }
-
-    if (!done) outSections[sec.key] = [];
-  }
-
-  // Flatten
-  const allLines = Object.values(outSections).flat();
-
-  // ---------------- compute rates from Currency page ----------------
-  // We need:
-  // - divineChaos: Divine Orb expressed in Chaos
-  // - divineInEx: Divine Orb expressed in Exalted (from tooltip)
-  // Then:
-  // - exChaos = divineChaos / divineInEx
-  let divineChaos = null;
   let divineInEx = null;
-  let exChaos = null;
+  let divineIcon = "";
 
-  // find Divine row in scraped currency lines
-  const divineRow = (outSections.currency || []).find(
-    x => (x.name || "").toLowerCase() === "divine orb"
-  );
-
-  // divineChaos from visible value
-  if (divineRow && divineRow.amount && divineRow.unit.toLowerCase() === "chaos orb") {
-    divineChaos = divineRow.amount;
+  for (const s of SECTIONS) {
+    const result = await scrapeSection(page, s);
+    allSections.push({
+      key: s.key,
+      label: s.label,
+      url: result.url,
+      count: result.lines.length,
+    });
+    allLines = allLines.concat(result.lines);
   }
 
-  // divineInEx from tooltip (visit currency page and hover Divine value)
-  const currencyUrl = `${BASE}/poe2/economy/${LEAGUE}/currency`;
-  const nav = await safeGoto(page, currencyUrl);
+  // Determine Exalted icon + Divine icon + DivineInEx from currency section if possible
+  const currencyLines = allLines.filter(x => x.section === "currency");
 
-  if (nav.ok) {
-    try {
-      await page.waitForSelector("table tbody tr", { timeout: 60000 });
-      await page.waitForTimeout(2000);
+  // Exalted icon: from "Exalted Orb" row
+  const exRow = currencyLines.find(x => x.name.toLowerCase() === "exalted orb");
+  if (exRow?.icon) baseIcon = exRow.icon;
 
-      // find row that starts with "Divine Orb"
-      const rows = await page.$$("table tbody tr");
-      for (const tr of rows.slice(0, 200)) {
-        const txt = (await tr.innerText()).replace(/\s+/g, " ").trim().toLowerCase();
-        if (txt.startsWith("divine orb")) {
-          const tds = await tr.$$("td");
-          // find value column index on this page
-          const valueColIndex = await page.evaluate(() => {
-            const ths = Array.from(document.querySelectorAll("table thead th"));
-            return ths.findIndex(th => (th.innerText || "").trim().toLowerCase() === "value");
-          });
+  const divRow = currencyLines.find(x => x.name.toLowerCase() === "divine orb");
+  if (divRow?.icon) divineIcon = divRow.icon;
 
-          if (valueColIndex >= 0 && tds[valueColIndex]) {
-            // hover on last img in value cell if exists
-            const imgs = await tds[valueColIndex].$$("img");
-            if (imgs.length) await imgs[imgs.length - 1].hover({ timeout: 5000 });
-            else await tds[valueColIndex].hover({ timeout: 5000 });
-
-            await page.waitForTimeout(140);
-            const tip = await getTooltipText(page);
-            divineInEx = parseExaltedFromTooltip(tip);
-          }
-          break;
-        }
-      }
-    } catch {}
-  }
-
-  if (divineChaos && divineInEx && divineInEx > 0) {
-    exChaos = divineChaos / divineInEx;
-  }
-
-  // ---------------- fill exaltedValue for ALL lines ----------------
-  // Rules:
-  // - if unit Chaos: exaltedValue = amount / exChaos
-  // - if unit Divine: exaltedValue = amount * divineInEx
-  // - if unit Exalted: exaltedValue = amount
-  // - if name is Exalted Orb: exaltedValue = 1
-  // - if name is Divine Orb: exaltedValue = divineInEx (if known)
-  for (const l of allLines) {
-    const nameL = (l.name || "").toLowerCase();
-    const unitL = (l.unit || "").toLowerCase();
-    const amt = Number(l.amount ?? 0);
-
-    if (nameL === "exalted orb" || nameL === "perfect exalted orb") {
-      l.exaltedValue = 1;
-      continue;
-    }
-
-    if (nameL === "divine orb" && divineInEx && divineInEx > 0) {
-      l.exaltedValue = divineInEx;
-      continue;
-    }
-
-    if (!amt || amt <= 0) {
-      l.exaltedValue = null;
-      continue;
-    }
-
-    if (unitL === "exalted orb") {
-      l.exaltedValue = amt;
-      continue;
-    }
-
-    if (unitL === "divine orb") {
-      l.exaltedValue = (divineInEx && divineInEx > 0) ? (amt * divineInEx) : null;
-      continue;
-    }
-
-    if (unitL === "chaos orb") {
-      l.exaltedValue = (exChaos && exChaos > 0) ? (amt / exChaos) : null;
-      continue;
-    }
-
-    l.exaltedValue = null;
+  // divineInEx:
+  // best: if divRow has exaltedValue parsed -> that is already in Ex
+  if (divRow?.exaltedValue && divRow.exaltedValue > 0) {
+    divineInEx = divRow.exaltedValue;
+  } else {
+    // fallback: if tooltip present, try parse "X Exalted Orb" specifically when hovering divine row might fail
+    // Keep null if not found
+    divineInEx = null;
   }
 
   await browser.close();
 
-  // output
+  // Clean output:
+  // - remove tooltip text to keep file light (you can keep it if you want)
+  const linesOut = allLines.map(x => ({
+    section: x.section,
+    name: x.name,
+    icon: x.icon,
+    amount: x.amount,
+    unit: x.unit,
+    exaltedValue: x.exaltedValue
+  }));
+
   const out = {
     updatedAt: new Date().toISOString(),
     league: LEAGUE,
-    sourceBase: `${BASE}/poe2/economy/${LEAGUE}/`,
+    sourceBase: ECONOMY_BASE,
+    sections: allSections,
     base: "Exalted Orb",
-    baseIcon,
-    rates: {
-      divineChaos: divineChaos ?? null,
-      divineInEx: divineInEx ?? null,
-      exChaos: exChaos ?? null
-    },
-    sections: outSections,
-    lines: allLines
+    baseIcon: baseIcon || "",
+    divineIcon: divineIcon || "",
+    divineInEx: divineInEx,
+    lines: linesOut
   };
 
   fs.mkdirSync("data", { recursive: true });
   fs.writeFileSync("data/prices.json", JSON.stringify(out, null, 2), "utf8");
 
-  const countEx = allLines.filter(x => x.exaltedValue !== null).length;
-  console.log(`\nDONE ✅ sections=${Object.keys(outSections).length} totalLines=${allLines.length} exaltedValueFilled=${countEx}`);
-  console.log(`RATES ✅ divineChaos=${out.rates.divineChaos} | divineInEx=${out.rates.divineInEx} | exChaos=${out.rates.exChaos}`);
+  const total = linesOut.length;
+  const ok = linesOut.filter(x => x.exaltedValue !== null && x.exaltedValue !== undefined).length;
+  console.log(`\nSAVED data/prices.json -> lines=${total} exaltedValueFound=${ok} sections=${allSections.length}`);
 })();
