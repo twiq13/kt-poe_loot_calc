@@ -1,9 +1,14 @@
 {
-  "updatedAt": "2026-01-10T22:08:07.795Z",
+  "updatedAt": "2026-01-10T22:35:52.280Z",
   "league": "standard",
   "sourceBase": "https://poe.ninja/poe2/economy/standard/",
   "base": "Exalted Orb",
   "baseIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ad7c366789/CurrencyAddModToRare.png",
+  "rates": {
+    "divineChaos": 36,
+    "divineInEx": null,
+    "exChaos": null
+  },
   "sections": {
     "currency": [
       {
@@ -19,7 +24,7 @@
         "section": "currency",
         "name": "Perfect Chaos Orb",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "amount": 5.2,
+        "amount": 5.4,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -28,7 +33,7 @@
         "section": "currency",
         "name": "Fracturing Orb",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRnJhY3R1cmluZ09yYiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/8b85ed1dc2/FracturingOrb.png",
-        "amount": 1.9,
+        "amount": 2.2,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -40,13 +45,13 @@
         "amount": 1.4,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
+        "exaltedValue": 1
       },
       {
         "section": "currency",
         "name": "Divine Orb",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -73,7 +78,7 @@
         "section": "currency",
         "name": "Perfect Regal Orb",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlTWFnaWNUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/e8fb148e80/CurrencyUpgradeMagicToRare.png",
-        "amount": 3.4,
+        "amount": 3.3,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -91,7 +96,7 @@
         "section": "currency",
         "name": "Greater Jeweller's Orb",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxTb2NrZXROdW1iZXJzMDIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/7dd6ee75be/CurrencyRerollSocketNumbers02.png",
-        "amount": 2.1,
+        "amount": 2.2,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -242,8 +247,8 @@
       },
       {
         "section": "currency",
-        "name": "Orb of Augmentation",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb01hZ2ljIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c8ad0ddc84/CurrencyAddModToMagic.png",
+        "name": "Armourer's Scrap",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBcm1vdXJRdWFsaXR5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d5868f596d/CurrencyArmourQuality.png",
         "amount": 1,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -251,8 +256,8 @@
       },
       {
         "section": "currency",
-        "name": "Armourer's Scrap",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBcm1vdXJRdWFsaXR5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d5868f596d/CurrencyArmourQuality.png",
+        "name": "Orb of Augmentation",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb01hZ2ljIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c8ad0ddc84/CurrencyAddModToMagic.png",
         "amount": 1,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -274,7 +279,7 @@
         "amount": 1,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
+        "exaltedValue": 1
       },
       {
         "section": "currency",
@@ -318,7 +323,7 @@
         "section": "fragments",
         "name": "Primary Calamity Fragment",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9VYmVyUGlubmFjbGVLZXkxIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/fc0875d40b/UberPinnacleKey1.png",
-        "amount": 3.2,
+        "amount": 3.4,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -327,7 +332,7 @@
         "section": "fragments",
         "name": "Deadly Fate",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL1RyaWFsbWFzdGVyS2V5MiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/cccae44832/TrialmasterKey2.png",
-        "amount": 1.9,
+        "amount": 1.7,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -343,18 +348,18 @@
       },
       {
         "section": "fragments",
-        "name": "Cowardly Fate",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL1RyaWFsbWFzdGVyS2V5MSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/661ab60074/TrialmasterKey1.png",
-        "amount": 1.7,
+        "name": "Secondary Calamity Fragment",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9VYmVyUGlubmFjbGVLZXkyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/0fec2b1925/UberPinnacleKey2.png",
+        "amount": 1.6,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
       },
       {
         "section": "fragments",
-        "name": "Secondary Calamity Fragment",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9VYmVyUGlubmFjbGVLZXkyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/0fec2b1925/UberPinnacleKey2.png",
-        "amount": 1.4,
+        "name": "Cowardly Fate",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL1RyaWFsbWFzdGVyS2V5MSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/661ab60074/TrialmasterKey1.png",
+        "amount": 1.5,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -363,7 +368,7 @@
         "section": "fragments",
         "name": "Tertiary Calamity Fragment",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9VYmVyUGlubmFjbGVLZXkzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/29665daa60/UberPinnacleKey3.png",
-        "amount": 1.3,
+        "amount": 1.4,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -372,7 +377,7 @@
         "section": "fragments",
         "name": "Faded Crisis Fragment",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9QaW5uYWNsZUtleTIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5709c39ee7/PinnacleKey2.png",
-        "amount": 34,
+        "amount": 35,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -428,7 +433,7 @@
         "section": "abyssalBones",
         "name": "Tecrod's Gaze",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3NhbEV5ZVNvY2tldGFibGVzL1RlY3JvZHNHYXplIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/ef2a9355b4/TecrodsGaze.png",
-        "amount": 45,
+        "amount": 42,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -437,7 +442,7 @@
         "section": "abyssalBones",
         "name": "Ancient Collarbone",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3MvQW5jaWVudENsYXZpY2xlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/86b2c7a29a/AncientClavicle.png",
-        "amount": 25,
+        "amount": 21,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -446,7 +451,7 @@
         "section": "abyssalBones",
         "name": "Amanamu's Gaze",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3NhbEV5ZVNvY2tldGFibGVzL0FtYW5hbXVzR2F6ZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/53ba66a7d4/AmanamusGaze.png",
-        "amount": 13,
+        "amount": 11,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -455,7 +460,7 @@
         "section": "abyssalBones",
         "name": "Ancient Jawbone",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3MvQW5jaWVudEphd2JvbmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/bff68187a6/AncientJawbone.png",
-        "amount": 6.3,
+        "amount": 6.4,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -464,7 +469,7 @@
         "section": "abyssalBones",
         "name": "Kurgal's Gaze",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3NhbEV5ZVNvY2tldGFibGVzL0t1cmdhbHNHYXplIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c21eb07bab/KurgalsGaze.png",
-        "amount": 3,
+        "amount": 4,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -482,7 +487,7 @@
         "section": "abyssalBones",
         "name": "Ulaman's Gaze",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3NhbEV5ZVNvY2tldGFibGVzL1VsYW1hbnNHYXplIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/b39b0a03bc/UlamansGaze.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -500,7 +505,7 @@
         "section": "abyssalBones",
         "name": "Kulemak's Invitation",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvS3VsZW1ha3NJbnZpdGF0aW9uIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c7e6e86681/KulemaksInvitation.png",
-        "amount": 8.3,
+        "amount": 8.8,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -536,7 +541,7 @@
         "section": "abyssalBones",
         "name": "Gnawed Jawbone",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3MvR25hd2VkSmF3Ym9uZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/6d343a5e8d/GnawedJawbone.png",
-        "amount": 2.3,
+        "amount": 2.7,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -583,7 +588,7 @@
         "section": "uncutGems",
         "name": "Uncut Spirit Gem (Level 20)",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
-        "amount": 8.6,
+        "amount": 8.5,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -610,16 +615,7 @@
         "section": "uncutGems",
         "name": "Uncut Spirit Gem (Level 16)",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
-        "amount": 2.1,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "uncutGems",
-        "name": "Uncut Spirit Gem (Level 10)",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
-        "amount": 2,
+        "amount": 2.3,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -635,9 +631,18 @@
       },
       {
         "section": "uncutGems",
+        "name": "Uncut Spirit Gem (Level 14)",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
+        "amount": 32,
+        "unit": "Chaos Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "exaltedValue": null
+      },
+      {
+        "section": "uncutGems",
         "name": "Uncut Spirit Gem (Level 11)",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
-        "amount": 18,
+        "amount": 20,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -653,9 +658,18 @@
       },
       {
         "section": "uncutGems",
+        "name": "Uncut Spirit Gem (Level 5)",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
+        "amount": 18,
+        "unit": "Chaos Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "exaltedValue": null
+      },
+      {
+        "section": "uncutGems",
         "name": "Uncut Skill Gem (Level 9)",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
-        "amount": 3.9,
+        "amount": 4,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -689,15 +703,6 @@
       },
       {
         "section": "uncutGems",
-        "name": "Uncut Support Gem (Level 2)",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFN1cHBvcnRHZW0iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/d1ffe1c951/UncutSupportGem.png",
-        "amount": 1,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "uncutGems",
         "name": "Uncut Skill Gem (Level 7)",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
         "amount": 1,
@@ -707,8 +712,8 @@
       },
       {
         "section": "uncutGems",
-        "name": "Uncut Spirit Gem (Level 14)",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
+        "name": "Uncut Support Gem (Level 2)",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFN1cHBvcnRHZW0iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/d1ffe1c951/UncutSupportGem.png",
         "amount": 1,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -716,8 +721,8 @@
       },
       {
         "section": "uncutGems",
-        "name": "Uncut Spirit Gem (Level 5)",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
+        "name": "Uncut Skill Gem (Level 3)",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
         "amount": 1,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -752,8 +757,8 @@
       },
       {
         "section": "uncutGems",
-        "name": "Uncut Skill Gem (Level 11)",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
+        "name": "Uncut Spirit Gem (Level 18)",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
         "amount": 1,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -761,8 +766,8 @@
       },
       {
         "section": "uncutGems",
-        "name": "Uncut Spirit Gem (Level 18)",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
+        "name": "Uncut Skill Gem (Level 11)",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
         "amount": 1,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -797,15 +802,6 @@
       },
       {
         "section": "uncutGems",
-        "name": "Uncut Spirit Gem (Level 6)",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
-        "amount": 1,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "uncutGems",
         "name": "Uncut Spirit Gem (Level 9)",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
         "amount": 1,
@@ -824,7 +820,7 @@
       },
       {
         "section": "uncutGems",
-        "name": "Uncut Skill Gem (Level 16)",
+        "name": "Uncut Skill Gem (Level 12)",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
         "amount": 1,
         "unit": "Chaos Orb",
@@ -833,7 +829,7 @@
       },
       {
         "section": "uncutGems",
-        "name": "Uncut Skill Gem (Level 12)",
+        "name": "Uncut Skill Gem (Level 16)",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
         "amount": 1,
         "unit": "Chaos Orb",
@@ -869,6 +865,15 @@
       },
       {
         "section": "uncutGems",
+        "name": "Uncut Skill Gem (Level 6)",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
+        "amount": 1,
+        "unit": "Chaos Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "exaltedValue": null
+      },
+      {
+        "section": "uncutGems",
         "name": "Uncut Spirit Gem (Level 7)",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
         "amount": 1,
@@ -893,379 +898,9 @@
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
-      },
-      {
-        "section": "uncutGems",
-        "name": "Uncut Skill Gem (Level 6)",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
-        "amount": 1,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
       }
     ],
-    "lineageGems": [
-      {
-        "section": "lineageGems",
-        "name": "Uhtred's Augury",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VVaHRyZWRHcmVhdGVyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/207f49bf94/LineageUhtredGreater.png",
-        "amount": 105,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Uhtred's Omen",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VVaHRyZWRTdGFuZGFyZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/2e603483a5/LineageUhtredStandard.png",
-        "amount": 68,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Uul-Netol's Embrace",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VVdWxOZXRvbCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/751151f142/LineageUulNetol.png",
-        "amount": 62,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Garukhan's Resolve",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0dhcnVraGFuIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/392773e9fd/Garukhan.png",
-        "amount": 48,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Amanamu's Tithe",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VBbWFuYW11Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/715766340e/LineageAmanamu.png",
-        "amount": 48,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Ixchel's Torment",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL1RyaWFsbWFzdGVyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/231195f1b3/Trialmaster.png",
-        "amount": 42,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Dialla's Desire",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0RpYWxsYSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/1b959c86b4/Dialla.png",
-        "amount": 28,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Rakiata's Flow",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL1Jha2lhdGEiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/20a70b7bd3/Rakiata.png",
-        "amount": 19,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Ratha's Assault",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0F6YWRpYW4iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/a77457eef2/Azadian.png",
-        "amount": 9.4,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Arjun's Medal",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0FtbW9Db25zZXJ2YXRpb24iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/8220863d61/AmmoConservation.png",
-        "amount": 9.2,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Atalui's Bloodletting",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VMaWZldGFwIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4d9a20ab28/LineageLifetap.png",
-        "amount": 8.4,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Esh's Radiance",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VFc2giLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2bdbf8be07/LineageEsh.png",
-        "amount": 7.4,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Rigwald's Ferocity",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL1JpZ3dhbGQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/a053a2b077/Rigwald.png",
-        "amount": 7.2,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Khatal's Rejuvenation",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VLaGF0YWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/e67d6a908e/LineageKhatal.png",
-        "amount": 6.9,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Oisín's Oath",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL1dhbGtlcm9mdGhlV2lsZHMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/50c27082f9/WalkeroftheWilds.png",
-        "amount": 6.7,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Arbiter's Ignition",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VBcmJpdGVyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/52bc86c140/LineageArbiter.png",
-        "amount": 6,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Uhtred's Exodus",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VVaHRyZWRMZXNzZXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/b286006915/LineageUhtredLesser.png",
-        "amount": 5,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Tul's Stillness",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VUdWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/cff647542b/LineageTul.png",
-        "amount": 4.4,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Zarokh's Revolt",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL1phcm9raHNSZXZvbHQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/a611b32c57/ZarokhsRevolt.png",
-        "amount": 4.3,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Xoph's Pyre",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VYb3BoIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/09f4b817dc/LineageXoph.png",
-        "amount": 4,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Ahn's Citadel",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VBaG5DaGlzZWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5e34f72a34/LineageAhnChisel.png",
-        "amount": 3,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Dominus' Grasp",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VNZXJjeSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/38123ca95d/LineageMercy.png",
-        "amount": 3,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Doedre's Undoing",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VEb2VkcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/83dad35313/LineageDoedre.png",
-        "amount": 2.5,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Morgana's Tempest",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL01vcmdhbmFzVGVtcGVzdCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/55ddb1bfc8/MorganasTempest.png",
-        "amount": 1.5,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Zarokh's Refrain",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL1phcm9raCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/78c9566961/Zarokh.png",
-        "amount": 1.3,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Ailith's Chimes",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL01vbmFzdGljIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/795375ce2d/Monastic.png",
-        "amount": 35,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Atziri's Allure",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VBdHppcmkiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/422053dc32/LineageAtziri.png",
-        "amount": 35,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Bhatair's Vengeance",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL1NoYXR0ZXJlZEZhbmciLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ed794a9e4b/ShatteredFang.png",
-        "amount": 35,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Brutus' Brain",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VNZWF0c2hpZWxkIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/115edf7e2f/LineageMeatshield.png",
-        "amount": 35,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Cirel's Cultivation",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0dyZWF0d29vZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/9d2739c22d/Greatwood.png",
-        "amount": 35,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Einhar's Beastrite",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VFaW5oYXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/aec9088873/LineageEinhar.png",
-        "amount": 35,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Kalisa's Crescendo",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VLYWxpc2FDaG9ydXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/1d60b0db2f/LineageKalisaChorus.png",
-        "amount": 35,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Uruk's Smelting",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VBcm1vdXJCcmVhayIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/821e3c1334/LineageArmourBreak.png",
-        "amount": 30,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Vilenta's Propulsion",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VWaWxlbnRhIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/abda900f3c/LineageVilenta.png",
-        "amount": 25,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Kaom's Madness",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VLYW9tIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/82eacd9fdc/LineageKaom.png",
-        "amount": 22,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Sione's Temper",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL1dpbGRzaGFyZHMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/6d700adf17/Wildshards.png",
-        "amount": 18,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Arakaali's Lust",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VBcmFrYWFsaSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/be37cb2c77/LineageArakaali.png",
-        "amount": 4.7,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Romira's Requital",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VSb21pcmEiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/62c07d95f0/LineageRomira.png",
-        "amount": 3,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Tecrod's Revenge",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VUZWNyb2QiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/783b026592/LineageTecrod.png",
-        "amount": 2.6,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "lineageGems",
-        "name": "Kurgal's Leash",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0FieXNzS3VyZ2FsIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/3fbc251a84/AbyssKurgal.png",
-        "amount": 1,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      }
-    ],
+    "lineageGems": [],
     "essences": [
       {
         "section": "essences",
@@ -1597,7 +1232,7 @@
         "section": "soulCores",
         "name": "Soul Core of Jiquani",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZUxpZmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/bb83a9f337/GreaterSoulCoreLife.png",
-        "amount": 4.1,
+        "amount": 3.9,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -1606,7 +1241,7 @@
         "section": "soulCores",
         "name": "Soul Core of Quipolatl",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZVNwZWVkIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d4967ad0f1/GreaterSoulCoreSpeed.png",
-        "amount": 2.7,
+        "amount": 2.6,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -1615,7 +1250,7 @@
         "section": "soulCores",
         "name": "Soul Core of Azcapa",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZVdlYWx0aFJhcml0eSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/6a69033a04/GreaterSoulCoreWealthRarity.png",
-        "amount": 2.1,
+        "amount": 2.5,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -1649,6 +1284,15 @@
       },
       {
         "section": "soulCores",
+        "name": "Soul Core of Zantipi",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZWludCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/bf932f7001/GreaterSoulCoreint.png",
+        "amount": 2,
+        "unit": "Divine Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
+        "exaltedValue": null
+      },
+      {
+        "section": "soulCores",
         "name": "Topotante's Soul Core of Dampening",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlRmlyZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/3657368a8c/NewSoulCoreFire.png",
         "amount": 2,
@@ -1669,7 +1313,7 @@
         "section": "soulCores",
         "name": "Cholotl's Soul Core of War",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlUHJvamVjdGlsZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/dfc35bed7f/NewSoulCoreProjectile.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -1678,7 +1322,7 @@
         "section": "soulCores",
         "name": "Citaqualotl's Soul Core of Foulness",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlQ2hhb3MyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/002059f8f5/NewSoulCoreChaos2.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -1687,7 +1331,7 @@
         "section": "soulCores",
         "name": "Hayoxi's Soul Core of Heatproofing",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlSWNlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/6d8455bff0/NewSoulCoreIce.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -1696,7 +1340,7 @@
         "section": "soulCores",
         "name": "Quipolatl's Soul Core of Flow",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlVGltZUNvb2xkb3duIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/dab6d943f3/NewSoulCoreTimeCooldown.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -1705,25 +1349,7 @@
         "section": "soulCores",
         "name": "Soul Core of Ticaba",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZUNyaXQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/b453416064/GreaterSoulCoreCrit.png",
-        "amount": 35,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "soulCores",
-        "name": "Soul Core of Zantipi",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZWludCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/bf932f7001/GreaterSoulCoreint.png",
-        "amount": 35,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "soulCores",
-        "name": "Uromoti's Soul Core of Attenuation",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlQ3Vyc2VzMiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/25919ac93d/NewSoulCoreCurses2.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -1732,7 +1358,7 @@
         "section": "soulCores",
         "name": "Zalatl's Soul Core of Insulation",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlTGlnaHRuaW5nIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/80c455f775/NewSoulCoreLightning.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -1748,18 +1374,27 @@
       },
       {
         "section": "soulCores",
-        "name": "Tzamoto's Soul Core of Ferocity",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlUmFnZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/7bbacc1706/NewSoulCoreRage.png",
-        "amount": 28,
+        "name": "Soul Core of Tacati",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZUNoYW9zIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/cd9c4fb0a7/GreaterSoulCoreChaos.png",
+        "amount": 26,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
       },
       {
         "section": "soulCores",
-        "name": "Soul Core of Tacati",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZUNoYW9zIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/cd9c4fb0a7/GreaterSoulCoreChaos.png",
-        "amount": 27,
+        "name": "Tzamoto's Soul Core of Ferocity",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlUmFnZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/7bbacc1706/NewSoulCoreRage.png",
+        "amount": 22,
+        "unit": "Chaos Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "exaltedValue": null
+      },
+      {
+        "section": "soulCores",
+        "name": "Xipocado's Soul Core of Dominion",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlTWluaW9uIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/b1e7975db2/NewSoulCoreMinion.png",
+        "amount": 18,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -1833,7 +1468,7 @@
         "section": "idols",
         "name": "Idol of Ralakesh",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU1vbmtleVNwZWNpYWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/8ffc9986a0/AzmeriSocketableMonkeySpecial.png",
-        "amount": 1.8,
+        "amount": 2,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -1858,18 +1493,9 @@
       },
       {
         "section": "idols",
-        "name": "Owl Idol",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU93bCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/dfe1212549/AzmeriSocketableOwl.png",
-        "amount": 18,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "idols",
         "name": "Rabbit Idol",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVJhYmJpdCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/d578d6d700/AzmeriSocketableRabbit.png",
-        "amount": 17,
+        "amount": 16,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -1878,6 +1504,15 @@
         "section": "idols",
         "name": "Bear Idol",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUJlYXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2d494d1054/AzmeriSocketableBear.png",
+        "amount": 12,
+        "unit": "Chaos Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "exaltedValue": null
+      },
+      {
+        "section": "idols",
+        "name": "Owl Idol",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU93bCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/dfe1212549/AzmeriSocketableOwl.png",
         "amount": 12,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -1968,27 +1603,9 @@
       },
       {
         "section": "runes",
-        "name": "Greater Rune of Tithing",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/369dd670ba/LightningRuneSpecial2.png",
-        "amount": 3.4,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "runes",
         "name": "Craiceann's Rune of Warding",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTYiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/677fca20e0/NewRune6.png",
         "amount": 3,
-        "unit": "Divine Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "runes",
-        "name": "Thane Grannell's Rune of Mastery",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTEyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/8fddac42a1/NewRune12.png",
-        "amount": 2.8,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -2004,9 +1621,27 @@
       },
       {
         "section": "runes",
+        "name": "Thane Grannell's Rune of Mastery",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTEyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/8fddac42a1/NewRune12.png",
+        "amount": 2.6,
+        "unit": "Divine Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
+        "exaltedValue": null
+      },
+      {
+        "section": "runes",
+        "name": "Greater Rune of Tithing",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/369dd670ba/LightningRuneSpecial2.png",
+        "amount": 2.5,
+        "unit": "Divine Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
+        "exaltedValue": null
+      },
+      {
+        "section": "runes",
         "name": "Thane Girt's Rune of Wildness",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTE1Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d76b01cd40/NewRune15.png",
-        "amount": 2.5,
+        "amount": 2,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -2024,7 +1659,7 @@
         "section": "runes",
         "name": "Adept Rune",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvRGV4UnVuZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/efa54e5585/DexRune.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2033,7 +1668,7 @@
         "section": "runes",
         "name": "Farrul's Rune of Grace",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/1ca9b19776/NewRune4.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2042,7 +1677,7 @@
         "section": "runes",
         "name": "Farrul's Rune of the Chase",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5029b70d64/NewRune5.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2051,7 +1686,7 @@
         "section": "runes",
         "name": "Farrul's Rune of the Hunt",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTkiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/8040a2785b/NewRune9.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2060,7 +1695,7 @@
         "section": "runes",
         "name": "Lady Hestra's Rune of Winter",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTE4Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/709f1d7a0e/NewRune18.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2069,7 +1704,7 @@
         "section": "runes",
         "name": "Saqawal's Rune of the Sky",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/7c3f68cf1c/NewRune2.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2078,7 +1713,7 @@
         "section": "runes",
         "name": "Thane Leld's Rune of Spring",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTE5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/b2966e8da7/NewRune19.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2087,25 +1722,7 @@
         "section": "runes",
         "name": "Thane Myrk's Rune of Summer",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTE3Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/f1bf657be5/NewRune17.png",
-        "amount": 35,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "runes",
-        "name": "Fenumus' Rune of Agony",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/b8711ef6c2/NewRune3.png",
-        "amount": 18,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "runes",
-        "name": "Greater Inspiration Rune",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTWFuYVJlY292ZXJ5UnVuZVRpZXIyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/9c6cc572d8/ManaRecoveryRuneTier2.png",
-        "amount": 5.6,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2130,6 +1747,15 @@
       },
       {
         "section": "runes",
+        "name": "Storm Rune",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/98319b3998/LightningRune.png",
+        "amount": 2.6,
+        "unit": "Chaos Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "exaltedValue": null
+      },
+      {
+        "section": "runes",
         "name": "Greater Iron Rune",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvRW5oYW5jZVJ1bmVUaWVyMiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/5fdc6a72ed/EnhanceRuneTier2.png",
         "amount": 2.6,
@@ -2142,15 +1768,6 @@
         "name": "Greater Vision Rune",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvQWNjdXJhY3lSdW5lVGllcjIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/88ab9b96b4/AccuracyRuneTier2.png",
         "amount": 2.4,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "runes",
-        "name": "Storm Rune",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/98319b3998/LightningRune.png",
-        "amount": 1.8,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2184,8 +1801,8 @@
       },
       {
         "section": "runes",
-        "name": "Fenumus' Rune of Spinning",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTEzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d0e9100877/NewRune13.png",
+        "name": "Greater Desert Rune",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvRmlyZVJ1bmVUaWVyMiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/2c6986b94c/FireRuneTier2.png",
         "amount": 1,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -2193,8 +1810,8 @@
       },
       {
         "section": "runes",
-        "name": "Greater Desert Rune",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvRmlyZVJ1bmVUaWVyMiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/2c6986b94c/FireRuneTier2.png",
+        "name": "Fenumus' Rune of Spinning",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTEzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d0e9100877/NewRune13.png",
         "amount": 1,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -2213,6 +1830,15 @@
         "section": "runes",
         "name": "Craiceann's Rune of Recovery",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTEwIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/96c722e7d3/NewRune10.png",
+        "amount": 1,
+        "unit": "Chaos Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "exaltedValue": null
+      },
+      {
+        "section": "runes",
+        "name": "Fenumus' Rune of Agony",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/b8711ef6c2/NewRune3.png",
         "amount": 1,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -2289,6 +1915,15 @@
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
+      },
+      {
+        "section": "runes",
+        "name": "Rebirth Rune",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlmZVJlY292ZXJ5UnVuZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/bbbb060773/LifeRecoveryRune.png",
+        "amount": 1,
+        "unit": "Chaos Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "exaltedValue": null
       }
     ],
     "omens": [
@@ -2323,7 +1958,7 @@
         "section": "omens",
         "name": "Omen of Dextral Erasure",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMzRGFyayIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/6e2bb52963/VoodooOmens3Dark.png",
-        "amount": 9.7,
+        "amount": 9.6,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -2332,7 +1967,7 @@
         "section": "omens",
         "name": "Omen of Chance",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQ2hhbmNlTm90RGVzdHJveSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/461b794959/OmenOnChanceNotDestroy.png",
-        "amount": 9,
+        "amount": 8,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -2350,7 +1985,7 @@
         "section": "omens",
         "name": "Omen of Light",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQW5udWxSZW1vdmVBYnlzc01vZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/eb39bcb3d7/OmenOnAnnulRemoveAbyssMod.png",
-        "amount": 6.4,
+        "amount": 6.5,
         "unit": "Divine Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
         "exaltedValue": null
@@ -2377,7 +2012,7 @@
         "section": "omens",
         "name": "Omen of Homogenising Coronation",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uUmVnYWxBZGRFeGlzdGluZ01vZFR5cGUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/314f84e4dd/OmenOnRegalAddExistingModType.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2386,7 +2021,7 @@
         "section": "omens",
         "name": "Omen of the Blessed",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uRGl2aW5lUmVyb2xsSW1wbGljaXRzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d910191d85/OmenOnDivineRerollImplicits.png",
-        "amount": 35,
+        "amount": 36,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2395,7 +2030,7 @@
         "section": "omens",
         "name": "Omen of Dextral Crystallisation",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uUGVyZmVjdEVzc2VuY2VTdWZmaXgiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/7ec019819e/OmenOnPerfectEssenceSuffix.png",
-        "amount": 33,
+        "amount": 35,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2404,7 +2039,7 @@
         "section": "omens",
         "name": "Omen of Sinistral Crystallisation",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uUGVyZmVjdEVzc2VuY2VQcmVmaXgiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/75263d6201/OmenOnPerfectEssencePrefix.png",
-        "amount": 28,
+        "amount": 29,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2413,7 +2048,7 @@
         "section": "omens",
         "name": "Omen of Amelioration",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMzQmx1ZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/b5ee965352/VoodooOmens3Blue.png",
-        "amount": 26,
+        "amount": 27,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2431,7 +2066,7 @@
         "section": "omens",
         "name": "Omen of Chaotic Quantity",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQ2hhb3NNYXBQYWNrU2l6ZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/9ea6c86009/OmenOnChaosMapPackSize.png",
-        "amount": 9,
+        "amount": 12,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2440,7 +2075,7 @@
         "section": "omens",
         "name": "Omen of Corruption",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMzUmVkIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/9cfdcc9e1a/VoodooOmens3Red.png",
-        "amount": 8.5,
+        "amount": 8.7,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2458,7 +2093,7 @@
         "section": "omens",
         "name": "Omen of Dextral Exaltation",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMzWWVsbG93Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/ed7cf06fa4/VoodooOmens3Yellow.png",
-        "amount": 5.7,
+        "amount": 5.5,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2467,16 +2102,7 @@
         "section": "omens",
         "name": "Omen of Catalysing Exaltation",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uRXhhbHRDb25zdW1lUXVhbGl0eSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ca4d0db767/OmenOnExaltConsumeQuality.png",
-        "amount": 5.1,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "omens",
-        "name": "Omen of the Sovereign",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQWJ5c3NHdWFyZW50ZWVkTGljaFR5cGVNb2QxIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/a4962e6d7b/OmenOnAbyssGuarenteedLichTypeMod1.png",
-        "amount": 4.3,
+        "amount": 5.2,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2494,7 +2120,16 @@
         "section": "omens",
         "name": "Omen of Sinistral Exaltation",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMyWWVsbG93Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/6d316b47ee/VoodooOmens2Yellow.png",
-        "amount": 3.5,
+        "amount": 3.6,
+        "unit": "Chaos Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "exaltedValue": null
+      },
+      {
+        "section": "omens",
+        "name": "Omen of the Sovereign",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQWJ5c3NHdWFyZW50ZWVkTGljaFR5cGVNb2QxIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/a4962e6d7b/OmenOnAbyssGuarenteedLichTypeMod1.png",
+        "amount": 3.6,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2512,7 +2147,7 @@
         "section": "omens",
         "name": "Omen of Bartering",
         "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lblNlbGxWZW5kb3JSYW5kb21pc2UiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/12ef99da8b/OmenSellVendorRandomise.png",
-        "amount": 2.8,
+        "amount": 2.7,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2555,18 +2190,18 @@
       },
       {
         "section": "omens",
-        "name": "Omen of Chaotic Monsters",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQ2hhb3NNYXBJdGVtUXVhbnRpdHkiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/dcd21d0252/OmenOnChaosMapItemQuantity.png",
-        "amount": 1.2,
+        "name": "Omen of Greater Exaltation",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxWWVsbG93Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/22d9b6478d/VoodooOmens1Yellow.png",
+        "amount": 1.1,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
       },
       {
         "section": "omens",
-        "name": "Omen of Greater Exaltation",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxWWVsbG93Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/22d9b6478d/VoodooOmens1Yellow.png",
-        "amount": 1.1,
+        "name": "Omen of Chaotic Monsters",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQ2hhb3NNYXBJdGVtUXVhbnRpdHkiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/dcd21d0252/OmenOnChaosMapItemQuantity.png",
+        "amount": 1,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
         "exaltedValue": null
@@ -2609,8 +2244,8 @@
       },
       {
         "section": "omens",
-        "name": "Omen of Refreshment",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxQmx1ZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/213474d1d5/VoodooOmens1Blue.png",
+        "name": "Omen of Answered Prayers",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnM0Qmx1ZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ba21c85554/VoodooOmens4Blue.png",
         "amount": 1,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -2618,8 +2253,8 @@
       },
       {
         "section": "omens",
-        "name": "Omen of Answered Prayers",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnM0Qmx1ZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ba21c85554/VoodooOmens4Blue.png",
+        "name": "Omen of Refreshment",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxQmx1ZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/213474d1d5/VoodooOmens1Blue.png",
         "amount": 1,
         "unit": "Chaos Orb",
         "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -2635,7 +2270,53 @@
         "exaltedValue": null
       }
     ],
-    "expedition": [],
+    "expedition": [
+      {
+        "section": "expedition",
+        "name": "Black Scythe Artifact",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9SdW5lNiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/2260f34070/Rune6.png",
+        "amount": 1,
+        "unit": "Chaos Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "exaltedValue": null
+      },
+      {
+        "section": "expedition",
+        "name": "Broken Circle Artifact",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9SdW5lMTYiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/46b487f53f/Rune16.png",
+        "amount": 1,
+        "unit": "Chaos Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "exaltedValue": null
+      },
+      {
+        "section": "expedition",
+        "name": "Exotic Coinage",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9CYXJ0ZXJSZWZyZXNoQ3VycmVuY3kiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/8a4fe1f468/BarterRefreshCurrency.png",
+        "amount": 1,
+        "unit": "Chaos Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "exaltedValue": null
+      },
+      {
+        "section": "expedition",
+        "name": "Sun Artifact",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9SdW5lMTciLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ca2335fdef/Rune17.png",
+        "amount": 1,
+        "unit": "Chaos Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "exaltedValue": null
+      },
+      {
+        "section": "expedition",
+        "name": "Order Artifact",
+        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9SdW5lMTMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/47a41c9782/Rune13.png",
+        "amount": 1,
+        "unit": "Chaos Orb",
+        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "exaltedValue": null
+      }
+    ],
     "liquidEmotions": [
       {
         "section": "liquidEmotions",
@@ -2710,125 +2391,7 @@
         "exaltedValue": null
       }
     ],
-    "catalyst": [
-      {
-        "section": "catalyst",
-        "name": "Adaptive Catalyst",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0QXR0cmlidXRlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/015f6c9ac8/BreachCatalystAttribute.png",
-        "amount": 1.8,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "catalyst",
-        "name": "Skittering Catalyst",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0U3BlZWQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/14b5db3c3c/BreachCatalystSpeed.png",
-        "amount": 1.8,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "catalyst",
-        "name": "Reaver Catalyst",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0QXR0YWNrIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/ccc363f502/BreachCatalystAttack.png",
-        "amount": 1.4,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "catalyst",
-        "name": "Esh's Catalyst",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0TGlnaHRuaW5nIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/299e62fc33/BreachCatalystLightning.png",
-        "amount": 1.3,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "catalyst",
-        "name": "Xoph's Catalyst",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0RmlyZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/05b1999374/BreachCatalystFire.png",
-        "amount": 1,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "catalyst",
-        "name": "Tul's Catalyst",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0Q29sZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/c3bc9abf43/BreachCatalystCold.png",
-        "amount": 1,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "catalyst",
-        "name": "Sibilant Catalyst",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0Q2FzdGVyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/51dc6bc317/BreachCatalystCaster.png",
-        "amount": 1,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "catalyst",
-        "name": "Carapace Catalyst",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0RGVmZW5jZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/568ca70b04/BreachCatalystDefences.png",
-        "amount": 1,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "catalyst",
-        "name": "Flesh Catalyst",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0TGlmZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/06ec489870/BreachCatalystLife.png",
-        "amount": 1,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "catalyst",
-        "name": "Uul-Netol's Catalyst",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0UGh5c2ljYWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/bc9406c106/BreachCatalystPhysical.png",
-        "amount": 1,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "catalyst",
-        "name": "Neural Catalyst",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0TWFuYSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/61d3a7a832/BreachCatalystMana.png",
-        "amount": 1,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "catalyst",
-        "name": "Breach Splinter",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaHN0b25lU3BsaW50ZXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/4abb17ea8e/BreachstoneSplinter.png",
-        "amount": 1,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      },
-      {
-        "section": "catalyst",
-        "name": "Chayula's Catalyst",
-        "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0Q2hhb3MiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/c80d8d7b1b/BreachCatalystChaos.png",
-        "amount": 1,
-        "unit": "Chaos Orb",
-        "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-        "exaltedValue": null
-      }
-    ]
+    "catalyst": []
   },
   "lines": [
     {
@@ -2844,7 +2407,7 @@
       "section": "currency",
       "name": "Perfect Chaos Orb",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "amount": 5.2,
+      "amount": 5.4,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -2853,7 +2416,7 @@
       "section": "currency",
       "name": "Fracturing Orb",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRnJhY3R1cmluZ09yYiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/8b85ed1dc2/FracturingOrb.png",
-      "amount": 1.9,
+      "amount": 2.2,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -2865,13 +2428,13 @@
       "amount": 1.4,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
+      "exaltedValue": 1
     },
     {
       "section": "currency",
       "name": "Divine Orb",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -2898,7 +2461,7 @@
       "section": "currency",
       "name": "Perfect Regal Orb",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlTWFnaWNUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/e8fb148e80/CurrencyUpgradeMagicToRare.png",
-      "amount": 3.4,
+      "amount": 3.3,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -2916,7 +2479,7 @@
       "section": "currency",
       "name": "Greater Jeweller's Orb",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxTb2NrZXROdW1iZXJzMDIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/7dd6ee75be/CurrencyRerollSocketNumbers02.png",
-      "amount": 2.1,
+      "amount": 2.2,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -3067,8 +2630,8 @@
     },
     {
       "section": "currency",
-      "name": "Orb of Augmentation",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb01hZ2ljIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c8ad0ddc84/CurrencyAddModToMagic.png",
+      "name": "Armourer's Scrap",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBcm1vdXJRdWFsaXR5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d5868f596d/CurrencyArmourQuality.png",
       "amount": 1,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -3076,8 +2639,8 @@
     },
     {
       "section": "currency",
-      "name": "Armourer's Scrap",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBcm1vdXJRdWFsaXR5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d5868f596d/CurrencyArmourQuality.png",
+      "name": "Orb of Augmentation",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb01hZ2ljIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c8ad0ddc84/CurrencyAddModToMagic.png",
       "amount": 1,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -3099,7 +2662,7 @@
       "amount": 1,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
+      "exaltedValue": 1
     },
     {
       "section": "currency",
@@ -3141,7 +2704,7 @@
       "section": "fragments",
       "name": "Primary Calamity Fragment",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9VYmVyUGlubmFjbGVLZXkxIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/fc0875d40b/UberPinnacleKey1.png",
-      "amount": 3.2,
+      "amount": 3.4,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -3150,7 +2713,7 @@
       "section": "fragments",
       "name": "Deadly Fate",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL1RyaWFsbWFzdGVyS2V5MiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/cccae44832/TrialmasterKey2.png",
-      "amount": 1.9,
+      "amount": 1.7,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -3166,18 +2729,18 @@
     },
     {
       "section": "fragments",
-      "name": "Cowardly Fate",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL1RyaWFsbWFzdGVyS2V5MSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/661ab60074/TrialmasterKey1.png",
-      "amount": 1.7,
+      "name": "Secondary Calamity Fragment",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9VYmVyUGlubmFjbGVLZXkyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/0fec2b1925/UberPinnacleKey2.png",
+      "amount": 1.6,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
     },
     {
       "section": "fragments",
-      "name": "Secondary Calamity Fragment",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9VYmVyUGlubmFjbGVLZXkyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/0fec2b1925/UberPinnacleKey2.png",
-      "amount": 1.4,
+      "name": "Cowardly Fate",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL1RyaWFsbWFzdGVyS2V5MSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/661ab60074/TrialmasterKey1.png",
+      "amount": 1.5,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -3186,7 +2749,7 @@
       "section": "fragments",
       "name": "Tertiary Calamity Fragment",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9VYmVyUGlubmFjbGVLZXkzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/29665daa60/UberPinnacleKey3.png",
-      "amount": 1.3,
+      "amount": 1.4,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -3195,7 +2758,7 @@
       "section": "fragments",
       "name": "Faded Crisis Fragment",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9QaW5uYWNsZUtleTIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5709c39ee7/PinnacleKey2.png",
-      "amount": 34,
+      "amount": 35,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -3249,7 +2812,7 @@
       "section": "abyssalBones",
       "name": "Tecrod's Gaze",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3NhbEV5ZVNvY2tldGFibGVzL1RlY3JvZHNHYXplIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/ef2a9355b4/TecrodsGaze.png",
-      "amount": 45,
+      "amount": 42,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -3258,7 +2821,7 @@
       "section": "abyssalBones",
       "name": "Ancient Collarbone",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3MvQW5jaWVudENsYXZpY2xlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/86b2c7a29a/AncientClavicle.png",
-      "amount": 25,
+      "amount": 21,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -3267,7 +2830,7 @@
       "section": "abyssalBones",
       "name": "Amanamu's Gaze",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3NhbEV5ZVNvY2tldGFibGVzL0FtYW5hbXVzR2F6ZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/53ba66a7d4/AmanamusGaze.png",
-      "amount": 13,
+      "amount": 11,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -3276,7 +2839,7 @@
       "section": "abyssalBones",
       "name": "Ancient Jawbone",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3MvQW5jaWVudEphd2JvbmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/bff68187a6/AncientJawbone.png",
-      "amount": 6.3,
+      "amount": 6.4,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -3285,7 +2848,7 @@
       "section": "abyssalBones",
       "name": "Kurgal's Gaze",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3NhbEV5ZVNvY2tldGFibGVzL0t1cmdhbHNHYXplIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c21eb07bab/KurgalsGaze.png",
-      "amount": 3,
+      "amount": 4,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -3303,7 +2866,7 @@
       "section": "abyssalBones",
       "name": "Ulaman's Gaze",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3NhbEV5ZVNvY2tldGFibGVzL1VsYW1hbnNHYXplIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/b39b0a03bc/UlamansGaze.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -3321,7 +2884,7 @@
       "section": "abyssalBones",
       "name": "Kulemak's Invitation",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvS3VsZW1ha3NJbnZpdGF0aW9uIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c7e6e86681/KulemaksInvitation.png",
-      "amount": 8.3,
+      "amount": 8.8,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -3357,7 +2920,7 @@
       "section": "abyssalBones",
       "name": "Gnawed Jawbone",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3MvR25hd2VkSmF3Ym9uZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/6d343a5e8d/GnawedJawbone.png",
-      "amount": 2.3,
+      "amount": 2.7,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -3402,7 +2965,7 @@
       "section": "uncutGems",
       "name": "Uncut Spirit Gem (Level 20)",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
-      "amount": 8.6,
+      "amount": 8.5,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -3429,16 +2992,7 @@
       "section": "uncutGems",
       "name": "Uncut Spirit Gem (Level 16)",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
-      "amount": 2.1,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "uncutGems",
-      "name": "Uncut Spirit Gem (Level 10)",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
-      "amount": 2,
+      "amount": 2.3,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -3454,9 +3008,18 @@
     },
     {
       "section": "uncutGems",
+      "name": "Uncut Spirit Gem (Level 14)",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
+      "amount": 32,
+      "unit": "Chaos Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "uncutGems",
       "name": "Uncut Spirit Gem (Level 11)",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
-      "amount": 18,
+      "amount": 20,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -3472,9 +3035,18 @@
     },
     {
       "section": "uncutGems",
+      "name": "Uncut Spirit Gem (Level 5)",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
+      "amount": 18,
+      "unit": "Chaos Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "uncutGems",
       "name": "Uncut Skill Gem (Level 9)",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
-      "amount": 3.9,
+      "amount": 4,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -3508,15 +3080,6 @@
     },
     {
       "section": "uncutGems",
-      "name": "Uncut Support Gem (Level 2)",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFN1cHBvcnRHZW0iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/d1ffe1c951/UncutSupportGem.png",
-      "amount": 1,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "uncutGems",
       "name": "Uncut Skill Gem (Level 7)",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
       "amount": 1,
@@ -3526,8 +3089,8 @@
     },
     {
       "section": "uncutGems",
-      "name": "Uncut Spirit Gem (Level 14)",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
+      "name": "Uncut Support Gem (Level 2)",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFN1cHBvcnRHZW0iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/d1ffe1c951/UncutSupportGem.png",
       "amount": 1,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -3535,8 +3098,8 @@
     },
     {
       "section": "uncutGems",
-      "name": "Uncut Spirit Gem (Level 5)",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
+      "name": "Uncut Skill Gem (Level 3)",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
       "amount": 1,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -3571,8 +3134,8 @@
     },
     {
       "section": "uncutGems",
-      "name": "Uncut Skill Gem (Level 11)",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
+      "name": "Uncut Spirit Gem (Level 18)",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
       "amount": 1,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -3580,8 +3143,8 @@
     },
     {
       "section": "uncutGems",
-      "name": "Uncut Spirit Gem (Level 18)",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
+      "name": "Uncut Skill Gem (Level 11)",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
       "amount": 1,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -3616,15 +3179,6 @@
     },
     {
       "section": "uncutGems",
-      "name": "Uncut Spirit Gem (Level 6)",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
-      "amount": 1,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "uncutGems",
       "name": "Uncut Spirit Gem (Level 9)",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
       "amount": 1,
@@ -3643,7 +3197,7 @@
     },
     {
       "section": "uncutGems",
-      "name": "Uncut Skill Gem (Level 16)",
+      "name": "Uncut Skill Gem (Level 12)",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
       "amount": 1,
       "unit": "Chaos Orb",
@@ -3652,7 +3206,7 @@
     },
     {
       "section": "uncutGems",
-      "name": "Uncut Skill Gem (Level 12)",
+      "name": "Uncut Skill Gem (Level 16)",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
       "amount": 1,
       "unit": "Chaos Orb",
@@ -3688,6 +3242,15 @@
     },
     {
       "section": "uncutGems",
+      "name": "Uncut Skill Gem (Level 6)",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
+      "amount": 1,
+      "unit": "Chaos Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "uncutGems",
       "name": "Uncut Spirit Gem (Level 7)",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtQnVmZiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab25e9aa3b/UncutSkillGemBuff.png",
       "amount": 1,
@@ -3708,375 +3271,6 @@
       "section": "uncutGems",
       "name": "Uncut Skill Gem (Level 14)",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
-      "amount": 1,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "uncutGems",
-      "name": "Uncut Skill Gem (Level 6)",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9VbmN1dFNraWxsR2VtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/97f0ceba15/UncutSkillGem.png",
-      "amount": 1,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Uhtred's Augury",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VVaHRyZWRHcmVhdGVyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/207f49bf94/LineageUhtredGreater.png",
-      "amount": 105,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Uhtred's Omen",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VVaHRyZWRTdGFuZGFyZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/2e603483a5/LineageUhtredStandard.png",
-      "amount": 68,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Uul-Netol's Embrace",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VVdWxOZXRvbCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/751151f142/LineageUulNetol.png",
-      "amount": 62,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Garukhan's Resolve",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0dhcnVraGFuIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/392773e9fd/Garukhan.png",
-      "amount": 48,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Amanamu's Tithe",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VBbWFuYW11Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/715766340e/LineageAmanamu.png",
-      "amount": 48,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Ixchel's Torment",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL1RyaWFsbWFzdGVyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/231195f1b3/Trialmaster.png",
-      "amount": 42,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Dialla's Desire",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0RpYWxsYSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/1b959c86b4/Dialla.png",
-      "amount": 28,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Rakiata's Flow",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL1Jha2lhdGEiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/20a70b7bd3/Rakiata.png",
-      "amount": 19,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Ratha's Assault",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0F6YWRpYW4iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/a77457eef2/Azadian.png",
-      "amount": 9.4,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Arjun's Medal",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0FtbW9Db25zZXJ2YXRpb24iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/8220863d61/AmmoConservation.png",
-      "amount": 9.2,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Atalui's Bloodletting",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VMaWZldGFwIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4d9a20ab28/LineageLifetap.png",
-      "amount": 8.4,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Esh's Radiance",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VFc2giLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2bdbf8be07/LineageEsh.png",
-      "amount": 7.4,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Rigwald's Ferocity",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL1JpZ3dhbGQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/a053a2b077/Rigwald.png",
-      "amount": 7.2,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Khatal's Rejuvenation",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VLaGF0YWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/e67d6a908e/LineageKhatal.png",
-      "amount": 6.9,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Oisín's Oath",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL1dhbGtlcm9mdGhlV2lsZHMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/50c27082f9/WalkeroftheWilds.png",
-      "amount": 6.7,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Arbiter's Ignition",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VBcmJpdGVyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/52bc86c140/LineageArbiter.png",
-      "amount": 6,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Uhtred's Exodus",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VVaHRyZWRMZXNzZXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/b286006915/LineageUhtredLesser.png",
-      "amount": 5,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Tul's Stillness",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VUdWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/cff647542b/LineageTul.png",
-      "amount": 4.4,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Zarokh's Revolt",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL1phcm9raHNSZXZvbHQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/a611b32c57/ZarokhsRevolt.png",
-      "amount": 4.3,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Xoph's Pyre",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VYb3BoIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/09f4b817dc/LineageXoph.png",
-      "amount": 4,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Ahn's Citadel",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VBaG5DaGlzZWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5e34f72a34/LineageAhnChisel.png",
-      "amount": 3,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Dominus' Grasp",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VNZXJjeSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/38123ca95d/LineageMercy.png",
-      "amount": 3,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Doedre's Undoing",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VEb2VkcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/83dad35313/LineageDoedre.png",
-      "amount": 2.5,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Morgana's Tempest",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL01vcmdhbmFzVGVtcGVzdCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/55ddb1bfc8/MorganasTempest.png",
-      "amount": 1.5,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Zarokh's Refrain",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL1phcm9raCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/78c9566961/Zarokh.png",
-      "amount": 1.3,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Ailith's Chimes",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL01vbmFzdGljIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/795375ce2d/Monastic.png",
-      "amount": 35,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Atziri's Allure",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VBdHppcmkiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/422053dc32/LineageAtziri.png",
-      "amount": 35,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Bhatair's Vengeance",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL1NoYXR0ZXJlZEZhbmciLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ed794a9e4b/ShatteredFang.png",
-      "amount": 35,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Brutus' Brain",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VNZWF0c2hpZWxkIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/115edf7e2f/LineageMeatshield.png",
-      "amount": 35,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Cirel's Cultivation",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0dyZWF0d29vZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/9d2739c22d/Greatwood.png",
-      "amount": 35,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Einhar's Beastrite",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VFaW5oYXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/aec9088873/LineageEinhar.png",
-      "amount": 35,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Kalisa's Crescendo",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VLYWxpc2FDaG9ydXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/1d60b0db2f/LineageKalisaChorus.png",
-      "amount": 35,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Uruk's Smelting",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VBcm1vdXJCcmVhayIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/821e3c1334/LineageArmourBreak.png",
-      "amount": 30,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Vilenta's Propulsion",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VWaWxlbnRhIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/abda900f3c/LineageVilenta.png",
-      "amount": 25,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Kaom's Madness",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VLYW9tIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/82eacd9fdc/LineageKaom.png",
-      "amount": 22,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Sione's Temper",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL1dpbGRzaGFyZHMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/6d700adf17/Wildshards.png",
-      "amount": 18,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Arakaali's Lust",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VBcmFrYWFsaSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/be37cb2c77/LineageArakaali.png",
-      "amount": 4.7,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Romira's Requital",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VSb21pcmEiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/62c07d95f0/LineageRomira.png",
-      "amount": 3,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Tecrod's Revenge",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0xpbmVhZ2VUZWNyb2QiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/783b026592/LineageTecrod.png",
-      "amount": 2.6,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "lineageGems",
-      "name": "Kurgal's Leash",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9OZXcvTmV3U3VwcG9ydC9MaW5lYWdlL0FieXNzS3VyZ2FsIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/3fbc251a84/AbyssKurgal.png",
       "amount": 1,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -4410,7 +3604,7 @@
       "section": "soulCores",
       "name": "Soul Core of Jiquani",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZUxpZmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/bb83a9f337/GreaterSoulCoreLife.png",
-      "amount": 4.1,
+      "amount": 3.9,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -4419,7 +3613,7 @@
       "section": "soulCores",
       "name": "Soul Core of Quipolatl",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZVNwZWVkIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d4967ad0f1/GreaterSoulCoreSpeed.png",
-      "amount": 2.7,
+      "amount": 2.6,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -4428,7 +3622,7 @@
       "section": "soulCores",
       "name": "Soul Core of Azcapa",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZVdlYWx0aFJhcml0eSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/6a69033a04/GreaterSoulCoreWealthRarity.png",
-      "amount": 2.1,
+      "amount": 2.5,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -4462,6 +3656,15 @@
     },
     {
       "section": "soulCores",
+      "name": "Soul Core of Zantipi",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZWludCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/bf932f7001/GreaterSoulCoreint.png",
+      "amount": 2,
+      "unit": "Divine Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "soulCores",
       "name": "Topotante's Soul Core of Dampening",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlRmlyZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/3657368a8c/NewSoulCoreFire.png",
       "amount": 2,
@@ -4482,7 +3685,7 @@
       "section": "soulCores",
       "name": "Cholotl's Soul Core of War",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlUHJvamVjdGlsZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/dfc35bed7f/NewSoulCoreProjectile.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4491,7 +3694,7 @@
       "section": "soulCores",
       "name": "Citaqualotl's Soul Core of Foulness",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlQ2hhb3MyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/002059f8f5/NewSoulCoreChaos2.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4500,7 +3703,7 @@
       "section": "soulCores",
       "name": "Hayoxi's Soul Core of Heatproofing",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlSWNlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/6d8455bff0/NewSoulCoreIce.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4509,7 +3712,7 @@
       "section": "soulCores",
       "name": "Quipolatl's Soul Core of Flow",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlVGltZUNvb2xkb3duIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/dab6d943f3/NewSoulCoreTimeCooldown.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4518,25 +3721,7 @@
       "section": "soulCores",
       "name": "Soul Core of Ticaba",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZUNyaXQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/b453416064/GreaterSoulCoreCrit.png",
-      "amount": 35,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "soulCores",
-      "name": "Soul Core of Zantipi",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZWludCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/bf932f7001/GreaterSoulCoreint.png",
-      "amount": 35,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "soulCores",
-      "name": "Uromoti's Soul Core of Attenuation",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlQ3Vyc2VzMiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/25919ac93d/NewSoulCoreCurses2.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4545,7 +3730,7 @@
       "section": "soulCores",
       "name": "Zalatl's Soul Core of Insulation",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlTGlnaHRuaW5nIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/80c455f775/NewSoulCoreLightning.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4561,18 +3746,27 @@
     },
     {
       "section": "soulCores",
-      "name": "Tzamoto's Soul Core of Ferocity",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlUmFnZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/7bbacc1706/NewSoulCoreRage.png",
-      "amount": 28,
+      "name": "Soul Core of Tacati",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZUNoYW9zIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/cd9c4fb0a7/GreaterSoulCoreChaos.png",
+      "amount": 26,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
     },
     {
       "section": "soulCores",
-      "name": "Soul Core of Tacati",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL0dyZWF0ZXJTb3VsQ29yZUNoYW9zIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/cd9c4fb0a7/GreaterSoulCoreChaos.png",
-      "amount": 27,
+      "name": "Tzamoto's Soul Core of Ferocity",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlUmFnZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/7bbacc1706/NewSoulCoreRage.png",
+      "amount": 22,
+      "unit": "Chaos Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "soulCores",
+      "name": "Xipocado's Soul Core of Dominion",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU291bENvcmVzL05ld1NvdWxDb3JlTWluaW9uIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/b1e7975db2/NewSoulCoreMinion.png",
+      "amount": 18,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4644,7 +3838,7 @@
       "section": "idols",
       "name": "Idol of Ralakesh",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU1vbmtleVNwZWNpYWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/8ffc9986a0/AzmeriSocketableMonkeySpecial.png",
-      "amount": 1.8,
+      "amount": 2,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -4669,18 +3863,9 @@
     },
     {
       "section": "idols",
-      "name": "Owl Idol",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU93bCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/dfe1212549/AzmeriSocketableOwl.png",
-      "amount": 18,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "idols",
       "name": "Rabbit Idol",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVJhYmJpdCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/d578d6d700/AzmeriSocketableRabbit.png",
-      "amount": 17,
+      "amount": 16,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4689,6 +3874,15 @@
       "section": "idols",
       "name": "Bear Idol",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUJlYXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2d494d1054/AzmeriSocketableBear.png",
+      "amount": 12,
+      "unit": "Chaos Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "idols",
+      "name": "Owl Idol",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU93bCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/dfe1212549/AzmeriSocketableOwl.png",
       "amount": 12,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -4777,27 +3971,9 @@
     },
     {
       "section": "runes",
-      "name": "Greater Rune of Tithing",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/369dd670ba/LightningRuneSpecial2.png",
-      "amount": 3.4,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "runes",
       "name": "Craiceann's Rune of Warding",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTYiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/677fca20e0/NewRune6.png",
       "amount": 3,
-      "unit": "Divine Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "runes",
-      "name": "Thane Grannell's Rune of Mastery",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTEyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/8fddac42a1/NewRune12.png",
-      "amount": 2.8,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -4813,9 +3989,27 @@
     },
     {
       "section": "runes",
+      "name": "Thane Grannell's Rune of Mastery",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTEyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/8fddac42a1/NewRune12.png",
+      "amount": 2.6,
+      "unit": "Divine Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "runes",
+      "name": "Greater Rune of Tithing",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZVNwZWNpYWwyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/369dd670ba/LightningRuneSpecial2.png",
+      "amount": 2.5,
+      "unit": "Divine Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "runes",
       "name": "Thane Girt's Rune of Wildness",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTE1Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d76b01cd40/NewRune15.png",
-      "amount": 2.5,
+      "amount": 2,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -4833,7 +4027,7 @@
       "section": "runes",
       "name": "Adept Rune",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvRGV4UnVuZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/efa54e5585/DexRune.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4842,7 +4036,7 @@
       "section": "runes",
       "name": "Farrul's Rune of Grace",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/1ca9b19776/NewRune4.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4851,7 +4045,7 @@
       "section": "runes",
       "name": "Farrul's Rune of the Chase",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5029b70d64/NewRune5.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4860,7 +4054,7 @@
       "section": "runes",
       "name": "Farrul's Rune of the Hunt",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTkiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/8040a2785b/NewRune9.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4869,7 +4063,7 @@
       "section": "runes",
       "name": "Lady Hestra's Rune of Winter",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTE4Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/709f1d7a0e/NewRune18.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4878,7 +4072,7 @@
       "section": "runes",
       "name": "Saqawal's Rune of the Sky",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/7c3f68cf1c/NewRune2.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4887,7 +4081,7 @@
       "section": "runes",
       "name": "Thane Leld's Rune of Spring",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTE5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/b2966e8da7/NewRune19.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4896,25 +4090,7 @@
       "section": "runes",
       "name": "Thane Myrk's Rune of Summer",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTE3Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/f1bf657be5/NewRune17.png",
-      "amount": 35,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "runes",
-      "name": "Fenumus' Rune of Agony",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/b8711ef6c2/NewRune3.png",
-      "amount": 18,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "runes",
-      "name": "Greater Inspiration Rune",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTWFuYVJlY292ZXJ5UnVuZVRpZXIyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/9c6cc572d8/ManaRecoveryRuneTier2.png",
-      "amount": 5.6,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4939,6 +4115,15 @@
     },
     {
       "section": "runes",
+      "name": "Storm Rune",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/98319b3998/LightningRune.png",
+      "amount": 2.6,
+      "unit": "Chaos Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "runes",
       "name": "Greater Iron Rune",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvRW5oYW5jZVJ1bmVUaWVyMiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/5fdc6a72ed/EnhanceRuneTier2.png",
       "amount": 2.6,
@@ -4951,15 +4136,6 @@
       "name": "Greater Vision Rune",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvQWNjdXJhY3lSdW5lVGllcjIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/88ab9b96b4/AccuracyRuneTier2.png",
       "amount": 2.4,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "runes",
-      "name": "Storm Rune",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlnaHRuaW5nUnVuZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/98319b3998/LightningRune.png",
-      "amount": 1.8,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -4993,8 +4169,8 @@
     },
     {
       "section": "runes",
-      "name": "Fenumus' Rune of Spinning",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTEzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d0e9100877/NewRune13.png",
+      "name": "Greater Desert Rune",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvRmlyZVJ1bmVUaWVyMiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/2c6986b94c/FireRuneTier2.png",
       "amount": 1,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -5002,8 +4178,8 @@
     },
     {
       "section": "runes",
-      "name": "Greater Desert Rune",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvRmlyZVJ1bmVUaWVyMiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/2c6986b94c/FireRuneTier2.png",
+      "name": "Fenumus' Rune of Spinning",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTEzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d0e9100877/NewRune13.png",
       "amount": 1,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -5022,6 +4198,15 @@
       "section": "runes",
       "name": "Craiceann's Rune of Recovery",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTEwIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/96c722e7d3/NewRune10.png",
+      "amount": 1,
+      "unit": "Chaos Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "runes",
+      "name": "Fenumus' Rune of Agony",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/b8711ef6c2/NewRune3.png",
       "amount": 1,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -5100,6 +4285,15 @@
       "exaltedValue": null
     },
     {
+      "section": "runes",
+      "name": "Rebirth Rune",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTGlmZVJlY292ZXJ5UnVuZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/bbbb060773/LifeRecoveryRune.png",
+      "amount": 1,
+      "unit": "Chaos Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "exaltedValue": null
+    },
+    {
       "section": "omens",
       "name": "Omen of Sinistral Annulment",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMyUHVycGxlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/b9eaf38592/VoodooOmens2Purple.png",
@@ -5130,7 +4324,7 @@
       "section": "omens",
       "name": "Omen of Dextral Erasure",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMzRGFyayIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/6e2bb52963/VoodooOmens3Dark.png",
-      "amount": 9.7,
+      "amount": 9.6,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -5139,7 +4333,7 @@
       "section": "omens",
       "name": "Omen of Chance",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQ2hhbmNlTm90RGVzdHJveSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/461b794959/OmenOnChanceNotDestroy.png",
-      "amount": 9,
+      "amount": 8,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -5157,7 +4351,7 @@
       "section": "omens",
       "name": "Omen of Light",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQW5udWxSZW1vdmVBYnlzc01vZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/eb39bcb3d7/OmenOnAnnulRemoveAbyssMod.png",
-      "amount": 6.4,
+      "amount": 6.5,
       "unit": "Divine Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
       "exaltedValue": null
@@ -5184,7 +4378,7 @@
       "section": "omens",
       "name": "Omen of Homogenising Coronation",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uUmVnYWxBZGRFeGlzdGluZ01vZFR5cGUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/314f84e4dd/OmenOnRegalAddExistingModType.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -5193,7 +4387,7 @@
       "section": "omens",
       "name": "Omen of the Blessed",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uRGl2aW5lUmVyb2xsSW1wbGljaXRzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d910191d85/OmenOnDivineRerollImplicits.png",
-      "amount": 35,
+      "amount": 36,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -5202,7 +4396,7 @@
       "section": "omens",
       "name": "Omen of Dextral Crystallisation",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uUGVyZmVjdEVzc2VuY2VTdWZmaXgiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/7ec019819e/OmenOnPerfectEssenceSuffix.png",
-      "amount": 33,
+      "amount": 35,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -5211,7 +4405,7 @@
       "section": "omens",
       "name": "Omen of Sinistral Crystallisation",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uUGVyZmVjdEVzc2VuY2VQcmVmaXgiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/75263d6201/OmenOnPerfectEssencePrefix.png",
-      "amount": 28,
+      "amount": 29,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -5220,7 +4414,7 @@
       "section": "omens",
       "name": "Omen of Amelioration",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMzQmx1ZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/b5ee965352/VoodooOmens3Blue.png",
-      "amount": 26,
+      "amount": 27,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -5238,7 +4432,7 @@
       "section": "omens",
       "name": "Omen of Chaotic Quantity",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQ2hhb3NNYXBQYWNrU2l6ZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/9ea6c86009/OmenOnChaosMapPackSize.png",
-      "amount": 9,
+      "amount": 12,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -5247,7 +4441,7 @@
       "section": "omens",
       "name": "Omen of Corruption",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMzUmVkIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/9cfdcc9e1a/VoodooOmens3Red.png",
-      "amount": 8.5,
+      "amount": 8.7,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -5265,7 +4459,7 @@
       "section": "omens",
       "name": "Omen of Dextral Exaltation",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMzWWVsbG93Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/ed7cf06fa4/VoodooOmens3Yellow.png",
-      "amount": 5.7,
+      "amount": 5.5,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -5274,16 +4468,7 @@
       "section": "omens",
       "name": "Omen of Catalysing Exaltation",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uRXhhbHRDb25zdW1lUXVhbGl0eSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ca4d0db767/OmenOnExaltConsumeQuality.png",
-      "amount": 5.1,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "omens",
-      "name": "Omen of the Sovereign",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQWJ5c3NHdWFyZW50ZWVkTGljaFR5cGVNb2QxIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/a4962e6d7b/OmenOnAbyssGuarenteedLichTypeMod1.png",
-      "amount": 4.3,
+      "amount": 5.2,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -5301,7 +4486,16 @@
       "section": "omens",
       "name": "Omen of Sinistral Exaltation",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMyWWVsbG93Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/6d316b47ee/VoodooOmens2Yellow.png",
-      "amount": 3.5,
+      "amount": 3.6,
+      "unit": "Chaos Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "omens",
+      "name": "Omen of the Sovereign",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQWJ5c3NHdWFyZW50ZWVkTGljaFR5cGVNb2QxIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/a4962e6d7b/OmenOnAbyssGuarenteedLichTypeMod1.png",
+      "amount": 3.6,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -5319,7 +4513,7 @@
       "section": "omens",
       "name": "Omen of Bartering",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lblNlbGxWZW5kb3JSYW5kb21pc2UiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/12ef99da8b/OmenSellVendorRandomise.png",
-      "amount": 2.8,
+      "amount": 2.7,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -5362,18 +4556,18 @@
     },
     {
       "section": "omens",
-      "name": "Omen of Chaotic Monsters",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQ2hhb3NNYXBJdGVtUXVhbnRpdHkiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/dcd21d0252/OmenOnChaosMapItemQuantity.png",
-      "amount": 1.2,
+      "name": "Omen of Greater Exaltation",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxWWVsbG93Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/22d9b6478d/VoodooOmens1Yellow.png",
+      "amount": 1.1,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
     },
     {
       "section": "omens",
-      "name": "Omen of Greater Exaltation",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxWWVsbG93Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/22d9b6478d/VoodooOmens1Yellow.png",
-      "amount": 1.1,
+      "name": "Omen of Chaotic Monsters",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQ2hhb3NNYXBJdGVtUXVhbnRpdHkiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/dcd21d0252/OmenOnChaosMapItemQuantity.png",
+      "amount": 1,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
       "exaltedValue": null
@@ -5416,15 +4610,6 @@
     },
     {
       "section": "omens",
-      "name": "Omen of Refreshment",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxQmx1ZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/213474d1d5/VoodooOmens1Blue.png",
-      "amount": 1,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "omens",
       "name": "Omen of Answered Prayers",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnM0Qmx1ZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ba21c85554/VoodooOmens4Blue.png",
       "amount": 1,
@@ -5434,8 +4619,62 @@
     },
     {
       "section": "omens",
+      "name": "Omen of Refreshment",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxQmx1ZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/213474d1d5/VoodooOmens1Blue.png",
+      "amount": 1,
+      "unit": "Chaos Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "omens",
       "name": "Omen of the Liege",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQWJ5c3NHdWFyZW50ZWVkTGljaFR5cGVNb2QyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/675e1d439a/OmenOnAbyssGuarenteedLichTypeMod2.png",
+      "amount": 1,
+      "unit": "Chaos Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "expedition",
+      "name": "Black Scythe Artifact",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9SdW5lNiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/2260f34070/Rune6.png",
+      "amount": 1,
+      "unit": "Chaos Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "expedition",
+      "name": "Broken Circle Artifact",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9SdW5lMTYiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/46b487f53f/Rune16.png",
+      "amount": 1,
+      "unit": "Chaos Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "expedition",
+      "name": "Exotic Coinage",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9CYXJ0ZXJSZWZyZXNoQ3VycmVuY3kiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/8a4fe1f468/BarterRefreshCurrency.png",
+      "amount": 1,
+      "unit": "Chaos Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "expedition",
+      "name": "Sun Artifact",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9SdW5lMTciLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ca2335fdef/Rune17.png",
+      "amount": 1,
+      "unit": "Chaos Orb",
+      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "exaltedValue": null
+    },
+    {
+      "section": "expedition",
+      "name": "Order Artifact",
+      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9SdW5lMTMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/47a41c9782/Rune13.png",
       "amount": 1,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
@@ -5508,123 +4747,6 @@
       "section": "liquidEmotions",
       "name": "Diluted Liquid Greed",
       "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvRGlsdXRlZERpc3RpbGxlZEdyZWVkIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/ddec210bbb/DilutedDistilledGreed.png",
-      "amount": 1,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "catalyst",
-      "name": "Adaptive Catalyst",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0QXR0cmlidXRlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/015f6c9ac8/BreachCatalystAttribute.png",
-      "amount": 1.8,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "catalyst",
-      "name": "Skittering Catalyst",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0U3BlZWQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/14b5db3c3c/BreachCatalystSpeed.png",
-      "amount": 1.8,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "catalyst",
-      "name": "Reaver Catalyst",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0QXR0YWNrIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/ccc363f502/BreachCatalystAttack.png",
-      "amount": 1.4,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "catalyst",
-      "name": "Esh's Catalyst",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0TGlnaHRuaW5nIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/299e62fc33/BreachCatalystLightning.png",
-      "amount": 1.3,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "catalyst",
-      "name": "Xoph's Catalyst",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0RmlyZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/05b1999374/BreachCatalystFire.png",
-      "amount": 1,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "catalyst",
-      "name": "Tul's Catalyst",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0Q29sZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/c3bc9abf43/BreachCatalystCold.png",
-      "amount": 1,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "catalyst",
-      "name": "Sibilant Catalyst",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0Q2FzdGVyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/51dc6bc317/BreachCatalystCaster.png",
-      "amount": 1,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "catalyst",
-      "name": "Carapace Catalyst",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0RGVmZW5jZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/568ca70b04/BreachCatalystDefences.png",
-      "amount": 1,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "catalyst",
-      "name": "Flesh Catalyst",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0TGlmZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/06ec489870/BreachCatalystLife.png",
-      "amount": 1,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "catalyst",
-      "name": "Uul-Netol's Catalyst",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0UGh5c2ljYWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/bc9406c106/BreachCatalystPhysical.png",
-      "amount": 1,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "catalyst",
-      "name": "Neural Catalyst",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0TWFuYSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/61d3a7a832/BreachCatalystMana.png",
-      "amount": 1,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "catalyst",
-      "name": "Breach Splinter",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaHN0b25lU3BsaW50ZXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/4abb17ea8e/BreachstoneSplinter.png",
-      "amount": 1,
-      "unit": "Chaos Orb",
-      "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "exaltedValue": null
-    },
-    {
-      "section": "catalyst",
-      "name": "Chayula's Catalyst",
-      "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0Q2hhb3MiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/c80d8d7b1b/BreachCatalystChaos.png",
       "amount": 1,
       "unit": "Chaos Orb",
       "unitIcon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
