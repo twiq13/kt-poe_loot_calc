@@ -1,269 +1,342 @@
+/* =========================================================
+   🎛 ICON SIZE CONTROL PANEL (CHANGE SIZES HERE)
+   ========================================================= */
+
+/* Totals bar (Total Invest / Loot / Gains) */
+:root {
+  --icon-total-size: 18px;
+
+  /* Left market list (Currency / Fragments icons) */
+  --icon-market-size: 20px;
+
+  /* Loot table - item icon (next to item name) */
+  --icon-loot-item-size: 20px;
+
+  /* Loot table - currency icon (Exalted next to price) */
+  --icon-loot-price-size: 18px;
+
+  /* Optional: global icon shadow strength */
+  --icon-shadow: drop-shadow(0 0 2px rgba(0,0,0,.7));
+}
+
+/* =========================================================
+   GLOBAL THEME
+   ========================================================= */
+
 * { box-sizing: border-box; }
 
-body{
-  background:#1C1C1C;
-  color:#fff;
+body {
+  background: #1C1C1C;
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
-  margin:0;
-  padding:20px;
+  margin: 0;
+  padding: 20px;
 }
 
-h1{ margin:0 0 12px 0; }
-
-input, button{
-  background:#222;
-  color:#fff;
-  border:1px solid #444;
-  border-radius:8px;
-  padding:9px 10px;
+h1 {
+  margin: 0 0 12px 0;
 }
 
-input::placeholder{ color:#aaa; }
-button{ cursor:pointer; }
-button:hover{ background:#2f2f2f; }
-
-/* Header bar */
-.header-bar{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  gap:14px;
-  background:#222;
-  border:1px solid #333;
-  border-radius:12px;
-  padding:12px;
-  margin-bottom:14px;
+input, button {
+  background: #222;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 9px 10px;
 }
 
-.invest-mini{
-  display:flex;
-  gap:12px;
-  align-items:flex-end;
+input::placeholder { color: #aaa; }
+
+button {
+  cursor: pointer;
 }
 
-.field label{
-  display:block;
-  font-size:12px;
-  color:#bbb;
-  margin-bottom:6px;
+button:hover {
+  background: #2f2f2f;
 }
 
-.field input{
-  width:160px;
+/* =========================================================
+   HEADER BAR (INVEST + TOTALS)
+   ========================================================= */
+
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 14px;
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 14px;
 }
 
-.totals-mini{
-  display:flex;
-  gap:12px;
-  align-items:flex-end;
+/* Invest section */
+.invest-mini {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
 }
 
-.totalBox{
-  background:#1b1b1b;
-  border:1px solid #333;
-  border-radius:10px;
-  padding:10px 12px;
-  min-width:150px;
+.field label {
+  display: block;
+  font-size: 12px;
+  color: #bbb;
+  margin-bottom: 6px;
 }
 
-.tLabel{
-  font-size:12px;
-  color:#bbb;
-  margin-bottom:6px;
+.field input {
+  width: 160px;
 }
 
-.tValue{
-  font-size:16px;
-  font-weight:700;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  justify-content:flex-end;
+/* Totals section */
+.totals-mini {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
 }
 
-/* dual format inside totals */
-.dual{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-}
-.dual .sep{
-  opacity:.6;
-  margin:0 6px;
-}
-.pIcon{
-  width:6px;
-  height:6px;
-  vertical-align:middle;
-  filter: drop-shadow(0 0 2px rgba(0,0,0,.6));
+.totalBox {
+  background: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-width: 150px;
 }
 
-.resetBtn{
-  background:#ff3b3b;
-  border:1px solid #ff3b3b;
-  padding:10px 12px;
-  border-radius:10px;
-}
-.resetBtn:hover{ background:#ff5a5a; }
-
-/* Layout */
-.layout{
-  display:flex;
-  gap:16px;
+.tLabel {
+  font-size: 12px;
+  color: #bbb;
+  margin-bottom: 6px;
 }
 
-/* Left panel */
-.left-panel{
-  width:320px;
-  background:#222;
-  border:1px solid #333;
-  border-radius:12px;
-  padding:12px;
+.tValue {
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: flex-end;
 }
 
-.panel-title{
-  font-weight:700;
-  margin-bottom:10px;
+/* Totals icons (Exalted / Divine) */
+.pIcon {
+  width: var(--icon-total-size);
+  height: var(--icon-total-size);
+  filter: var(--icon-shadow);
 }
 
-.tabs{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-bottom:10px;
-}
-.tab{
-  padding:7px 10px;
-  border-radius:10px;
-  border:1px solid #444;
-  background:#1b1b1b;
-  color:#fff;
-}
-.tab.active{
-  border-color:#fff;
+/* =========================================================
+   RESET BUTTON
+   ========================================================= */
+
+.resetBtn {
+  background: #ff3b3b;
+  border: 1px solid #ff3b3b;
+  padding: 10px 12px;
+  border-radius: 10px;
 }
 
-#currencySearch{
-  width:100%;
-  margin-bottom:10px;
+.resetBtn:hover {
+  background: #ff5a5a;
 }
 
-#currencyList{
-  max-height:560px;
-  overflow:auto;
-  border:1px solid #333;
-  border-radius:10px;
-  padding:6px;
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+.layout {
+  display: flex;
+  gap: 16px;
 }
 
-/* list row */
-.currency-item{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  align-items:center;
-  padding:8px;
-  border-bottom:1px solid #333;
-  border-radius:8px;
-}
-.currency-item:hover{ background:#2a2a2a; }
-.currency-item small{
-  color:#bbb;
-  white-space:nowrap;
-}
-.cLeft{
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.cIcon{
-  width:6px;
-  height:6px;
-  filter: drop-shadow(0 0 2px rgba(0,0,0,.6));
+/* =========================================================
+   LEFT PANEL (MARKET LIST)
+   ========================================================= */
+
+.left-panel {
+  width: 320px;
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 12px;
 }
 
-/* Right panel */
-.app{
-  flex:1;
-  background:#222;
-  border:1px solid #333;
-  border-radius:12px;
-  padding:12px;
+.panel-title {
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-.app-title{
-  font-weight:700;
-  margin-bottom:12px;
-  color:#ddd;
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
-.loot-table{
-  width:100%;
-  border-collapse:collapse;
-  table-layout:fixed;
+.tab {
+  padding: 7px 10px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background: #1b1b1b;
+  color: #fff;
 }
 
-.loot-table th, .loot-table td{
-  border-bottom:1px solid #333;
-  padding:10px 8px;
+.tab.active {
+  border-color: #fff;
 }
 
-.loot-table th{ color:#ccc; }
-
-.loot-table th:nth-child(1), .loot-table td:nth-child(1){ width:48%; }
-.loot-table th:nth-child(2), .loot-table td:nth-child(2){ width:18%; text-align:center; }
-.loot-table th:nth-child(3), .loot-table td:nth-child(3){ width:26%; }
-.loot-table th:nth-child(4), .loot-table td:nth-child(4){ width:44px; text-align:center; }
-
-.loot-table input[type="number"], .loot-table input[list]{ width:100%; }
-
-.loot-actions{
-  margin-top:12px;
-  display:flex;
-  gap:10px;
+#currencySearch {
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-.btnIcon{
-  color:#fff;       /* + must be white */
-  font-weight:900;
-  margin-right:6px;
+#currencyList {
+  max-height: 560px;
+  overflow-y: auto;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 6px;
 }
 
-.deleteBtn{
-  background:transparent;
-  border:none;
-  color:#ff3b3b;
-  font-size:18px;
-  cursor:pointer;
-}
-.deleteBtn:hover{ color:#ff7b7b; }
-
-/* Item icon inside loot */
-.lootIcon{
-  width:8px;
-  height:8px;
-  display:none;
-  filter: drop-shadow(0 0 2px rgba(0,0,0,.6));
+/* Market list row */
+.currency-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #333;
+  border-radius: 8px;
 }
 
-.baseIcon{
-  width:6px;
-  height:6px;
-  margin-left:6px;
-  vertical-align:middle;
-  display:none;
-  filter: drop-shadow(0 0 2px rgba(0,0,0,.6));
+.currency-item:hover {
+  background: #2a2a2a;
 }
 
-/* Status */
-.status{
-  background:#111;
-  border:1px solid #333;
-  border-radius:10px;
-  padding:10px;
-  margin-top:14px;
-  color:#00ff66;
-  white-space:pre-wrap;
+.currency-item small {
+  color: #bbb;
+  white-space: nowrap;
 }
 
+/* Left side (icon + name) */
+.cLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
+/* Market icons */
+.cIcon {
+  width: var(--icon-market-size);
+  height: var(--icon-market-size);
+  filter: var(--icon-shadow);
+}
+
+/* =========================================================
+   RIGHT PANEL (LOOT TABLE)
+   ========================================================= */
+
+.app {
+  flex: 1;
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.app-title {
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ddd;
+}
+
+.loot-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.loot-table th,
+.loot-table td {
+  border-bottom: 1px solid #333;
+  padding: 10px 8px;
+}
+
+.loot-table th {
+  color: #ccc;
+}
+
+.loot-table th:nth-child(1),
+.loot-table td:nth-child(1) { width: 48%; }
+
+.loot-table th:nth-child(2),
+.loot-table td:nth-child(2) { width: 18%; text-align: center; }
+
+.loot-table th:nth-child(3),
+.loot-table td:nth-child(3) { width: 26%; }
+
+.loot-table th:nth-child(4),
+.loot-table td:nth-child(4) { width: 44px; text-align: center; }
+
+.loot-table input[type="number"],
+.loot-table input[list] {
+  width: 100%;
+}
+
+/* Loot icons (item) */
+.lootIcon {
+  width: var(--icon-loot-item-size);
+  height: var(--icon-loot-item-size);
+  filter: var(--icon-shadow);
+}
+
+/* Loot price currency icon (Exalted) */
+.baseIcon {
+  width: var(--icon-loot-price-size);
+  height: var(--icon-loot-price-size);
+  margin-left: 6px;
+  vertical-align: middle;
+  filter: var(--icon-shadow);
+}
+
+/* Actions */
+.loot-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.btnIcon {
+  color: #fff;
+  font-weight: 900;
+  margin-right: 6px;
+}
+
+/* Delete button */
+.deleteBtn {
+  background: transparent;
+  border: none;
+  color: #ff3b3b;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  color: #ff7b7b;
+}
+
+/* =========================================================
+   STATUS BAR
+   ========================================================= */
+
+.status {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 14px;
+  color: #00ff66;
+  white-space: pre-wrap;
+}
