@@ -7,6 +7,8 @@ let divineInEx = null; // 1 Divine = X Ex
 
 let activeTab = "currency";
 
+const BASE_CURRENCY_NAME = "Exalted Orb";
+
 // ---------- helpers ----------
 function cleanName(name) {
   return String(name || "").replace(/\s*WIKI\s*$/i, "").trim();
@@ -38,9 +40,11 @@ function formatDual(exValue) {
 
   return `
     <span class="dual">
-      <span>${ex.toFixed(2)}</span>${exaltIcon ? `<img class="pIcon" src="${exaltIcon}" alt="">` : ""}
+      <span>${ex.toFixed(2)}</span>
+      ${exaltIcon ? `<img class="pIcon" src="${exaltIcon}" alt="Exalted">` : ""}
       <span class="sep">/</span>
-      <span>${div.toFixed(2)}</span>${divineIcon ? `<img class="pIcon" src="${divineIcon}" alt="">` : ""}
+      <span>${div.toFixed(2)}</span>
+      ${divineIcon ? `<img class="pIcon" src="${divineIcon}" alt="Divine">` : ""}
     </span>
   `;
 }
@@ -53,21 +57,21 @@ async function loadData() {
     const res = await fetch("./data/prices.json?ts=" + Date.now(), { cache: "no-store" });
     const data = await res.json();
 
-    // we keep original amount/unit for LEFT list
+    // Keep original amount/unit for LEFT list, and exaltedValue for RIGHT + totals
     items = (data.lines || []).map(x => ({
       name: cleanName(x.name),
-      amount: Number(x.amount ?? 0),
-      unit: cleanName(x.unit || ""),
-      exaltedValue: Number(x.exaltedValue ?? 0),
+      amount: Number(x.amount ?? 0),                // original list value
+      unit: cleanName(x.unit || ""),                // original list unit
+      exaltedValue: Number(x.exaltedValue ?? 0),    // used for loot + totals
       icon: x.icon || ""
     }));
 
     itemMap = new Map(items.map(x => [x.name.toLowerCase(), x]));
 
-    // base icon (exalted)
+    // Base icon (Exalted)
     exaltIcon = data.baseIcon || itemMap.get("exalted orb")?.icon || "";
 
-    // divine icon & rate (from JSON row)
+    // Divine icon & rate: 1 Divine = X Ex
     const divineRow = itemMap.get("divine orb");
     divineIcon = divineRow?.icon || "";
     divineInEx = divineRow?.exaltedValue || null;
@@ -78,8 +82,10 @@ async function loadData() {
     bindTabs();
     renderLeftList();
     refreshAllLootPrices();
-    recalcAll();
+
+    // load state AFTER base icons/rates are known
     loadState();
+    recalcAll();
 
   } catch (e) {
     setStatus("Status: ERROR ❌ " + e.toString());
@@ -92,10 +98,10 @@ function bindTabs() {
     btn.onclick = () => {
       document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-      activeTab = btn.dataset.tab;
+      activeTab = btn.dataset.tab || "currency";
 
-      // For now, only "currency" is real. Others: show placeholder.
       renderLeftList();
+      saveState(); // ✅ important: persist tab selection
     };
   });
 }
@@ -121,6 +127,7 @@ function renderLeftList() {
     const row = document.createElement("div");
     row.className = "currency-item";
 
+    // ✅ show original amount + unit in left list (ex: 800 Divine Orb)
     const rightText = x.unit ? `${x.amount} ${x.unit}` : `${x.amount}`;
 
     row.innerHTML = `
@@ -155,14 +162,17 @@ function addLootLine() {
 
   tr.innerHTML = `
     <td>
-      <div style="display:flex;align-items:center;gap:8px;">
+      <div class="lootItemWrap">
         <input class="lootItem" list="currencyDatalist" placeholder="Item">
         <img class="lootIcon" alt="">
       </div>
     </td>
-    <td class="priceCell">
-      <span class="lootPrice">0</span>
-      <img class="baseIcon" alt="">
+    <td>
+      <div class="priceCell">
+        <span class="lootPrice">0</span>
+        <img class="baseIcon" alt="">
+        <span class="priceUnit">${BASE_CURRENCY_NAME}</span>
+      </div>
     </td>
     <td><input class="lootQty" type="number" value="0" min="0"></td>
     <td><button type="button" class="deleteBtn" title="Delete">✖</button></td>
@@ -174,11 +184,11 @@ function addLootLine() {
   const qtyInput = tr.querySelector(".lootQty");
   const delBtn = tr.querySelector(".deleteBtn");
 
-  // set base icon (exalted) next to price
+  // ✅ base icon = Exalted always for loot table
   const baseImg = tr.querySelector(".baseIcon");
   if (exaltIcon) {
     baseImg.src = exaltIcon;
-    baseImg.style.display = "inline-block";
+    baseImg.style.display = "block";
   } else {
     baseImg.style.display = "none";
   }
@@ -253,17 +263,29 @@ function updatePrice(input) {
 
   const priceEl = row.querySelector(".lootPrice");
   const iconEl = row.querySelector(".lootIcon");
+  const baseImg = row.querySelector(".baseIcon");
+  const unitSpan = row.querySelector(".priceUnit");
 
+  // item icon next to name
   if (found?.icon) {
     iconEl.src = found.icon;
-    iconEl.style.display = "inline-block";
+    iconEl.style.display = "block";
   } else {
     iconEl.style.display = "none";
   }
 
-  // Right table MUST be Exalted only
+  // ✅ Right table ALWAYS Exalted value
   const ex = found ? Number(found.exaltedValue || 0) : 0;
   priceEl.textContent = ex.toFixed(2);
+
+  // ✅ Force base icon + unit label (always Exalted)
+  if (exaltIcon) {
+    baseImg.src = exaltIcon;
+    baseImg.style.display = "block";
+  } else {
+    baseImg.style.display = "none";
+  }
+  if (unitSpan) unitSpan.textContent = BASE_CURRENCY_NAME;
 
   recalcAll();
 }
@@ -279,7 +301,7 @@ function refreshAllLootPrices() {
 // ---------- calculations ----------
 function calcInvestEx() {
   const maps = num("maps");
-  const ppm = num("costPerMap"); // this is Exalted (user said cost per map)
+  const ppm = num("costPerMap"); // Exalted
   return maps * ppm;
 }
 
@@ -303,6 +325,7 @@ function recalcAll() {
   const loot = calcLootEx();
   const gain = loot - invest;
 
+  // ✅ totals always show Ex/Div conversions
   setHTML("totalInvest", formatDual(invest));
   setHTML("totalLoot", formatDual(loot));
   setHTML("gain", formatDual(gain));
@@ -331,12 +354,13 @@ function saveState() {
 function loadState() {
   const raw = localStorage.getItem("poe2FarmState");
   if (!raw) return;
+
   try {
     const state = JSON.parse(raw);
 
     if (state?.invest) {
-      if (document.getElementById("maps")) document.getElementById("maps").value = state.invest.maps ?? "";
-      if (document.getElementById("costPerMap")) document.getElementById("costPerMap").value = state.invest.costPerMap ?? "";
+      if (document.getElementById("maps")) document.getElementById("maps").value = state.invest.maps ?? "10";
+      if (document.getElementById("costPerMap")) document.getElementById("costPerMap").value = state.invest.costPerMap ?? "0";
     }
 
     if (state?.activeTab) activeTab = state.activeTab;
@@ -392,18 +416,20 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("currencySearch")?.addEventListener("input", renderLeftList);
 
   ["maps", "costPerMap"].forEach(id => {
-    document.getElementById(id)?.addEventListener("input", () => { recalcAll(); saveState(); });
+    document.getElementById(id)?.addEventListener("input", () => {
+      recalcAll();
+      saveState();
+    });
   });
 
   document.getElementById("resetBtn")?.addEventListener("click", resetAll);
 
   window.addLootLine = addLootLine;
   window.addManualLine = addManualLine;
+  window.resetAll = resetAll;
 
   loadData().then(() => {
     if (!document.querySelector("#lootBody tr")) addLootLine();
     recalcAll();
   });
 });
-
-
