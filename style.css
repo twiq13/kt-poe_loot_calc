@@ -4,7 +4,7 @@
 
 /* Totals bar (Total Invest / Loot / Gains) */
 :root {
-  --icon-total-size: 48px;
+  --icon-total-size: 20px;
 
   /* Left market list (Currency / Fragments icons) */
   --icon-market-size: 20px;
@@ -13,7 +13,7 @@
   --icon-loot-item-size: 20px;
 
   /* Loot table - currency icon (Exalted next to price) */
-  --icon-loot-price-size: 18px;
+  --icon-loot-price-size: 20px;
 
   /* Optional: global icon shadow strength */
   --icon-shadow: drop-shadow(0 0 2px rgba(0,0,0,.7));
@@ -355,5 +355,6 @@ button:hover {
 .cIcon { width: var(--icon-market-size) !important; height: var(--icon-market-size) !important; }
 .lootIcon { width: var(--icon-loot-item-size) !important; height: var(--icon-loot-item-size) !important; }
 .baseIcon { width: var(--icon-loot-price-size) !important; height: var(--icon-loot-price-size) !important; }
+
 
 
