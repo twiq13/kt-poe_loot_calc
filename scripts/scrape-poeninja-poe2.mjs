@@ -13,10 +13,11 @@ function cleanName(name) {
 function parseCompactNumber(s) {
   if (!s) return null;
   const t = String(s).trim().toLowerCase().replace(/,/g, ".");
-  const m = t.match(/^([0-9]+(\.[0-9]+)?)(k)?$/i);
+  const m = t.match(/^([0-9]+(\.[0-9]+)?)(k|m)?$/i);
   if (!m) return null;
   let n = Number(m[1]);
-  if (m[3]) n *= 1000;
+  if (m[3] === "k") n *= 1000;
+  if (m[3] === "m") n *= 1000000;
   return Number.isFinite(n) ? n : null;
 }
 
@@ -40,8 +41,6 @@ function normalizeUrl(u) {
 
   await page.waitForSelector("table thead th", { timeout: 60000 });
   await page.waitForSelector("table tbody tr", { timeout: 60000 });
-
-  // Laisse le temps au lazy-load de remplir les images
   await page.waitForTimeout(4000);
 
   // index colonne Value
@@ -49,6 +48,7 @@ function normalizeUrl(u) {
     const ths = Array.from(document.querySelectorAll("table thead th"));
     return ths.findIndex(th => (th.innerText || "").trim().toLowerCase() === "value");
   });
+
   console.log("Value column index =", valueColIndex);
 
   if (valueColIndex < 0) {
@@ -57,89 +57,106 @@ function normalizeUrl(u) {
     process.exit(1);
   }
 
-  const rows = await page.evaluate((valueIdx) => {
-    function bestImgUrl(img) {
-      if (!img) return "";
-
-      // Le plus fiable
-      let u = img.currentSrc || img.src || img.getAttribute("src") || "";
-
-      // Next/Image ou lazy
-      if (!u || u === "about:blank") {
-        u = img.getAttribute("data-src") || img.getAttribute("data-lazy-src") || "";
-      }
-
-      // srcset: prend le 1er url
-      if ((!u || u === "about:blank") && img.getAttribute("srcset")) {
-        const ss = img.getAttribute("srcset").split(",")[0]?.trim();
-        u = ss ? ss.split(" ")[0] : "";
-      }
-
-      return u || "";
-    }
-
-    const trs = Array.from(document.querySelectorAll("table tbody tr"));
-    return trs.slice(0, 500).map(tr => {
-      const tds = Array.from(tr.querySelectorAll("td"));
-      if (tds.length <= valueIdx) return null;
-
-      const name = (tds[0]?.innerText || "").replace(/\s+/g, " ").trim();
-
-      // colonne 0: souvent plusieurs images (logo + WIKI)
-      const imgs0 = Array.from(tds[0].querySelectorAll("img"));
-      // on prend le premier "vrai" logo (souvent le 1er)
-      const icon = bestImgUrl(imgs0[0]) || bestImgUrl(imgs0[1]) || "";
-
-      const valueTd = tds[valueIdx];
-      const valueText = (valueTd?.innerText || "").replace(/\s+/g, " ").trim();
-
-      // Value column: on prend la dernière image (souvent l'unité)
-      const imgsV = Array.from(valueTd.querySelectorAll("img"));
-      const unitImg = imgsV.length ? imgsV[imgsV.length - 1] : null;
-      const unitIcon = bestImgUrl(unitImg);
-
-      const unitAlt =
-        unitImg?.getAttribute("alt") ||
-        unitImg?.getAttribute("title") ||
-        "";
-
-      return { name, icon, valueText, unitIcon, unitAlt };
-    }).filter(Boolean);
-  }, valueColIndex);
-
-  await browser.close();
-
-  if (!rows.length) {
-    console.error("Aucune ligne trouvée dans le tableau.");
+  // Récup lignes avec handles (pour hover)
+  const rowHandles = await page.$$("table tbody tr");
+  if (!rowHandles.length) {
+    console.error("Aucune ligne tr.");
+    await browser.close();
     process.exit(1);
   }
 
-  const lines = rows.map(r => {
-    const token = r.valueText.split(" ").find(x => /^[0-9]/.test(x)) || null;
+  // Trouver l’icône Exalted (pour l’UI)
+  let exaltIcon = "";
+  for (const tr of rowHandles) {
+    const txt = (await tr.innerText()).replace(/\s+/g, " ").trim().toLowerCase();
+    if (txt.startsWith("exalted orb")) {
+      const img = await tr.$("td img");
+      if (img) {
+        const src = await img.getAttribute("src");
+        exaltIcon = normalizeUrl(src || "");
+      }
+      break;
+    }
+  }
+
+  // Fonction pour lire le tooltip visible (après hover)
+  async function getTooltipText() {
+    return await page.evaluate(() => {
+      const candidates = Array.from(document.querySelectorAll('[role="tooltip"], .tooltip, [data-popper-placement]'));
+      // on prend le dernier élément visible
+      const visible = candidates.filter(el => {
+        const r = el.getBoundingClientRect();
+        return r.width > 0 && r.height > 0;
+      });
+      const el = visible[visible.length - 1] || null;
+      return el ? (el.innerText || "").replace(/\s+/g, " ").trim() : "";
+    });
+  }
+
+  const lines = [];
+  const max = Math.min(rowHandles.length, 250); // limite raisonnable
+
+  for (let i = 0; i < max; i++) {
+    const tr = rowHandles[i];
+
+    // colonnes
+    const tds = await tr.$$("td");
+    if (!tds.length || tds.length <= valueColIndex) continue;
+
+    const nameRaw = ((await tds[0].innerText()) || "").replace(/\s+/g, " ").trim();
+    const name = cleanName(nameRaw);
+    if (!name) continue;
+
+    // icon item
+    let icon = "";
+    const img0 = await tds[0].$("img");
+    if (img0) icon = normalizeUrl((await img0.getAttribute("src")) || "");
+
+    // value cell info (fallback)
+    const valueText = ((await tds[valueColIndex].innerText()) || "").replace(/\s+/g, " ").trim();
+    const token = valueText.split(" ").find(x => /^[0-9]/.test(x)) || null;
     const amount = parseCompactNumber(token);
 
-    return {
-      name: cleanName(r.name),
-      amount,
-      unit: cleanName(r.unitAlt || ""),
-      icon: normalizeUrl(r.icon || ""),
-      unitIcon: normalizeUrl(r.unitIcon || "")
-    };
-  }).filter(x => x.name && x.amount !== null);
+    // hover pour tooltip (sur la cellule Value)
+    let exaltedValue = null;
+    try {
+      await tds[valueColIndex].hover({ timeout: 5000 });
+      await page.waitForTimeout(120);
 
-  // Debug rapide : voir si on récupère des icônes
-  const withIcons = lines.filter(x => x.icon || x.unitIcon).length;
-  console.log(`Icons found: ${withIcons}/${lines.length}`);
+      const tip = await getTooltipText();
+
+      // chercher "Exalted Orb"
+      // ex: "... 3.1M Chaos Orb ⇆ 1.0 Exalted Orb ..."
+      const m = tip.match(/([0-9]+([.,][0-9]+)?(k|m)?)\s*Exalted\s*Orb/i);
+      if (m) exaltedValue = parseCompactNumber(m[1]);
+
+    } catch {
+      exaltedValue = null;
+    }
+
+    lines.push({
+      name,
+      icon,
+      amount: amount ?? null,
+      unit: "",               // pas indispensable maintenant
+      exaltedValue,           // ✅ valeur en Exalted depuis tooltip
+    });
+  }
+
+  await browser.close();
 
   const out = {
     updatedAt: new Date().toISOString(),
     league: LEAGUE,
     source: URL,
+    base: "Exalted Orb",
+    baseIcon: exaltIcon,
     lines
   };
 
   fs.mkdirSync("data", { recursive: true });
   fs.writeFileSync("data/prices.json", JSON.stringify(out, null, 2), "utf8");
 
-  console.log(`OK -> ${lines.length} currencies écrites dans data/prices.json`);
+  const ok = lines.filter(x => x.exaltedValue !== null).length;
+  console.log(`OK -> ${lines.length} lines, exaltedValue found for ${ok}`);
 })();
