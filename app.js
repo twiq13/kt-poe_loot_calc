@@ -449,8 +449,18 @@ document.addEventListener("DOMContentLoaded", () => {
   window.loadCurrencies = loadCurrencies;
 
   loadCurrencies();
+  currencies = (data.lines || []).map(c => ({
+  name: cleanName(c.name),
+  exaltedValue: Number(c.exaltedValue ?? 0),
+  icon: c.icon || ""
+}));
+
+currencyMap = new Map(currencies.map(c => [c.name.toLowerCase(), c]));
+baseIcon = data.baseIcon || "";
+
   loadState();
 
   if (!document.querySelector("#lootBody tr")) addLootLine();
   calculerTout();
 });
+
