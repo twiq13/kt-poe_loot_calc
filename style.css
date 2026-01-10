@@ -59,6 +59,18 @@ button:hover {
    HEADER BAR (INVEST + TOTALS)
    ========================================================= */
 
+.tValue {
+  display: flex;
+  align-items: center;   /* CENTRE verticalement */
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.pIcon {
+  vertical-align: middle;
+  display: inline-block;
+}
+
 .header-bar {
   display: flex;
   justify-content: space-between;
@@ -154,6 +166,17 @@ button:hover {
    LEFT PANEL (MARKET LIST)
    ========================================================= */
 
+.cLeft {
+  display: flex;
+  align-items: center;   /* CENTRE texte + icône */
+  gap: 8px;
+}
+
+.cIcon {
+  display: block;        /* évite le baseline inline */
+}
+
+
 .left-panel {
   width: 320px;
   background: #222;
@@ -237,6 +260,10 @@ button:hover {
 /* =========================================================
    RIGHT PANEL (LOOT TABLE)
    ========================================================= */
+
+.lootIcon {
+  display: block;
+}
 
 .app {
   flex: 1;
@@ -355,6 +382,7 @@ button:hover {
 .cIcon { width: var(--icon-market-size) !important; height: var(--icon-market-size) !important; }
 .lootIcon { width: var(--icon-loot-item-size) !important; height: var(--icon-loot-item-size) !important; }
 .baseIcon { width: var(--icon-loot-price-size) !important; height: var(--icon-loot-price-size) !important; }
+
 
 
 
