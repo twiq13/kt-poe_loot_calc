@@ -7,8 +7,6 @@ let divineInEx = null; // 1 Divine = X Ex
 
 let activeTab = "currency";
 
-const BASE_CURRENCY_NAME = "Exalted Orb";
-
 // ---------- helpers ----------
 function cleanName(name) {
   return String(name || "").replace(/\s*WIKI\s*$/i, "").trim();
@@ -33,18 +31,18 @@ function escapeHtml(s){
   }[m]));
 }
 
-// ---------- format totals (Ex/Div with icons) ----------
+// ---------- totals formatter (Ex/Div with icons) ----------
 function formatDual(exValue) {
   const ex = Number(exValue || 0);
+
+  // ✅ correct conversion: Div = Ex / (Ex per Div)
   const div = (divineInEx && divineInEx > 0) ? (ex / divineInEx) : 0;
 
   return `
     <span class="dual">
-      <span>${ex.toFixed(2)}</span>
-      ${exaltIcon ? `<img class="pIcon" src="${exaltIcon}" alt="Exalted">` : ""}
+      <span>${ex.toFixed(2)}</span>${exaltIcon ? `<img class="pIcon" src="${exaltIcon}" alt="Ex">` : ""}
       <span class="sep">/</span>
-      <span>${div.toFixed(2)}</span>
-      ${divineIcon ? `<img class="pIcon" src="${divineIcon}" alt="Divine">` : ""}
+      <span>${div.toFixed(2)}</span>${divineIcon ? `<img class="pIcon" src="${divineIcon}" alt="Div">` : ""}
     </span>
   `;
 }
@@ -57,33 +55,50 @@ async function loadData() {
     const res = await fetch("./data/prices.json?ts=" + Date.now(), { cache: "no-store" });
     const data = await res.json();
 
-    // Keep original amount/unit for LEFT list, and exaltedValue for RIGHT + totals
+    // LEFT list uses original amount/unit (+ unitIcon if present)
+    // RIGHT table uses exaltedValue
     items = (data.lines || []).map(x => ({
       name: cleanName(x.name),
-      amount: Number(x.amount ?? 0),                // original list value
-      unit: cleanName(x.unit || ""),                // original list unit
-      exaltedValue: Number(x.exaltedValue ?? 0),    // used for loot + totals
-      icon: x.icon || ""
+      amount: Number(x.amount ?? 0),
+      unit: cleanName(x.unit || ""),
+      exaltedValue: Number(x.exaltedValue ?? 0),
+      icon: x.icon || "",
+      unitIcon: x.unitIcon || "" // ✅ for market list (if available)
     }));
 
     itemMap = new Map(items.map(x => [x.name.toLowerCase(), x]));
 
-    // Base icon (Exalted)
+    // base icon (exalted)
     exaltIcon = data.baseIcon || itemMap.get("exalted orb")?.icon || "";
 
-    // Divine icon & rate: 1 Divine = X Ex
+    // divine icon & rate
     const divineRow = itemMap.get("divine orb");
     divineIcon = divineRow?.icon || "";
+
+    // ✅ main: 1 Divine = X Ex (from exaltedValue)
     divineInEx = divineRow?.exaltedValue || null;
 
-    setStatus(`Status: OK ✅ items=${items.length}`);
+    // ✅ fallback if missing/zero: try compute from amount/unit using Exalted row (very defensive)
+    if (!divineInEx || divineInEx <= 0) {
+      const exRow = itemMap.get("exalted orb");
+      // if both are expressed in Chaos in amount/unit, we can compute:
+      // divineInEx = (Divine in Chaos) / (Exalted in Chaos)
+      if (divineRow && exRow) {
+        const divChaos = (divineRow.unit.toLowerCase() === "chaos orb") ? divineRow.amount : null;
+        const exChaos  = (exRow.unit.toLowerCase() === "chaos orb") ? exRow.amount : null;
+        if (divChaos && exChaos && exChaos > 0) {
+          divineInEx = divChaos / exChaos;
+        }
+      }
+    }
+
+    setStatus(`Status: OK ✅ items=${items.length} | 1 Div = ${divineInEx ? divineInEx.toFixed(4) : "?"} Ex`);
 
     fillDatalist();
     bindTabs();
     renderLeftList();
     refreshAllLootPrices();
 
-    // load state AFTER base icons/rates are known
     loadState();
     recalcAll();
 
@@ -92,7 +107,7 @@ async function loadData() {
   }
 }
 
-// ---------- tabs skeleton ----------
+// ---------- tabs ----------
 function bindTabs() {
   document.querySelectorAll(".tab").forEach(btn => {
     btn.onclick = () => {
@@ -101,17 +116,17 @@ function bindTabs() {
       activeTab = btn.dataset.tab || "currency";
 
       renderLeftList();
-      saveState(); // ✅ important: persist tab selection
+      saveState(); // keep tab
     };
   });
 }
 
-// ---------- left list ----------
+// ---------- left list (market) ----------
 function renderLeftList() {
   const panel = document.getElementById("currencyList");
   const q = (document.getElementById("currencySearch")?.value || "").trim().toLowerCase();
-
   if (!panel) return;
+
   panel.innerHTML = "";
 
   if (activeTab !== "currency") {
@@ -127,7 +142,7 @@ function renderLeftList() {
     const row = document.createElement("div");
     row.className = "currency-item";
 
-    // ✅ show original amount + unit in left list (ex: 800 Divine Orb)
+    // ✅ show value + unit text + (optional) unit icon
     const rightText = x.unit ? `${x.amount} ${x.unit}` : `${x.amount}`;
 
     row.innerHTML = `
@@ -135,7 +150,10 @@ function renderLeftList() {
         ${x.icon ? `<img class="cIcon" src="${x.icon}" alt="">` : ""}
         <span>${escapeHtml(x.name)}</span>
       </div>
-      <small>${escapeHtml(rightText)}</small>
+      <small class="mRight">
+        <span>${escapeHtml(rightText)}</span>
+        ${x.unitIcon ? `<img class="mUnitIcon" src="${x.unitIcon}" alt="">` : ""}
+      </small>
     `;
 
     row.addEventListener("click", () => addLootLineWithName(x.name));
@@ -171,7 +189,6 @@ function addLootLine() {
       <div class="priceCell">
         <span class="lootPrice">0</span>
         <img class="baseIcon" alt="">
-        <span class="priceUnit">${BASE_CURRENCY_NAME}</span>
       </div>
     </td>
     <td><input class="lootQty" type="number" value="0" min="0"></td>
@@ -184,7 +201,7 @@ function addLootLine() {
   const qtyInput = tr.querySelector(".lootQty");
   const delBtn = tr.querySelector(".deleteBtn");
 
-  // ✅ base icon = Exalted always for loot table
+  // base icon (exalted) next to price (no text)
   const baseImg = tr.querySelector(".baseIcon");
   if (exaltIcon) {
     baseImg.src = exaltIcon;
@@ -263,10 +280,7 @@ function updatePrice(input) {
 
   const priceEl = row.querySelector(".lootPrice");
   const iconEl = row.querySelector(".lootIcon");
-  const baseImg = row.querySelector(".baseIcon");
-  const unitSpan = row.querySelector(".priceUnit");
 
-  // item icon next to name
   if (found?.icon) {
     iconEl.src = found.icon;
     iconEl.style.display = "block";
@@ -274,18 +288,9 @@ function updatePrice(input) {
     iconEl.style.display = "none";
   }
 
-  // ✅ Right table ALWAYS Exalted value
+  // Right table = Exalted only
   const ex = found ? Number(found.exaltedValue || 0) : 0;
   priceEl.textContent = ex.toFixed(2);
-
-  // ✅ Force base icon + unit label (always Exalted)
-  if (exaltIcon) {
-    baseImg.src = exaltIcon;
-    baseImg.style.display = "block";
-  } else {
-    baseImg.style.display = "none";
-  }
-  if (unitSpan) unitSpan.textContent = BASE_CURRENCY_NAME;
 
   recalcAll();
 }
@@ -301,10 +306,9 @@ function refreshAllLootPrices() {
 // ---------- calculations ----------
 function calcInvestEx() {
   const maps = num("maps");
-  const ppm = num("costPerMap"); // Exalted
+  const ppm = num("costPerMap");
   return maps * ppm;
 }
-
 function calcLootEx() {
   let total = 0;
   document.querySelectorAll("#lootBody tr").forEach(row => {
@@ -319,13 +323,11 @@ function calcLootEx() {
   });
   return total;
 }
-
 function recalcAll() {
   const invest = calcInvestEx();
   const loot = calcLootEx();
   const gain = loot - invest;
 
-  // ✅ totals always show Ex/Div conversions
   setHTML("totalInvest", formatDual(invest));
   setHTML("totalLoot", formatDual(loot));
   setHTML("gain", formatDual(gain));
@@ -365,7 +367,6 @@ function loadState() {
 
     if (state?.activeTab) activeTab = state.activeTab;
 
-    // restore tab UI
     document.querySelectorAll(".tab").forEach(b => {
       b.classList.toggle("active", b.dataset.tab === activeTab);
     });
