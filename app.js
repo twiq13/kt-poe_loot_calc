@@ -1,3 +1,5 @@
+<script src="app.js?v=999"></script>
+
 let items = [];
 let itemMap = new Map();
 
@@ -405,3 +407,4 @@ document.addEventListener("DOMContentLoaded", () => {
     recalcAll();
   });
 });
+
