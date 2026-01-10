@@ -107,13 +107,14 @@ function addLootLine() {
   const tr = document.createElement("tr");
   tr.className = "lootRow";
 
-  tr.innerHTML = `
-    <td>
-      <input class="lootItem" list="currencyDatalist" placeholder="Item">
-    </td>
-    <td class="price lootPrice">0</td>
-    <td><input class="lootQty" type="number" value="0" min="0"></td>
-  `;
+tr.innerHTML = `
+  <td>
+    <input class="lootItem" list="currencyDatalist" placeholder="Item">
+  </td>
+  <td class="price lootPrice">0</td>
+  <td><input class="lootQty" type="number" value="0" min="0"></td>
+  <td><button class="deleteBtn" title="Supprimer">✖</button></td>
+`;
 
   document.getElementById("lootBody").appendChild(tr);
 
@@ -129,6 +130,13 @@ function addLootLine() {
     calculerLoot();
     saveState();
   });
+
+  tr.querySelector(".deleteBtn").addEventListener("click", () => {
+  tr.remove();
+  calculerLoot();
+  saveState();
+});
+
 
   return tr;
 }
@@ -149,11 +157,12 @@ function addManualLine() {
   const tr = document.createElement("tr");
   tr.className = "lootRow manualRow";
 
-  tr.innerHTML = `
-    <td><input class="lootItem" placeholder="Nom libre"></td>
-    <td><input class="manualPrice" type="number" value="0" min="0" step="0.01"></td>
-    <td><input class="lootQty" type="number" value="0" min="0"></td>
-  `;
+tr.innerHTML = `
+  <td><input class="lootItem" placeholder="Nom libre"></td>
+  <td><input class="manualPrice" type="number" value="0" min="0" step="0.01"></td>
+  <td><input class="lootQty" type="number" value="0" min="0"></td>
+  <td><button class="deleteBtn" title="Supprimer">✖</button></td>
+`;
 
   document.getElementById("lootBody").appendChild(tr);
 
@@ -168,6 +177,13 @@ function addManualLine() {
   tr.querySelector(".lootItem").addEventListener("input", () => {
     saveState();
   });
+
+  tr.querySelector(".deleteBtn").addEventListener("click", () => {
+  tr.remove();
+  calculerLoot();
+  saveState();
+});
+
 
   return tr;
 }
@@ -299,3 +315,31 @@ document.addEventListener("DOMContentLoaded", () => {
   // si aucune sauvegarde, on met une ligne par défaut
   if (!document.querySelector("#lootBody tr")) addLootLine();
 });
+
+function resetAll() {
+  // efface sauvegarde
+  localStorage.removeItem("poe2FarmState");
+
+  // reset champs investissement si tu veux (optionnel)
+  ["maps", "invest_tablets", "invest_omen", "invest_maps"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = "";
+  });
+
+  // reset tableau loot
+  clearLootRows();
+  addLootLine();
+
+  // reset résultats
+  const totalLoot = document.getElementById("totalLoot");
+  if (totalLoot) totalLoot.textContent = "0";
+
+  const gain = document.getElementById("gain");
+  if (gain) gain.textContent = "0";
+
+  const roi = document.getElementById("roi");
+  if (roi) roi.textContent = "0";
+
+  setStatus("Fetch status: reset ✅");
+}
+window.resetAll = resetAll;
