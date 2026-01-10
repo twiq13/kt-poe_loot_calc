@@ -55,44 +55,30 @@ async function loadData() {
     const res = await fetch("./data/prices.json?ts=" + Date.now(), { cache: "no-store" });
     const data = await res.json();
 
-    // LEFT list uses original amount/unit (+ unitIcon if present)
-    // RIGHT table uses exaltedValue
     items = (data.lines || []).map(x => ({
       name: cleanName(x.name),
       amount: Number(x.amount ?? 0),
-      unit: cleanName(x.unit || ""),
-      exaltedValue: Number(x.exaltedValue ?? 0),
+      unit: cleanName(x.unit || ""),     // IMPORTANT
       icon: x.icon || "",
-      unitIcon: x.unitIcon || "" // ✅ for market list (if available)
+      unitIcon: x.unitIcon || "",
+      exaltedValue: Number(x.exaltedValue ?? 0) // peut être 0 => on recalculera
     }));
 
+    // map
     itemMap = new Map(items.map(x => [x.name.toLowerCase(), x]));
 
-    // base icon (exalted)
+    // base icon (Exalted)
     exaltIcon = data.baseIcon || itemMap.get("exalted orb")?.icon || "";
 
-    // divine icon & rate
-    const divineRow = itemMap.get("divine orb");
-    divineIcon = divineRow?.icon || "";
+    // calc rates + fill exaltedValue for all items
+    computeRatesAndExalted();
 
-    // ✅ main: 1 Divine = X Ex (from exaltedValue)
-    divineInEx = divineRow?.exaltedValue || null;
+    // divine icon after compute
+    divineIcon = itemMap.get("divine orb")?.icon || "";
 
-    // ✅ fallback if missing/zero: try compute from amount/unit using Exalted row (very defensive)
-    if (!divineInEx || divineInEx <= 0) {
-      const exRow = itemMap.get("exalted orb");
-      // if both are expressed in Chaos in amount/unit, we can compute:
-      // divineInEx = (Divine in Chaos) / (Exalted in Chaos)
-      if (divineRow && exRow) {
-        const divChaos = (divineRow.unit.toLowerCase() === "chaos orb") ? divineRow.amount : null;
-        const exChaos  = (exRow.unit.toLowerCase() === "chaos orb") ? exRow.amount : null;
-        if (divChaos && exChaos && exChaos > 0) {
-          divineInEx = divChaos / exChaos;
-        }
-      }
-    }
-
-    setStatus(`Status: OK ✅ items=${items.length} | 1 Div = ${divineInEx ? divineInEx.toFixed(4) : "?"} Ex`);
+    setStatus(
+      `Status: OK ✅ items=${items.length} | 1 Ex = ${exChaos ? exChaos.toFixed(2) : "?"} Chaos | 1 Div = ${divineInEx ? divineInEx.toFixed(4) : "?"} Ex`
+    );
 
     fillDatalist();
     bindTabs();
@@ -106,6 +92,74 @@ async function loadData() {
     setStatus("Status: ERROR ❌ " + e.toString());
   }
 }
+
+/**
+ * Compute:
+ * - exChaos: Chaos per 1 Exalted
+ * - divineInEx: Exalted per 1 Divine
+ * - and fill item.exaltedValue if missing (0)
+ */
+let exChaos = null; // 1 Ex = X Chaos
+
+function computeRatesAndExalted() {
+  // 1) exChaos from "Exalted Orb" row, if it is priced in Chaos
+  const exRow = itemMap.get("exalted orb");
+  if (exRow && exRow.unit.toLowerCase() === "chaos orb" && exRow.amount > 0) {
+    exChaos = exRow.amount; // Chaos per Ex
+  } else {
+    exChaos = null;
+  }
+
+  // 2) divineInEx from "Divine Orb"
+  const divRow = itemMap.get("divine orb");
+
+  // Priority: if exaltedValue already present and >0
+  if (divRow && divRow.exaltedValue && divRow.exaltedValue > 0) {
+    divineInEx = divRow.exaltedValue;
+  } else {
+    divineInEx = null;
+    // If Divine is in Chaos and exChaos known => divineInEx = (DivChaos / exChaos)
+    if (divRow && divRow.unit.toLowerCase() === "chaos orb" && divRow.amount > 0 && exChaos && exChaos > 0) {
+      divineInEx = divRow.amount / exChaos;
+    }
+    // If Divine is in Exalted directly (rare)
+    if (divRow && divRow.unit.toLowerCase() === "exalted orb" && divRow.amount > 0) {
+      divineInEx = divRow.amount;
+    }
+  }
+
+  // 3) fill exaltedValue for each item if missing/0
+  items.forEach(it => {
+    if (it.exaltedValue && it.exaltedValue > 0) return;
+
+    const u = (it.unit || "").toLowerCase();
+
+    // If priced in Chaos
+    if (u === "chaos orb" && exChaos && exChaos > 0) {
+      it.exaltedValue = it.amount / exChaos;
+      return;
+    }
+
+    // If priced in Divine
+    if (u === "divine orb" && divineInEx && divineInEx > 0) {
+      it.exaltedValue = it.amount * divineInEx;
+      return;
+    }
+
+    // If priced in Exalted already
+    if (u === "exalted orb") {
+      it.exaltedValue = it.amount;
+      return;
+    }
+
+    // else keep 0
+    it.exaltedValue = 0;
+  });
+
+  // rebuild map with updated exaltedValue
+  itemMap = new Map(items.map(x => [x.name.toLowerCase(), x]));
+}
+
 
 // ---------- tabs ----------
 function bindTabs() {
@@ -434,3 +488,4 @@ document.addEventListener("DOMContentLoaded", () => {
     recalcAll();
   });
 });
+
