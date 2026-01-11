@@ -442,4 +442,32 @@ a.resetBtn{
   margin-bottom:10px;
 }
 
+/* Reddit button top-right like feedback */
+.redditBtn{
+  position:fixed;
+  top:18px;
+  right:20px;
+  z-index:9999;
+  background:#222;
+  border:1px solid #444;
+}
+.redditBtn:hover{ background:#2f2f2f; }
+
+/* Toggle button (same theme, not red) */
+.toggleBtn{
+  background:#222;
+  border:1px solid #444;
+  padding:10px 12px;
+  border-radius:10px;
+}
+.toggleBtn:hover{ background:#2f2f2f; }
+
+/* Footer signature */
+.site-signature{
+  margin-top:10px;
+  color:#9a9a9a;
+  font-size:12px;
+  opacity:.85;
+}
+
 
