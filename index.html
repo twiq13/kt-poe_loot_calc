@@ -56,8 +56,10 @@
     <aside class="left-panel">
       <div class="panel-title">Market List</div>
 
-      <!-- TABS -->
-      <div class="tabs">
+      <!-- TABS (app.js expects #tabs) -->
+      <div class="tabs" id="tabs">
+        <!-- optional: can keep these static buttons OR let buildTabs() recreate them.
+             If buildTabs() runs, it will overwrite this content anyway. -->
         <button class="tab active" data-tab="currency">Currency</button>
         <button class="tab" data-tab="fragments">Fragments</button>
         <button class="tab" data-tab="abyssalBones">Abyssal Bones</button>
@@ -73,9 +75,11 @@
         <button class="tab" data-tab="catalyst">Catalyst</button>
       </div>
 
-      <input id="currencySearch" placeholder="Search..." />
+      <!-- app.js expects #marketSearch -->
+      <input id="marketSearch" placeholder="Search..." />
 
-      <div id="currencyList"></div>
+      <!-- app.js expects #marketList -->
+      <div id="marketList"></div>
     </aside>
 
     <!-- RIGHT PANEL -->
@@ -95,10 +99,11 @@
       </table>
 
       <div class="loot-actions">
-        <button type="button" onclick="addLootLine()">
+        <!-- Use the correct function names -->
+        <button type="button" onclick="addLootRow()">
           <span class="btnIcon">+</span> Add row
         </button>
-        <button type="button" onclick="addManualLine()">
+        <button type="button" onclick="addManualRow()">
           <span class="btnIcon">+</span> Manual row
         </button>
       </div>
@@ -106,13 +111,13 @@
 
   </div>
 
-  <!-- AUTOCOMPLETE -->
-  <datalist id="currencyDatalist"></datalist>
+  <!-- AUTOCOMPLETE (app.js expects #itemDatalist) -->
+  <datalist id="itemDatalist"></datalist>
 
   <!-- STATUS -->
   <div id="fetchStatus" class="status">Status: waiting...</div>
 
-  <!-- JS (load at end so DOM exists) -->
-  <script src="app.js?v=1"></script>
+  <!-- JS -->
+  <script src="app.js?v=1" defer></script>
 </body>
 </html>
