@@ -1,181 +1,233 @@
-// app.js (stable final)
+// ==========================================================
+// PoE2 Farm Calculator - FINAL app.js
+// Base calculations in EXALTED (Ex)
+// Display: Smart Ex/Div (Market + Loot) + Dual Ex/Div (Totals)
+// Data source: ./data/prices.json (scraper forces Value Display = Exalted Orb)
+// ==========================================================
 
-let data = null;
-let items = [];
-let itemMap = new Map();
+let items = [];              // all lines from prices.json
+let byName = new Map();      // nameLower -> item
+let bySection = new Map();   // sectionId -> [items...]
 
-let activeTab = "currency";
+// Icons & rates
 let exaltIcon = "";
 let divineIcon = "";
-let divineInEx = null; // 1 Divine = X Ex
+let divineInEx = null;       // 1 Divine = X Ex
 
-// ---------- small helpers ----------
-function setStatus(msg){
+// UI state
+let activeSection = "currency";
+
+// ==========================================================
+// Helpers
+// ==========================================================
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"']/g, m => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+  }[m]));
+}
+
+function setStatus(msg) {
   const el = document.getElementById("fetchStatus");
   if (el) el.textContent = msg;
   console.log(msg);
 }
-function cleanName(s){ return String(s||"").replace(/\s*WIKI\s*$/i,"").trim(); }
-function esc(s){
-  return String(s).replace(/[&<>"']/g, m => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"
-  }[m]));
-}
-function num(id){
+
+function num(id) {
   const el = document.getElementById(id);
   const v = el ? Number(el.value) : 0;
   return Number.isFinite(v) ? v : 0;
 }
 
-// ---------- format totals (Ex / Div) ----------
-function formatDual(exValue){
+function setHTML(id, html) {
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = html;
+}
+
+function cleanName(name) {
+  return String(name || "").replace(/\s*WIKI\s*$/i, "").trim();
+}
+
+// ==========================================================
+// Formatting (display)
+// ==========================================================
+
+// Smart display: choose Div if >= 1 Divine in Ex, else Ex
+function formatSmart(exValue) {
+  const ex = Number(exValue || 0);
+
+  if (!divineInEx || divineInEx <= 0) {
+    return { value: ex.toFixed(2), icon: exaltIcon, mode: "ex" };
+  }
+
+  if (ex >= divineInEx) {
+    const div = ex / divineInEx;
+    return { value: div.toFixed(2), icon: divineIcon, mode: "div" };
+  }
+
+  return { value: ex.toFixed(2), icon: exaltIcon, mode: "ex" };
+}
+
+// Totals display: always show Ex / Div
+function formatDual(exValue) {
   const ex = Number(exValue || 0);
   const div = (divineInEx && divineInEx > 0) ? (ex / divineInEx) : 0;
 
   return `
-    <span>${ex.toFixed(2)}</span>${exaltIcon ? `<img class="pIcon" src="${exaltIcon}" alt="Ex">` : ""}
-    <span class="sep">/</span>
-    <span>${div.toFixed(2)}</span>${divineIcon ? `<img class="pIcon" src="${divineIcon}" alt="Div">` : ""}
+    <span class="dual">
+      <span>${ex.toFixed(2)}</span>${exaltIcon ? `<img class="pIcon" src="${exaltIcon}" alt="Ex">` : ""}
+      <span class="sep">/</span>
+      <span>${div.toFixed(2)}</span>${divineIcon ? `<img class="pIcon" src="${divineIcon}" alt="Div">` : ""}
+    </span>
   `;
 }
 
-// ---------- load prices.json ----------
-async function loadData(){
-  try{
+// ==========================================================
+// Load data (prices.json)
+// ==========================================================
+async function loadData() {
+  try {
     setStatus("Status: loading data/prices.json...");
-    const res = await fetch("./data/prices.json?ts=" + Date.now(), { cache:"no-store" });
-    data = await res.json();
 
+    const res = await fetch("./data/prices.json?ts=" + Date.now(), { cache: "no-store" });
+    const data = await res.json();
+
+    // Base info from json
+    exaltIcon = data.baseIcon || "";
+    divineIcon = data.divineIcon || "";
+    divineInEx = (typeof data.divineInEx === "number") ? data.divineInEx : null;
+
+    // Lines
     items = (data.lines || []).map(x => ({
       section: x.section || "currency",
       name: cleanName(x.name),
       icon: x.icon || "",
-      amount: Number(x.amount ?? 0),
-      unit: cleanName(x.unit || ""),
-      unitIcon: x.unitIcon || "",
-      exaltedValue: (typeof x.exaltedValue === "number") ? x.exaltedValue : null
-    }));
+      exaltedValue: Number(x.exaltedValue ?? x.amount ?? 0), // base in Ex
+      unitIcon: x.unitIcon || "" // optional
+    })).filter(x => x.name);
 
-    itemMap = new Map(items.map(x => [x.name.toLowerCase(), x]));
+    byName = new Map(items.map(it => [it.name.toLowerCase(), it]));
 
-    exaltIcon = data.baseIcon || itemMap.get("exalted orb")?.icon || "";
-    divineIcon = data.divineIcon || itemMap.get("divine orb")?.icon || "";
-    divineInEx = (typeof data.divineInEx === "number" && data.divineInEx > 0) ? data.divineInEx : null;
+    // Group by section
+    bySection = new Map();
+    for (const it of items) {
+      if (!bySection.has(it.section)) bySection.set(it.section, []);
+      bySection.get(it.section).push(it);
+    }
 
-    // Build tabs from prices.json sections (fallback if missing)
-    buildTabs(data.sections || null);
+    // If divineInEx missing: try to get from currency "Divine Orb"
+    if (!divineInEx || divineInEx <= 0) {
+      const divRow = byName.get("divine orb");
+      if (divRow && divRow.exaltedValue > 0) {
+        divineInEx = divRow.exaltedValue;
+      }
+    }
 
-    fillDatalist();
-    renderLeftList();
+    // If missing icons, fallback from rows
+    if (!exaltIcon) exaltIcon = byName.get("exalted orb")?.icon || "";
+    if (!divineIcon) divineIcon = byName.get("divine orb")?.icon || "";
 
-    // restore state (after tabs exist)
-    loadState();
+    setStatus(`Status: OK ✅ sections=${bySection.size} items=${items.length} | 1 Div=${divineInEx ? divineInEx.toFixed(2) : "?"} Ex`);
 
-    // ensure at least one loot row
-    if (!document.querySelector("#lootBody tr")) addLootLine();
+    bindTabs();            // tabs click events
+    bindSearch();          // search input event
+    fillDatalist();        // for loot autocomplete
+    loadState();           // restore previous state
+    renderMarketList();    // render left panel
+    refreshAllLootRows();  // update loot display
+    recalcAll();           // totals
 
-    recalcAll();
-
-    setStatus(`Status: OK ✅ items=${items.length} | activeTab=${activeTab} | 1 Div=${divineInEx ? divineInEx.toFixed(4) : "?"} Ex`);
-  } catch(e){
+  } catch (e) {
     setStatus("Status: ERROR ❌ " + e.toString());
   }
 }
 
-// ---------- tabs ----------
-const DEFAULT_TABS = [
-  { id:"currency", label:"Currency" },
-  { id:"fragments", label:"Fragments" },
-  { id:"abyssalBones", label:"Abyssal Bones" },
-  { id:"uncutGems", label:"Uncut Gems" },
-  { id:"lineageGems", label:"Lineage Gems" },
-  { id:"essences", label:"Essences" },
-  { id:"soulCores", label:"Soul Cores" },
-  { id:"idols", label:"Idols" },
-  { id:"runes", label:"Runes" },
-  { id:"omens", label:"Omens" },
-  { id:"expedition", label:"Expedition" },
-  { id:"liquidEmotions", label:"Liquid Emotions" },
-  { id:"catalyst", label:"Catalyst" },
-];
-
-function buildTabs(sectionsFromJson){
-  const tabsEl = document.getElementById("tabs");
-  if (!tabsEl) return;
-
-  const tabs = Array.isArray(sectionsFromJson) && sectionsFromJson.length
-    ? sectionsFromJson.map(s => ({ id: s.id, label: s.label || s.id }))
-    : DEFAULT_TABS;
-
-  tabsEl.innerHTML = tabs.map(t => `
-    <button class="tab ${t.id === activeTab ? "active" : ""}" data-tab="${esc(t.id)}" type="button">
-      ${esc(t.label)}
-    </button>
-  `).join("");
-
-  tabsEl.querySelectorAll(".tab").forEach(btn => {
-    btn.addEventListener("click", () => {
-      activeTab = btn.dataset.tab || "currency";
-      tabsEl.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b === btn));
-      renderLeftList();
+// ==========================================================
+// Tabs & Market List
+// ==========================================================
+function bindTabs() {
+  const tabs = document.querySelectorAll(".tab");
+  tabs.forEach(btn => {
+    btn.onclick = () => {
+      tabs.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeSection = btn.dataset.tab || "currency";
+      renderMarketList();
       saveState();
-    });
+    };
   });
+
+  // Ensure current section active after loadState
+  tabs.forEach(b => b.classList.toggle("active", b.dataset.tab === activeSection));
 }
 
-// ---------- left list ----------
-function renderLeftList(){
+function bindSearch() {
+  const search = document.getElementById("currencySearch");
+  if (!search) return;
+  search.addEventListener("input", renderMarketList);
+}
+
+function renderMarketList() {
   const panel = document.getElementById("currencyList");
   if (!panel) return;
 
   const q = (document.getElementById("currencySearch")?.value || "").trim().toLowerCase();
   panel.innerHTML = "";
 
-  const filtered = items
-    .filter(x => (x.section || "currency") === activeTab)
-    .filter(x => x.name.toLowerCase().includes(q))
+  const list = bySection.get(activeSection) || [];
+  const filtered = list
+    .filter(it => it.name.toLowerCase().includes(q))
     .slice(0, 400);
 
-  if (!filtered.length){
-    panel.innerHTML = `<div style="color:#bbb;padding:10px;">No items for "${esc(activeTab)}"</div>`;
+  if (!filtered.length) {
+    panel.innerHTML = `<div style="color:#bbb;padding:10px;">No items.</div>`;
     return;
   }
 
-  for (const x of filtered){
-    const rightText = x.unit ? `${x.amount} ${x.unit}` : `${x.amount}`;
+  for (const it of filtered) {
     const row = document.createElement("div");
     row.className = "currency-item";
+
+    const smart = formatSmart(it.exaltedValue);
+
     row.innerHTML = `
       <div class="cLeft">
-        ${x.icon ? `<img class="cIcon" src="${x.icon}" alt="">` : ""}
-        <span title="${esc(x.name)}">${esc(x.name)}</span>
+        ${it.icon ? `<img class="cIcon" src="${it.icon}" alt="">` : ""}
+        <span>${esc(it.name)}</span>
       </div>
       <small class="mRight">
-        <span>${esc(rightText)}</span>
-        ${x.unitIcon ? `<img class="mUnitIcon" src="${x.unitIcon}" alt="">` : ""}
+        <span>${esc(smart.value)}</span>
+        ${smart.icon ? `<img class="mUnitIcon" src="${smart.icon}" alt="">` : ""}
       </small>
     `;
-    row.addEventListener("click", () => addLootLineWithName(x.name));
+
+    row.addEventListener("click", () => addLootLineWithName(it.name));
     panel.appendChild(row);
   }
 }
 
-function fillDatalist(){
+function fillDatalist() {
   const dl = document.getElementById("currencyDatalist");
   if (!dl) return;
   dl.innerHTML = "";
-  // datalist includes all names (all tabs)
-  items.forEach(x => {
+
+  // All items (not only currency) so user can search everything
+  items.forEach(it => {
     const opt = document.createElement("option");
-    opt.value = x.name;
+    opt.value = it.name;
     dl.appendChild(opt);
   });
 }
 
-// ---------- loot rows ----------
-function addLootLine(){
+// ==========================================================
+// Loot Table
+// ==========================================================
+function addLootLine() {
+  const body = document.getElementById("lootBody");
+  if (!body) return null;
+
   const tr = document.createElement("tr");
   tr.className = "lootRow";
+  tr.dataset.exPrice = "0"; // base calc
 
   tr.innerHTML = `
     <td>
@@ -194,23 +246,71 @@ function addLootLine(){
     <td><button type="button" class="deleteBtn" title="Delete">✖</button></td>
   `;
 
-  document.getElementById("lootBody").appendChild(tr);
+  body.appendChild(tr);
 
   const itemInput = tr.querySelector(".lootItem");
   const qtyInput  = tr.querySelector(".lootQty");
   const delBtn    = tr.querySelector(".deleteBtn");
 
-  // show exalt icon near price
+  itemInput.addEventListener("input", () => {
+    updateLootRow(tr);
+    saveState();
+  });
+
+  qtyInput.addEventListener("input", () => {
+    recalcAll();
+    saveState();
+  });
+
+  delBtn.addEventListener("click", () => {
+    tr.remove();
+    recalcAll();
+    saveState();
+  });
+
+  // set default icon in price cell
   const baseImg = tr.querySelector(".baseIcon");
-  if (exaltIcon){
+  if (exaltIcon) {
     baseImg.src = exaltIcon;
     baseImg.style.display = "block";
   } else {
     baseImg.style.display = "none";
   }
 
-  itemInput.addEventListener("input", () => { updatePrice(itemInput); saveState(); });
-  qtyInput.addEventListener("input", () => { recalcAll(); saveState(); });
+  return tr;
+}
+
+function addManualLine() {
+  const body = document.getElementById("lootBody");
+  if (!body) return null;
+
+  const tr = document.createElement("tr");
+  tr.className = "lootRow manualRow";
+  tr.dataset.exPrice = "0";
+
+  tr.innerHTML = `
+    <td><input class="lootItem" placeholder="Custom name"></td>
+    <td><input class="manualPrice" type="number" value="0" min="0" step="0.01"></td>
+    <td><input class="lootQty" type="number" value="0" min="0"></td>
+    <td><button type="button" class="deleteBtn" title="Delete">✖</button></td>
+  `;
+
+  body.appendChild(tr);
+
+  const priceInput = tr.querySelector(".manualPrice");
+  const qtyInput   = tr.querySelector(".lootQty");
+  const delBtn     = tr.querySelector(".deleteBtn");
+
+  priceInput.addEventListener("input", () => {
+    tr.dataset.exPrice = String(Number(priceInput.value || 0)); // manual is Ex
+    recalcAll();
+    saveState();
+  });
+
+  qtyInput.addEventListener("input", () => {
+    recalcAll();
+    saveState();
+  });
 
   delBtn.addEventListener("click", () => {
     tr.remove();
@@ -221,182 +321,216 @@ function addLootLine(){
   return tr;
 }
 
-function addManualLine(){
-  const tr = document.createElement("tr");
-  tr.className = "lootRow manualRow";
-
-  tr.innerHTML = `
-    <td><input class="lootItem" placeholder="Custom name"></td>
-    <td><input class="manualPrice" type="number" value="0" min="0" step="0.01"></td>
-    <td><input class="lootQty" type="number" value="0" min="0"></td>
-    <td><button type="button" class="deleteBtn" title="Delete">✖</button></td>
-  `;
-
-  document.getElementById("lootBody").appendChild(tr);
-
-  tr.querySelector(".deleteBtn").addEventListener("click", () => {
-    tr.remove(); recalcAll(); saveState();
-  });
-
-  tr.querySelector(".manualPrice").addEventListener("input", () => { recalcAll(); saveState(); });
-  tr.querySelector(".lootQty").addEventListener("input", () => { recalcAll(); saveState(); });
-  tr.querySelector(".lootItem").addEventListener("input", saveState);
-
-  return tr;
-}
-
-function addLootLineWithName(name){
+function addLootLineWithName(name) {
   const tr = addLootLine();
+  if (!tr) return;
   tr.querySelector(".lootItem").value = name;
-  updatePrice(tr.querySelector(".lootItem"));
+  updateLootRow(tr);
   recalcAll();
   saveState();
 }
 
-function updatePrice(input){
-  const row = input.closest("tr");
-  if (row.classList.contains("manualRow")) { recalcAll(); return; }
+function updateLootRow(tr) {
+  if (!tr) return;
 
-  const name = (input.value || "").trim().toLowerCase();
-  const found = itemMap.get(name);
+  // manual row: exPrice already from input
+  if (tr.classList.contains("manualRow")) {
+    const price = Number(tr.querySelector(".manualPrice")?.value || 0);
+    tr.dataset.exPrice = String(price);
+    recalcAll();
+    return;
+  }
 
-  const priceEl = row.querySelector(".lootPrice");
-  const iconEl  = row.querySelector(".lootIcon");
+  const input = tr.querySelector(".lootItem");
+  const name = (input?.value || "").trim().toLowerCase();
+  const it = byName.get(name);
 
-  if (found?.icon){
-    iconEl.src = found.icon;
+  const iconEl = tr.querySelector(".lootIcon");
+  const priceEl = tr.querySelector(".lootPrice");
+  const baseImg = tr.querySelector(".baseIcon");
+
+  const ex = it ? Number(it.exaltedValue || 0) : 0;
+  tr.dataset.exPrice = String(ex);
+
+  // item icon
+  if (it?.icon) {
+    iconEl.src = it.icon;
     iconEl.style.display = "block";
   } else {
     iconEl.style.display = "none";
   }
 
-  const ex = found?.exaltedValue ? Number(found.exaltedValue) : 0;
-  priceEl.textContent = ex.toFixed(2);
+  // smart display price (Ex or Div) but keep exPrice for calculations
+  const smart = formatSmart(ex);
+  priceEl.textContent = smart.value;
+
+  if (smart.icon) {
+    baseImg.src = smart.icon;
+    baseImg.style.display = "block";
+  } else {
+    baseImg.style.display = "none";
+  }
 
   recalcAll();
 }
 
-// ---------- calculations ----------
-function calcInvestEx(){
-  return num("maps") * num("costPerMap");
+function refreshAllLootRows() {
+  document.querySelectorAll("#lootBody tr").forEach(tr => updateLootRow(tr));
 }
 
-function calcLootEx(){
+// ==========================================================
+// Calculations (always in EX)
+// ==========================================================
+function calcInvestEx() {
+  const maps = num("maps");
+  const costPerMap = num("costPerMap"); // user enters in Ex
+  return maps * costPerMap;
+}
+
+function calcLootEx() {
   let total = 0;
-  document.querySelectorAll("#lootBody tr").forEach(row => {
-    const qty = Number(row.querySelector(".lootQty")?.value || 0);
-    if (row.classList.contains("manualRow")){
-      const p = Number(row.querySelector(".manualPrice")?.value || 0);
-      total += p * qty;
-    } else {
-      const p = Number(row.querySelector(".lootPrice")?.textContent || 0);
-      total += p * qty;
-    }
+  document.querySelectorAll("#lootBody tr").forEach(tr => {
+    const qty = Number(tr.querySelector(".lootQty")?.value || 0);
+    const exPrice = Number(tr.dataset.exPrice || 0);
+    total += exPrice * qty;
   });
   return total;
 }
 
-function recalcAll(){
+function recalcAll() {
   const invest = calcInvestEx();
   const loot = calcLootEx();
   const gain = loot - invest;
 
-  document.getElementById("totalInvest").innerHTML = formatDual(invest);
-  document.getElementById("totalLoot").innerHTML = formatDual(loot);
-  document.getElementById("gain").innerHTML = formatDual(gain);
+  setHTML("totalInvest", formatDual(invest));
+  setHTML("totalLoot", formatDual(loot));
+  setHTML("gain", formatDual(gain));
 }
 
-// ---------- storage ----------
-function saveState(){
-  const rows = [...document.querySelectorAll("#lootBody tr")].map(r => {
-    const manual = r.classList.contains("manualRow");
+// ==========================================================
+// Storage (local)
+// ==========================================================
+function saveState() {
+  const rows = [...document.querySelectorAll("#lootBody tr")].map(tr => {
+    const manual = tr.classList.contains("manualRow");
     return {
       manual,
-      item: r.querySelector(".lootItem")?.value || "",
-      qty: Number(r.querySelector(".lootQty")?.value || 0),
-      price: manual ? Number(r.querySelector(".manualPrice")?.value || 0) : null
+      item: tr.querySelector(".lootItem")?.value || "",
+      qty: Number(tr.querySelector(".lootQty")?.value || 0),
+      price: manual ? Number(tr.querySelector(".manualPrice")?.value || 0) : null
     };
   });
 
-  const invest = {
-    maps: document.getElementById("maps")?.value ?? "10",
-    costPerMap: document.getElementById("costPerMap")?.value ?? "0"
+  const state = {
+    section: activeSection,
+    invest: {
+      maps: document.getElementById("maps")?.value ?? "10",
+      costPerMap: document.getElementById("costPerMap")?.value ?? "0"
+    },
+    rows
   };
 
-  localStorage.setItem("poe2FarmState", JSON.stringify({ rows, invest, activeTab }));
+  localStorage.setItem("poe2FarmState", JSON.stringify(state));
 }
 
-function loadState(){
+function loadState() {
   const raw = localStorage.getItem("poe2FarmState");
   if (!raw) return;
 
-  try{
-    const st = JSON.parse(raw);
+  try {
+    const s = JSON.parse(raw);
 
-    if (st?.invest){
-      document.getElementById("maps").value = st.invest.maps ?? "10";
-      document.getElementById("costPerMap").value = st.invest.costPerMap ?? "0";
+    if (s?.section) activeSection = s.section;
+
+    if (s?.invest) {
+      const maps = document.getElementById("maps");
+      const cost = document.getElementById("costPerMap");
+      if (maps) maps.value = s.invest.maps ?? "10";
+      if (cost) cost.value = s.invest.costPerMap ?? "0";
     }
 
-    if (st?.activeTab){
-      activeTab = st.activeTab;
-      // update tab UI
-      document.querySelectorAll(".tab").forEach(b => {
-        b.classList.toggle("active", b.dataset.tab === activeTab);
-      });
-    }
+    if (Array.isArray(s?.rows)) {
+      const body = document.getElementById("lootBody");
+      if (body) body.innerHTML = "";
 
-    if (Array.isArray(st?.rows)){
-      document.getElementById("lootBody").innerHTML = "";
-      for (const r of st.rows){
-        if (r.manual){
+      s.rows.forEach(r => {
+        if (r.manual) {
           const tr = addManualLine();
           tr.querySelector(".lootItem").value = r.item || "";
           tr.querySelector(".lootQty").value = r.qty ?? 0;
           tr.querySelector(".manualPrice").value = r.price ?? 0;
+          tr.dataset.exPrice = String(Number(r.price ?? 0));
         } else {
           const tr = addLootLine();
           tr.querySelector(".lootItem").value = r.item || "";
           tr.querySelector(".lootQty").value = r.qty ?? 0;
-          updatePrice(tr.querySelector(".lootItem"));
+          updateLootRow(tr);
         }
-      }
+      });
     }
-  } catch {}
+
+  } catch {
+    // ignore
+  }
 }
 
-function resetAll(){
+// ==========================================================
+// Reset
+// ==========================================================
+function resetAll() {
   localStorage.removeItem("poe2FarmState");
 
-  document.getElementById("maps").value = "10";
-  document.getElementById("costPerMap").value = "0";
+  const maps = document.getElementById("maps");
+  const cost = document.getElementById("costPerMap");
+  if (maps) maps.value = "10";
+  if (cost) cost.value = "0";
 
-  document.getElementById("lootBody").innerHTML = "";
+  activeSection = "currency";
+  document.querySelectorAll(".tab").forEach(b => {
+    b.classList.toggle("active", b.dataset.tab === "currency");
+  });
+
+  const body = document.getElementById("lootBody");
+  if (body) body.innerHTML = "";
   addLootLine();
 
-  activeTab = "currency";
-  document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b.dataset.tab === "currency"));
+  document.getElementById("currencySearch").value = "";
 
-  renderLeftList();
+  renderMarketList();
   recalcAll();
-  saveState();
   setStatus("Status: reset ✅");
 }
 
-// ---------- init ----------
+// ==========================================================
+// Init
+// ==========================================================
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("currencySearch")?.addEventListener("input", renderLeftList);
-  document.getElementById("maps")?.addEventListener("input", () => { recalcAll(); saveState(); });
-  document.getElementById("costPerMap")?.addEventListener("input", () => { recalcAll(); saveState(); });
+  // inputs invest
+  ["maps", "costPerMap"].forEach(id => {
+    document.getElementById(id)?.addEventListener("input", () => {
+      recalcAll();
+      saveState();
+    });
+  });
 
+  // reset button
   document.getElementById("resetBtn")?.addEventListener("click", resetAll);
-  document.getElementById("addRowBtn")?.addEventListener("click", () => { addLootLine(); saveState(); });
-  document.getElementById("addManualBtn")?.addEventListener("click", () => { addManualLine(); saveState(); });
 
-  // expose (optional)
+  // expose buttons used in HTML onclick
   window.addLootLine = addLootLine;
   window.addManualLine = addManualLine;
   window.resetAll = resetAll;
 
-  loadData();
+  loadData().then(() => {
+    // if no rows -> one empty row
+    if (!document.querySelector("#lootBody tr")) addLootLine();
+
+    // ensure tabs reflect loaded state
+    document.querySelectorAll(".tab").forEach(b => {
+      b.classList.toggle("active", b.dataset.tab === activeSection);
+    });
+
+    renderMarketList();
+    recalcAll();
+  });
 });
