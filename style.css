@@ -9,7 +9,7 @@
   --icon-shadow: drop-shadow(0 0 2px rgba(0,0,0,.7));
 
   /* ✅ CHANGE LOOT BG OPACITY HERE (0 → invisible, 1 → full) */
-  --loot-bg-opacity: 0.35;
+  --loot-bg-opacity: 0.28;
 }
 
 /* =========================================================
@@ -400,3 +400,4 @@ button:hover{ background:#2f2f2f; }
   color:#00ff66;
   white-space:pre-wrap;
 }
+
