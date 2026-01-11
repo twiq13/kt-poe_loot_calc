@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PoE2 Farm Calculator</title>
-  <link rel="stylesheet" href="style.css?v=999">
-  <script src="app.js?v=999" defer></script>
+  <title>PoE2 Loot Calculator</title>
+  <link rel="stylesheet" href="style.css?v=1">
 </head>
 
 <body>
-  <h1>PoE2 Farm Calculator</h1>
+
+  <h1>PoE2 Loot Calculator</h1>
 
   <!-- HEADER BAR -->
   <div class="header-bar">
+
     <!-- INVEST (left) -->
     <div class="invest-mini">
       <div class="field">
         <label>Total Maps</label>
         <input type="number" id="maps" value="10" min="0">
       </div>
+
       <div class="field">
         <label>Cost per Map (Ex)</label>
         <input type="number" id="costPerMap" value="0" min="0" step="0.01">
@@ -31,10 +33,12 @@
         <div class="tLabel">Total Invest</div>
         <div class="tValue" id="totalInvest">0</div>
       </div>
+
       <div class="totalBox">
         <div class="tLabel">Total Loot</div>
         <div class="tValue" id="totalLoot">0</div>
       </div>
+
       <div class="totalBox">
         <div class="tLabel">Gains</div>
         <div class="tValue" id="gain">0</div>
@@ -42,16 +46,31 @@
 
       <button class="resetBtn" id="resetBtn" type="button">Reset</button>
     </div>
+
   </div>
 
   <!-- MAIN LAYOUT -->
   <div class="layout">
+
     <!-- LEFT PANEL -->
     <aside class="left-panel">
       <div class="panel-title">Market List</div>
 
-      <div class="tabs" id="tabs">
-        <!-- tabs injected by JS from prices.json sections -->
+      <!-- TABS -->
+      <div class="tabs">
+        <button class="tab active" data-tab="currency">Currency</button>
+        <button class="tab" data-tab="fragments">Fragments</button>
+        <button class="tab" data-tab="abyssalBones">Abyssal Bones</button>
+        <button class="tab" data-tab="uncutGems">Uncut Gems</button>
+        <button class="tab" data-tab="lineageGems">Lineage Gems</button>
+        <button class="tab" data-tab="essences">Essences</button>
+        <button class="tab" data-tab="soulCores">Soul Cores</button>
+        <button class="tab" data-tab="idols">Idols</button>
+        <button class="tab" data-tab="runes">Runes</button>
+        <button class="tab" data-tab="omens">Omens</button>
+        <button class="tab" data-tab="expedition">Expedition</button>
+        <button class="tab" data-tab="liquidEmotions">Liquid Emotions</button>
+        <button class="tab" data-tab="catalyst">Catalyst</button>
       </div>
 
       <input id="currencySearch" placeholder="Search..." />
@@ -61,13 +80,13 @@
 
     <!-- RIGHT PANEL -->
     <main class="app">
-      <div class="app-title">Loot (prices shown in Exalted)</div>
+      <div class="app-title">Loot (prices auto displayed in Ex/Div)</div>
 
       <table class="loot-table">
         <thead>
           <tr>
             <th>Item</th>
-            <th>Price (Ex)</th>
+            <th>Price</th>
             <th>Qty</th>
             <th></th>
           </tr>
@@ -76,18 +95,24 @@
       </table>
 
       <div class="loot-actions">
-        <button type="button" id="addRowBtn">
+        <button type="button" onclick="addLootLine()">
           <span class="btnIcon">+</span> Add row
         </button>
-        <button type="button" id="addManualBtn">
+        <button type="button" onclick="addManualLine()">
           <span class="btnIcon">+</span> Manual row
         </button>
       </div>
     </main>
+
   </div>
 
+  <!-- AUTOCOMPLETE -->
   <datalist id="currencyDatalist"></datalist>
 
+  <!-- STATUS -->
   <div id="fetchStatus" class="status">Status: waiting...</div>
+
+  <!-- JS (load at end so DOM exists) -->
+  <script src="app.js?v=1"></script>
 </body>
 </html>
