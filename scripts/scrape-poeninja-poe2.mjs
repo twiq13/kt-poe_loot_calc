@@ -51,72 +51,88 @@ async function getValueColumnIndex(page) {
   });
 }
 
+async function divineTokenFromTable(page) {
+  return await page.evaluate(() => {
+    const rows = Array.from(document.querySelectorAll("table tbody tr"));
+    const row = rows.find(r => (r.innerText || "").toLowerCase().includes("divine orb"));
+    if (!row) return null;
+
+    const ths = Array.from(document.querySelectorAll("table thead th"));
+    const idx = ths.findIndex(th => (th.innerText || "").trim().toLowerCase() === "value");
+    if (idx < 0) return null;
+
+    const tds = Array.from(row.querySelectorAll("td"));
+    const cell = tds[idx];
+    if (!cell) return null;
+
+    const txt = (cell.innerText || "").replace(/\s+/g, " ").trim();
+    const token = txt.split(" ").find(x => /^[0-9]/.test(x));
+    return token || null;
+  });
+}
+
 /**
- * Force "Value Display" -> "Exalted Orb"
- * Méthode robuste:
- * - trouver le bloc qui contient le texte "Value Display"
- * - cliquer le control (dropdown)
- * - taper "Exalted Orb" + Enter
- * - vérifier que la valeur de Divine Orb devient > 100 (sinon retry)
+ * ✅ Force Value Display -> Exalted Orb (robust)
+ * - Find "Value Display" label
+ * - Find next combobox/listbox/button used by react-select
+ * - Click
+ * - Focus internal input + type + Enter
  */
-async function forceValueDisplayExalted(page) {
+async function forceValueDisplayExalted(page, { verifyOnCurrency = false } = {}) {
   const desired = "Exalted Orb";
 
-  for (let attempt = 1; attempt <= 4; attempt++) {
-    // Clique le control proche du texte "Value Display"
-    const container = page.locator("div", { hasText: "Value Display" }).first();
-
-    // Plusieurs UI possibles : on clique dans le container puis on utilise clavier
-    await container.click({ timeout: 5000 }).catch(() => {});
+  for (let attempt = 1; attempt <= 6; attempt++) {
+    // Scroll top to ensure controls visible
+    await page.evaluate(() => window.scrollTo(0, 0));
     await page.waitForTimeout(200);
 
-    // si dropdown pas ouvert, parfois il faut cliquer un élément frère (le select)
-    // on tente un clic un peu à droite du container
-    const box = await container.boundingBox().catch(() => null);
-    if (box) {
-      await page.mouse.click(box.x + box.width - 10, box.y + box.height - 10).catch(() => {});
+    // Locate the "Value Display" text node
+    const label = page.locator("text=Value Display").first();
+    await label.waitFor({ timeout: 10000 });
+
+    // Grab the nearest interactive select after the label (ARIA roles)
+    // We try multiple patterns because poe.ninja UI can change:
+    const combo = page.locator(
+      `xpath=//div[contains(.,'Value Display')][1]/following::*[@role='combobox' or @aria-haspopup='listbox' or self::button][1]`
+    ).first();
+
+    // Ensure it is in view + click
+    await combo.scrollIntoViewIfNeeded().catch(() => {});
+    await combo.click({ timeout: 5000 }).catch(() => {});
+
+    // React-select usually spawns an input somewhere (often in the dropdown)
+    // Try to focus any visible input with aria-autocomplete
+    const input = page.locator("input[aria-autocomplete='list']").first();
+    if (await input.count().catch(() => 0)) {
+      await input.fill("").catch(() => {});
+      await input.type(desired, { delay: 25 }).catch(() => {});
+      await page.keyboard.press("Enter").catch(() => {});
+    } else {
+      // Fallback: just type globally (works if menu captured focus)
+      await page.keyboard.press("Control+A").catch(() => {});
+      await page.keyboard.type(desired, { delay: 25 }).catch(() => {});
+      await page.keyboard.press("Enter").catch(() => {});
     }
 
-    await page.waitForTimeout(250);
-
-    // Taper au clavier puis Enter (react-select / listbox)
-    await page.keyboard.press("Control+A").catch(() => {});
-    await page.keyboard.type(desired, { delay: 30 }).catch(() => {});
-    await page.keyboard.press("Enter").catch(() => {});
-
-    // Attendre que la table se recalcul
+    // Wait for table to update
     await page.waitForTimeout(900);
 
-    // Vérif: lire la valeur de Divine Orb dans la table (section currency uniquement)
-    // (si la table est en Exalted, Divine vaut souvent plusieurs centaines Ex)
-    const divineVal = await page.evaluate(() => {
-      const rows = Array.from(document.querySelectorAll("table tbody tr"));
-      const row = rows.find(r => (r.innerText || "").toLowerCase().includes("divine orb"));
-      if (!row) return null;
-
-      const tds = Array.from(row.querySelectorAll("td"));
-      // on prend la cellule "Value" en trouvant l'entête
-      const ths = Array.from(document.querySelectorAll("table thead th"));
-      const idx = ths.findIndex(th => (th.innerText || "").trim().toLowerCase() === "value");
-      if (idx < 0 || !tds[idx]) return null;
-
-      const txt = (tds[idx].innerText || "").replace(/\s+/g, " ").trim();
-      const token = txt.split(" ").find(x => /^[0-9]/.test(x));
-      return token || null;
-    });
-
-    const divineParsed = parseCompactNumber(divineVal);
-
-    // Si Divine devient > 100, on considère que c'est bien en Exalted
-    if (divineParsed && divineParsed > 100) {
-      console.log(`Value Display OK ✅ (Divine ~ ${divineParsed} Ex)`);
+    // Verify only on Currency section (Divine must be > 100 Ex typically)
+    if (verifyOnCurrency) {
+      const tok = await divineTokenFromTable(page);
+      const val = parseCompactNumber(tok);
+      if (val && val > 100) {
+        console.log(`Value Display OK ✅ (Divine ~ ${val} Ex)`);
+        return true;
+      }
+      console.log(`Value Display retry ${attempt}/6 (Divine token="${tok}" parsed=${val})`);
+    } else {
+      // If no verification needed, we assume ok
       return true;
     }
-
-    console.log(`Value Display retry ${attempt}/4 (Divine token="${divineVal}" parsed=${divineParsed})`);
   }
 
-  console.log("⚠️ Could not force Value Display to Exalted (continuing anyway).");
+  console.log("⚠️ Could not force Value Display to Exalted.");
   return false;
 }
 
@@ -145,8 +161,8 @@ async function scrapeSection(page, section) {
   await page.waitForSelector("table thead th", { timeout: 60000 });
   await page.waitForSelector("table tbody tr", { timeout: 60000 });
 
-  // Force Value Display
-  await forceValueDisplayExalted(page);
+  // Force Exalted display (verify only for currency)
+  await forceValueDisplayExalted(page, { verifyOnCurrency: section.id === "currency" });
 
   const valueColIndex = await getValueColumnIndex(page);
   if (valueColIndex < 0) throw new Error(`Value column not found in section ${section.id}`);
@@ -224,9 +240,7 @@ async function scrapeSection(page, section) {
   fs.mkdirSync("data", { recursive: true });
   fs.writeFileSync("data/prices.json", JSON.stringify(out, null, 2), "utf8");
 
-  const divine = allLines.find(
-    x => x.section === "currency" && x.name.toLowerCase() === "divine orb"
-  );
+  const divine = allLines.find(x => x.section === "currency" && x.name.toLowerCase() === "divine orb");
   console.log(`TOTAL lines=${allLines.length}`);
   console.log(`Divine Orb exaltedValue = ${divine?.exaltedValue ?? "NOT FOUND"}`);
 })();
