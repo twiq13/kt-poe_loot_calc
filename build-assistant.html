@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PoE2 Build Assistant</title>
+
+  <!-- mêmes CSS que ton site -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+  <!-- ========= HEADER (copie identique de ton site) ========= -->
+  <header>
+    <!-- ... ton header existant ... -->
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="build-assistant.html" class="nav-link active">Build Assistant</a>
+    </nav>
+  </header>
+
+  <!-- ========= MAIN ========= -->
+  <main class="container">
+    <h1>Build Assistant</h1>
+    <p class="muted">
+      Choisis des tags (ex: Bow + Chaos) → je te propose des Uniques + Skill Gems compatibles.
+    </p>
+
+    <section class="card">
+      <h2>Build Tags</h2>
+
+      <div class="row">
+        <label>Main archetype</label>
+        <select id="tagArchetype">
+          <option value="Bow">Bow (Archer)</option>
+          <option value="Crossbow">Crossbow</option>
+          <option value="Melee">Melee</option>
+          <option value="Spell">Spell</option>
+          <option value="Minion">Minion</option>
+        </select>
+
+        <label>Element / Theme</label>
+        <select id="tagTheme">
+          <option value="Chaos">Chaos</option>
+          <option value="Fire">Fire</option>
+          <option value="Cold">Cold</option>
+          <option value="Lightning">Lightning</option>
+          <option value="Physical">Physical</option>
+          <option value="Poison">Poison</option>
+        </select>
+
+        <button id="btnSearch" class="btn primary">Find suggestions</button>
+      </div>
+
+      <div class="row">
+        <label class="checkbox">
+          <input type="checkbox" id="onlyUniques" checked />
+          Only Uniques
+        </label>
+
+        <label class="checkbox">
+          <input type="checkbox" id="strictCompat" checked />
+          Strict weapon/offhand compatibility
+        </label>
+
+        <button id="btnRefresh" class="btn">Refresh data</button>
+        <span id="status" class="muted"></span>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <div class="card">
+        <h2>Suggested Uniques</h2>
+        <div id="uniquesList" class="list"></div>
+      </div>
+
+      <div class="card">
+        <h2>Suggested Skill Gems</h2>
+        <div id="skillsList" class="list"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========= FOOTER (copie identique de ton site) ========= -->
+  <footer>
+    <!-- ... ton footer existant ... -->
+  </footer>
+
+  <script src="assets/js/build-assistant.js"></script>
+</body>
+</html>
