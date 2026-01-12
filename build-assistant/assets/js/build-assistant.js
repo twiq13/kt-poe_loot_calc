@@ -37,8 +37,8 @@ const proxify = (url) => PROXY_BASE + encodeURIComponent(url);
 const SKILLS_URL  = "https://poe2db.tw/us/Skill_Gems";
 const UNIQUES_URL = "https://poe2db.tw/us/Unique_item";
 
-const CACHE_SKILLS  = "poe2_skills_v4";
-const CACHE_UNIQUES = "poe2_uniques_v4";
+const CACHE_SKILLS  = "poe2_skills_v5";
+const CACHE_UNIQUES = "poe2_uniques_v5";
 
 /* ---------------- Fetch ---------------- */
 async function fetchHtml(url) {
@@ -83,15 +83,11 @@ function inferWeaponFromText(s) {
 
 function getSkillWantedTags(archetype, theme) {
   const tags = [];
-  // Archetype → tags (à affiner plus tard, mais déjà beaucoup mieux)
   if (archetype === "Bow" || archetype === "Crossbow") tags.push("Projectile");
   if (archetype === "Melee") tags.push("Melee");
   if (archetype === "Spell") tags.push("Spell");
   if (archetype === "Minion") tags.push("Minion");
-
-  // Theme tag (si présent dans poe2db)
   if (theme) tags.push(theme);
-
   return tags;
 }
 
@@ -104,11 +100,8 @@ function scoreTags(entityTags, wantedTags) {
   return score;
 }
 
-/* ---------------- Parsing: Skill Gems ----------------
-   On lit table tr → name + tags (comma list)
------------------------------------------------------- */
+/* ---------------- Parsing: Skill Gems ---------------- */
 function extractTagsLine(text) {
-  // cherche une portion "Attack, AoE, Melee, Slam" etc
   const m = (text || "").match(/([A-Z][A-Za-z]+(?:,\s*[A-Z][A-Za-z]+)+)/);
   return m ? m[1].split(",").map(x => x.trim()) : [];
 }
@@ -129,72 +122,119 @@ function parseSkillGems(html) {
     out.push({ name, tags });
   }
 
-  // Dedupe by lowercase name
   return dedupeByKey(out, x => x.name?.toLowerCase());
 }
 
-/* ---------------- Parsing: Uniques (grouped) ----------------
-   We track current section by anchors like:
+/* ---------------- Parsing: Uniques (ANCHOR-BASED, ROBUST) ----------------
+   poe2db uses anchors like:
    #WeaponUnique, #ArmourUnique, etc.
--------------------------------------------------------------- */
-function normalizeUniqueSectionId(idOrText) {
-  const s = (idOrText || "").toLowerCase();
+   We'll:
+   - find these anchors by id
+   - take the DOM content between anchor A and anchor B
+   - extract unique names from links inside that segment
+-------------------------------------------------------------------------- */
+
+function sectionLabelFromAnchorId(id) {
+  const s = (id || "").toLowerCase();
   if (s.includes("weapon")) return "Weapons";
   if (s.includes("armour") || s.includes("armor")) return "Gear";
-  if (s.includes("accessory") || s.includes("jewell") || s.includes("jewel") || s.includes("ring") || s.includes("amulet") || s.includes("belt"))
+  if (s.includes("accessory") || s.includes("jewel") || s.includes("ring") || s.includes("amulet") || s.includes("belt"))
     return "Jewellery";
-  return null;
+  return "Other";
+}
+
+function collectLinksUntil(startEl, stopEl) {
+  const links = [];
+  let cur = startEl;
+
+  while (cur && cur !== stopEl) {
+    if (cur.querySelectorAll) {
+      const a = Array.from(cur.querySelectorAll("a"));
+      links.push(...a);
+    }
+    cur = cur.nextElementSibling;
+  }
+  return links;
+}
+
+function isLikelyUniqueName(name) {
+  if (!name) return false;
+  if (name.length < 4 || name.length > 70) return false;
+  if (!/^[A-Z]/.test(name)) return false;
+  // filter obvious nav words
+  const bad = ["home","build assistant","unique item","skill gems","login","register"];
+  if (bad.includes(name.toLowerCase())) return false;
+  return true;
 }
 
 function parseUniques(html) {
   const doc = htmlToDoc(html);
+  const out = [];
 
-  const items = [];
-  let currentSection = "Other";
+  // Find all elements with id ending in "Unique" or containing "Unique"
+  const anchors = Array.from(doc.querySelectorAll("[id]"))
+    .filter(el => String(el.id).toLowerCase().includes("unique"));
 
-  // We iterate in DOM order over headings + tables
-  const nodes = Array.from(doc.body.querySelectorAll("h1,h2,h3,h4,table"));
+  // Prefer known order if present
+  const wantedIds = ["WeaponUnique", "AccessoryUnique", "ArmourUnique", "ArmorUnique", "JewelleryUnique", "JewelUnique"];
+  const sorted = [];
 
-  for (const node of nodes) {
-    // Update section from headings with id OR text
-    if (/^H[1-4]$/.test(node.tagName)) {
-      const sec = normalizeUniqueSectionId(node.id) || normalizeUniqueSectionId(node.textContent);
-      if (sec) currentSection = sec;
-      continue;
-    }
+  for (const wid of wantedIds) {
+    const el = anchors.find(x => x.id === wid) || anchors.find(x => x.id.toLowerCase() === wid.toLowerCase());
+    if (el) sorted.push(el);
+  }
 
-    // Parse table links (uniques are usually in tables)
-    if (node.tagName === "TABLE") {
-      const links = Array.from(node.querySelectorAll("a"));
-      for (const a of links) {
-        const name = (a.textContent || "").trim();
-        if (!name || name.length < 4 || name.length > 70) continue;
-        if (!/^[A-Z]/.test(name)) continue;
+  // Also include any other unique anchors not already used
+  for (const el of anchors) {
+    if (!sorted.includes(el)) sorted.push(el);
+  }
 
-        // Use row context to infer weapon type when in Weapons
-        const rowText = a.closest("tr")?.textContent || "";
-        const weapon = inferWeaponFromText(rowText + " " + name);
+  // Traverse segments
+  for (let i = 0; i < sorted.length; i++) {
+    const a = sorted[i];
+    const b = sorted[i + 1] || null;
+    const section = sectionLabelFromAnchorId(a.id);
 
-        items.push({
-          name,
-          section: currentSection,
-          weapon
-        });
-      }
+    // if the anchor is inside a heading, use heading as start, else use element itself
+    const start = a.closest("h1,h2,h3,h4") || a;
+
+    const links = collectLinksUntil(start, b ? (b.closest("h1,h2,h3,h4") || b) : null);
+
+    for (const link of links) {
+      const name = (link.textContent || "").trim();
+      if (!isLikelyUniqueName(name)) continue;
+
+      const rowText =
+        (link.closest("tr")?.textContent || "") +
+        " " +
+        (link.parentElement?.textContent || "");
+
+      out.push({
+        name,
+        section,
+        weapon: inferWeaponFromText(rowText + " " + name)
+      });
     }
   }
 
-  // Cleanup: keep only main sections we want + move unknown to Gear/Jewellery if we can infer
-  const cleaned = items.map(x => {
-    let sec = x.section;
-    if (sec === "Other") {
-      // fallback by weapon inference
-      if (x.weapon !== "unknown" && x.weapon !== "shield" && x.weapon !== "quiver") sec = "Weapons";
-    }
-    return { ...x, section: sec };
-  });
+  // If anchor parsing yields nothing (site structure changed), fallback to global link scan
+  if (out.length < 10) {
+    const allLinks = Array.from(doc.querySelectorAll("a"));
+    for (const link of allLinks) {
+      const name = (link.textContent || "").trim();
+      if (!isLikelyUniqueName(name)) continue;
 
-  return dedupeByKey(cleaned, x => x.name?.toLowerCase());
+      const ctx = (link.closest("tr")?.textContent || "") + " " + (link.parentElement?.textContent || "");
+      const weapon = inferWeaponFromText(ctx + " " + name);
+
+      // heuristics: if it mentions a weapon keyword, put in Weapons
+      const section = weapon !== "unknown" ? "Weapons" : "Other";
+
+      out.push({ name, section, weapon });
+    }
+  }
+
+  return dedupeByKey(out, x => x.name?.toLowerCase());
 }
 
 /* ---------------- Compatibility ---------------- */
@@ -218,12 +258,7 @@ function weaponCompatible(archetype, uniqueWeapon) {
 }
 
 /* ---------------- Render ---------------- */
-function renderList(el, html) {
-  el.innerHTML = html;
-}
-
 function renderUniquesGrouped(uniquesEl, uniques, archetype, strictCompat) {
-  // group order
   const order = ["Weapons", "Jewellery", "Gear", "Other"];
   const grouped = new Map(order.map(k => [k, []]));
 
@@ -232,12 +267,10 @@ function renderUniquesGrouped(uniquesEl, uniques, archetype, strictCompat) {
     grouped.get(k).push(u);
   }
 
-  // Apply strict compat ONLY to Weapons
   if (strictCompat) {
     grouped.set("Weapons", grouped.get("Weapons").filter(u => weaponCompatible(archetype, u.weapon)));
   }
 
-  // Sort inside groups
   for (const k of order) {
     grouped.get(k).sort((a,b) => a.name.localeCompare(b.name));
   }
@@ -250,17 +283,13 @@ function renderUniquesGrouped(uniquesEl, uniques, archetype, strictCompat) {
     html += `<div class="section-title">${esc(k)} <small>(${arr.length})</small></div>`;
 
     for (const u of arr.slice(0, 80)) {
-      const meta =
-        (k === "Weapons")
-          ? `weapon: ${esc(u.weapon)}`
-          : (u.weapon && u.weapon !== "unknown" ? `hint: ${esc(u.weapon)}` : "");
-
+      const meta = (k === "Weapons") ? `weapon: ${esc(u.weapon)}` : "";
       html += `
         <div class="result-item">
           <div class="result-icon"></div>
           <div>
             <div class="result-title">${esc(u.name)}</div>
-            ${meta ? `<div class="result-meta">${meta}</div>` : `<div class="result-meta muted">—</div>`}
+            <div class="result-meta">${meta || "—"}</div>
           </div>
         </div>
       `;
@@ -268,16 +297,15 @@ function renderUniquesGrouped(uniquesEl, uniques, archetype, strictCompat) {
   }
 
   if (!html) html = `<div class="muted">No results</div>`;
-  renderList(uniquesEl, html);
+  uniquesEl.innerHTML = html;
 }
 
 function renderSkills(skillsEl, skills, archetype, theme) {
   const wanted = getSkillWantedTags(archetype, theme);
 
-  // Score each skill
   const scored = skills
     .map(s => ({ ...s, score: scoreTags(s.tags, wanted) }))
-    .filter(s => s.score > 0) // important: we only keep relevant ones
+    .filter(s => s.score > 0)
     .sort((a,b) => b.score - a.score || a.name.localeCompare(b.name))
     .slice(0, 60);
 
@@ -298,11 +326,11 @@ function renderSkills(skillsEl, skills, archetype, theme) {
     }
   }
 
-  renderList(skillsEl, html);
+  skillsEl.innerHTML = html;
 }
 
-/* ---------------- Load data ---------------- */
-async function loadData(force = false) {
+/* ---------------- Load ---------------- */
+async function loadData(force=false) {
   setStatus("Loading data…");
 
   let skills = !force ? cacheGet(CACHE_SKILLS) : null;
@@ -319,7 +347,7 @@ async function loadData(force = false) {
     }
   } catch (e) {
     console.error(e);
-    setStatus("Error loading data (proxy ok, parse needs tweak). Check console.");
+    setStatus("Error loading data. Check console.");
     return null;
   }
 
